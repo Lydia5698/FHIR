@@ -4,74 +4,112 @@ import ca.uhn.hl7v2.HapiContext;
 import ca.uhn.hl7v2.model.Message;
 import ca.uhn.hl7v2.model.v25.group.ORU_R01_ORDER_OBSERVATION;
 import ca.uhn.hl7v2.model.v25.message.ORU_R01;
-import ca.uhn.hl7v2.model.v25.segment.OBX;
+import ca.uhn.hl7v2.model.v25.segment.OBR;
+import ca.uhn.hl7v2.model.v25.segment.ORC;
 import ca.uhn.hl7v2.parser.Parser;
 import ca.uhn.hl7v2.util.Hl7InputStreamMessageIterator;
+import com.jayway.jsonpath.JsonPath;
+import net.minidev.json.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
-import java.io.*;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.List;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.Scanner;
+
 
 public class V2 {
 
-
-  /*  String message = "MSH|^~\\&|ORBIS|UKSH-HL|CLAR_HL|Hygieneportal|20210722164734||ADT^A01^ADT_A01|9095e934-81ab-4ac1-b76f-26631695fffb|P|2.5||**REMOVED** (msh continuation pointer)|AL|NE||8859/1\n" +
-            "EVN|A01|202107221647||**REMOVED** (event reason code)|UKSH-HL|202107221507\n" +
-            "PID|1||18360014||Blick8961^Nella5604^^^^^L~||19800630|F|||~|||||||||||||||||||N\n" +
-            "PV1|1|H|LA018^^^LKCHI^HL^66240000|^^HL7||||~~|||||||||||253754957|||||||||||||||||||||||||202107221507|||||||A\n" +
-            "ZBE|101560467^ORBIS|202107221507||INSERT";*/
-
     HapiContext context = new DefaultHapiContext();
-
     Parser p = context.getPipeParser();
-    //File observationIdentifierTxt = new File("/Users/lydia/Desktop/Uni/6 Semester/BA/Patienten/src/main/resources/observationIdentifier.txt");
-
-
     Message hapiMsg;
-
-
-
-
-    //PipeParser ourPipeParser = new PipeParser();
-
-    //Message messageNeu = ourPipeParser.parse(message);
-
     int anhang = 1;
        
-        
-
-
-
-    //PID patient = V2Message.getPID();
-
-
-
-    public void ausgabe() throws HL7Exception, IOException {
-
-        //ourPipeParser.getParserConfiguration().setAllowUnknownVersions(true);
-     
-       /* try {
-            // The parse method performs the actual parsing
-            hapiMsg = p.parse(message);
-        } catch (EncodingNotSupportedException e) {
-            e.printStackTrace();
-            return;
-        } catch (HL7Exception e) {
-            e.printStackTrace();
-            return;
-        }*/
-        Message message = null;
-        for (int i = 0; i< 3; i++){
-            InputStream inputStream = new FileInputStream("/Users/lydia/Desktop/Uni/6 Semester/BA/mibi-on-fhir/Code/src/main/resources/MiBi/multiple"+ anhang);
+    public void ausgabe() throws HL7Exception, IOException  {
+        for (int i = 0; i< 5; i++){
+            // todo Only absolute Path possible ??
+            InputStream inputStream = new FileInputStream("/Users/lydia/Desktop/Uni/6 Semester/BA/mibi-on-fhir/Code/src/main/resources/adt/KC/ORU"+ anhang);
             Hl7InputStreamMessageIterator streamMessageIterator = new Hl7InputStreamMessageIterator(inputStream);
-            message = streamMessageIterator.next();
+            Message message = streamMessageIterator.next();
             ORU_R01 oruR01 = (ORU_R01) p.parse(message.encode());
             ORU_R01_ORDER_OBSERVATION orderObservation;
-            for (int j = 0; j<6; j++){
+            // When there are more than one OBX,OBR,ORC
+            for (int j = 0; j<5; j++){
                 if(!oruR01.getPATIENT_RESULT().getORDER_OBSERVATION(j).isEmpty()){
                     orderObservation = oruR01.getPATIENT_RESULT().getORDER_OBSERVATION(j);
+                    obx(orderObservation);
+
+                }
+            }
+
+            anhang+=1;
+            System.out.println(i);
+        }
+
+    }
+    public void obx(ORU_R01_ORDER_OBSERVATION orderObservation) throws HL7Exception, IOException {
+        //OBX obx = orderObservation.getOBSERVATION().getOBX();
+        ORC orc = orderObservation.getORC();
+        OBR obr = orderObservation.getOBR();
+        Object orderStatus = orc.getOrderStatus();
+        //String identifier = obx.getValueType().encode();
+        String check = obr.getResultStatus().encode();
+
+        if(checkIfInOntoserver(check)){
+            System.out.println("true");
+        }
+
+    }
+
+    private boolean checkIfInOntoserver(String check) throws IOException {
+        HttpURLConnection connection = (HttpURLConnection) new URL("https://r4.ontoserver.csiro.au/fhir/CodeSystem/v2-0123?_format=application/fhir+json").openConnection();
+        connection.setRequestMethod("GET");
+        connection.connect();
+        int responseCode = connection.getResponseCode();
+        System.out.println(responseCode);
+        // read the json document from the URL
+        if(responseCode == 200){
+            StringBuilder response = new StringBuilder();
+            Scanner scanner = new Scanner(connection.getInputStream());
+            while(scanner.hasNextLine()){
+                response.append(scanner.nextLine());
+                response.append("\n");
+            }
+            scanner.close();
+            JSONParser parser = new JSONParser();
+            try {
+                Object object = parser
+                        .parse(response.toString());
+
+                //convert Object to JSONObject
+                JSONObject jsonObject = (JSONObject) object;
+                // All codes from Result Status OBR
+                JSONArray code = JsonPath.read(jsonObject, "$.concept[*].code");
+                // Test Result Status OBR mit Code = S
+                if (code.contains(check)){
+                    return true;
+                }
+
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+        }
+        return false;
+    }
+
+
+    public V2() {
+    }
+}
+
+
+      /*
+                            To Write Fields to Document
+
                     OBX obx = orderObservation.getOBSERVATION().getOBX();
                     String identifier = obx.getObservationResultStatus().encode();
                     ClassLoader classLoader = getClass().getClassLoader();
@@ -83,60 +121,11 @@ public class V2 {
                         writer.write("\n" + anhang + " " + j + "\n");
                         writer.close();
 
-                    }
+                    }*/
 
 
-                }
-
-
-
-
-            }
-            //orderObservation = oruR01.getPATIENT_RESULT().getORDER_OBSERVATION(0).; // verändern für OBX OBR wenn mehr als 1
-            //OBR obr = orderObservation.getOBR();
-            //ORU_R01_OBSERVATION observation = orderObservation.getOBSERVATION(0);
-
-            //OBX obx = observation.getOBX();
-            //OBR obr = orderObservation.getOBR();
-            //ORC orc = orderObservation.getORC();
-            //MSH msh = oruR01.getMSH();
-            //PID pid = v2Message.get(P);
-            //ID[] varies = msh.getCharacterSet();
-            //String identifier = obr.getUniversalServiceIdentifier().encode();
-            //System.out.println(oruR01.getDSC());
-
-
-            //Path path = Paths.get("obrMibi.txt");
-            //List<String> contentList = Files.readAllLines(path, StandardCharsets.UTF_8);
-            //System.out.println(contentList);
-            //Writer writer = new BufferedWriter(new FileWriter("obrMibi.txt", true));
-            //writer = new FileWriter("observationIdentifier.txt");
-/*
-            if(varies.length == 1) {
-
-                if (!contentList.contains(varies[0].encode())) {
-                    writer.write(varies[0].encode());
-
-                    writer.write("\n" + anhang + "\n");
-                    writer.close();
-                }
-
-            }
-            else if(varies.length > 1) {
-                System.out.println("Flag");
-            }*/
-
-
-            anhang+=1;
-            System.out.println(i);
-        }
-
-
-
-
-
-
-        //System.out.println(patient.getName()); //human.name
+// JSON FHIR Patient
+//System.out.println(patient.getName()); //human.name
        /* FhirContext ctx = FhirContext.forDstu3();
         //IGenericClient client = ctx.newRestfulGenericClient("https://hapi.fhir.org/baseR4");
         Patient patient = new Patient();
@@ -149,13 +138,3 @@ public class V2 {
 
         String encode = parser.encodeResourceToString(patient);
         System.out.println(encode);*/
-
-
-    }
-
-
-    
-
-    public V2() throws HL7Exception, IOException {
-    }
-}
