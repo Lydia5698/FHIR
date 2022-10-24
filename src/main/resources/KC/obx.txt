@@ -1,0 +1,34 @@
+Set ID:
+1 1
+
+Value Type:
+ST 1
+
+Observation Identifier:
+cov2019so^SARS-CoV-2 RNA (Sonst.Mat.1)^^603308
+cov19pcrst^SARS-CoV-2 PCR Schnelltest^^603518
+
+References Range:
+negativ
+
+ObservationValue:
+!folgt 1
+!fehlt 22
+!storno 50
+neg 111
+positiv 329 !!!!! pos und negativ gleichzeitig?
+pos 343 !!!!! pos und negativ gleichzeitig?
+grenzw. 554
+entf. 770
+kMat 872
+
+AbnormalFlags:
+N 48
+H 329
+
+Observation Result Status
+I 1
+F 48
+D 50
+C 770
+

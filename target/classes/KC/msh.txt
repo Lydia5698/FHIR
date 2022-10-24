@@ -1,0 +1,43 @@
+Field Separator:
+\F\ 1
+
+Encoding Characters:
+\S\\R\\E\\T\  1
+
+Sending Application:
+OPUS::CLAR   1
+
+Sending Facility:
+LABOR   1
+
+Receiving Application:
+CLAR   1
+
+Receiving Facility:
+CLAR   1
+
+Message Type:
+ORU^R01   1
+
+Message Control ID: (Bsp)
+
+20220704135945000005        1
+20220704135944000018        2
+
+Processing ID:
+P   1
+
+Version ID:
+2.5     1
+
+Accept Acknowledgment Type:
+AL      1
+
+Application Acknowledgment Type:
+NE      1
+
+Country Code:
+DE      1
+
+Character Set:
+8859/1      1

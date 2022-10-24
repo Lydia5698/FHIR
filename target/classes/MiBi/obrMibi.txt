@@ -1,0 +1,191 @@
+Universal Service Identifier: Zahl1-     Zahl2- OBR
+1^MRSA (Kultur)                     1 0
+1^Erreger/Resistenz                 2 0
+bkan^Blutkultur anaerob^unt^12035   2 2
+bkae^Blutkultur aerob^unt^12034     3 2
+hemm^Hemmstofftest^unt^12002        5 2
+leukos^Leukozyten^unt^12502         5 3
+1^Erreger/Resistenz, Legionella Antigen (Urin), Streptococcus pneumoniae-Antigen    6 0
+strpnag^Streptococcus pneumoniae-Antigen^unt^16010                                  6 2
+legag^Legionellen-Antigen (Urin)^unt^16014                                          6 3
+1^MRGN, MRSA (Kultur)               12 0
+1^MRGN                              14 0
+1^Erreger/Resistenz, Hefen, Legionella Antigen (Urin), Streptococcus pneumoniae-Antigen     26 0
+1^Erreger/Resistenz, Pilze          32 0
+psgram^Grampr�parat^unt^10001       32 2
+quant^Quantifizierung               32 3
+pgram^Grampr�parat^unt^10000        41 2
+1^Erreger/Resistenz, Hefen          42 0
+1^Erreger/Resistenz, Mycobacterium tuberculosis (PCR+Kultur), Pilze         46 0
+1^Actinomyces, Aspergillus (Antigen), Erreger/Resistenz, Legionella, Mycobacterium tuberculosis (PCR+Kultur), Nocardia, Pilze, Pneumocystis         49 0
+aspaghl^Aspergillus Antigen-Nachweis^unt^16500                              49 5
+1^Erreger/Resistenz, Mycobacterium tuberculosis (Kultur), Pilze             50 0
+1^Actinomyces, Erreger/Resistenz, Pilze                                     57 0
+1^Erreger/Resistenz, Streptococcus pneumoniae-Antigen                       60 0
+kz^Keimzahl                                                                 97 4
+1^MRGN, MRSA (PCR)                                                          148 0
+1^Brucella, Erreger/Resistenz, Hefen                                        199 0
+1^MRGN, VRE                         303 0
+1^MRGN, MRSA (Kultur), VRE          322 0
+1^Pilze                             399 0
+bkpe^Blutkultur p�diatrisch^unt^12036                                       433 2
+1^Adenoviren, Clostridioides difficile (Antigen/Toxin), Norovirus (Antigen), Rotavirus, darmpathogene Erreger       519 0
+av^Adenoviren Antigen-Nachweis^unt^16005                                    519 2
+cl^Clostridioides difficile GDH- und Toxin^unt^16001                        519 3
+nv^Noroviren Antigen-Nachweis^unt^16007                                     519 4
+rv^Rotavirus Antigen-Nachweis^unt^16008                                     519 5
+resi^Resistenzbestimmung                                                    598 3
+1^Clostridioides difficile (Antigen/Toxin), Norovirus (Antigen), darmpathogene Erreger                              669 0
+1^darmpathogene Erreger                                                     670 0
+1^Adenoviren, Clostridioides difficile (Antigen/Toxin), EHEC (Toxin), Helicobacter pylori (Antigen), Norovirus (Antigen), Rotavirus, darmpathogene Erreger  748 0
+hp^Helicobacter pylori Antigen-Nachweis^unt^16003                           748 4
+1^Adenoviren, Am�ben, Clostridioides difficile (Antigen/Toxin), Cryptosporidia, EHEC (Toxin), Helicobacter pylori (Antigen), Lamblia, Mycobacterium tuberculosis (Kultur), Norovirus (Antigen), Parasiten, Pilze, Rotavirus, Vibrio cholerae, darmpathogene Erreger
+                                                                            752 0 todo 752 Freitext!!!
+1^Clostridioides difficile (Antigen/Toxin), darmpathogene Erreger           756 0
+1^Aspergillus (Antigen), Erreger/Resistenz, Mycobacterium tuberculosis (Kultur), Pilze                              761 0
+1^Adenoviren, Norovirus (Antigen), Rotavirus                                                                        783 0
+1^Aspergillus (Antigen), Erreger/Resistenz, Mycobacterium tuberculosis (PCR+Kultur), Pilze                          866 0
+znm^Ziehl-Neelsen-Pr�parat (Mycobacterien)^unt^10500                                                                910 2
+tbcpcrhl^M. tuberculosis Komplex PCR^unt^15500                                                                      910 3
+1^Erreger/Resistenz, Mycobacterium tuberculosis (PCR+Kultur)                                                        914 0
+1^Erreger/Resistenz, Mycobacterium tuberculosis (Kultur), Mycobacterium tuberculosis (PCR+Kultur), Pilze            916 0
+1^Quantiferon TB-Test                                                                                               999 0
+qferbe^Tb-Antigen (IFN-gamma)^unt^16024                                                                             999 2
+
+Placer Order Number: Immer gleich egal wie viele OBR (Bsp)
+28517711^LABOR      1 0
+28514285^LABOR      2 0
+
+Filler Order Number: Immer gleich egal wie viele OBR (Bsp)
+28517711^OSMCLAR    1 0
+28514285^OSMCLAR    2 0
+
+Specimen Source: Bestimmte Codes?
+screena&Screening Abstrich^^^rn&Rachen/Nase             1 0
+bkan&Blutkultur, anaerob                                2 0
+bkae&Blutkultur, aerob                                  3 0
+msu&Mittelstrahlurin                                    5 0
+screena&Screening Abstrich^^^lei&Leiste                 8 0
+screena&Screening Abstrich^^^trek&tief rektal           14 0
+ababsz&Abstrich Abszess^^^anu&Anus                      15 0
+ku&Katheter-Urin                                        18 0
+bal&Bronchoalveol�re Lavage^^^ul_r&Unterlappen rechts   32 0
+punk&Punktat^^^pl&Pleura                                41 0
+ur&Urin^^Lymphozelenfistel                              44 0
+gew&Gewebe^^^herzkl&Herzklappe                          45 0
+abs&resp. Absaugung                                     46 0
+ababsz&Abstrich Abszess^^^obsch_r&Oberschenkel rechts   48 0
+bal&Bronchoalveol�re Lavage^^^ul_l&Unterlappen links    49 0
+ts&Trachealsekret                                       57 0
+abintr&Abstrich tief, Wunde intraoperativ^^^untsch_l&Unterschenkel links        58 0
+gew&Gewebe^^^h�_l&H�fte links                           59 0
+abintr&Abstrich tief, Wunde intraoperativ^^^untsch_r&Unterschenkel rechts       63 0
+abintr&Abstrich tief, Wunde intraoperativ^^^fu_l&Fuss links                     65 0
+abintr&Abstrich tief, Wunde intraoperativ^^^fi_l&Finger links                   66 0
+abver&Abstrich Verbrennung^^^hand_l&Hand links          67 0
+ababsz&Abstrich Abszess                                 68 0
+ababsz&Abstrich Abszess^^Sternum                        69 0
+fremdm&Fremdmaterial^^^aks&Arterien-Katheterspitze      70 0
+abwund&Abstrich oberfl�chlich, Wunde^^^untsch_r&Unterschenkel rechts            75 0
+gew&Gewebe                                                                      76 0
+abwund&Abstrich oberfl�chlich, Wunde^^^fi_l&Finger links                        77 0
+abwund&Abstrich oberfl�chlich, Wunde^^^fi_r&Finger rechts                       78 0
+abwund&Abstrich oberfl�chlich, Wunde^^^hand_r&Hand rechts                       79 0
+abwund&Abstrich oberfl�chlich, Wunde^^^oba_r&Oberarm rechts                     80 0
+screena&Screening Abstrich^^^peria&perianal                                     86 0
+bkdttpae&Blutkultur (DTTP) aerob^^^zvk&ZVK                                      90 0
+bkdttpan&Blutkultur (DTTP) anaerob^^^zvk&ZVK                                    91 0
+screena&Screening Abstrich^^^ra&Rachen                                          95 0
+bkdttpae&Blutkultur (DTTP) aerob^^^art&arteriell                                99 0
+bkdttpan&Blutkultur (DTTP) anaerob^^^art&arteriell                              100 0
+bkdttpae&Blutkultur (DTTP) aerob^^^per&peripher                                 132 0
+bkdttpan&Blutkultur (DTTP) anaerob^^^per&peripher                               133 0
+screena&Screening Abstrich^^^na&Nase                                            136 0
+bkan&Blutkultur, anaerob^^^bl&Blut                                              157 0
+bkae&Blutkultur, aerob^^^bl&Blut                                                158 0
+bkdttpae&Blutkultur (DTTP) aerob^^^port&Port                                    168 0
+screena&Screening Abstrich^^PEG^kte&Kathetereinstichstelle                      234 0
+screents&Screening Trachealsekret                                               236 0
+screena&Screening Abstrich^^offene wunde re schulter                            299 0
+screena&Screening Abstrich^^PEG^draine&Drainageeinstichstelle                   308 0
+screena&Screening Abstrich^^rechts                                              322 0
+abober&Abstrich Haut, oberfl�chlich^^^anu&Anus                                  346 0
+abwund&Abstrich oberfl�chlich, Wunde^^^tons&Tonsille                            368 0
+abwund&Abstrich oberfl�chlich, Wunde^^^untsch_l&Unterschenkel links             370 0
+abober&Abstrich Haut, oberfl�chlich^^^ra&Rachen                                 372 0
+abwund&Abstrich oberfl�chlich, Wunde^^^bau&Bauch                                375 0
+abober&Abstrich Haut, oberfl�chlich^^^cerv&Cervix                               377 0
+sp&Sputum                                                                       387 0
+abwund&Abstrich oberfl�chlich, Wunde^^^hand_l&Hand links                        388 0
+abwund&Abstrich oberfl�chlich, Wunde^^^r�&R�cken                                389 0
+abober&Abstrich Haut, oberfl�chlich^^^bad&Bauchdecke                            396 0
+abwund&Abstrich oberfl�chlich, Wunde^^^ra&Rachen                                398 0
+abober&Abstrich Haut, oberfl�chlich^^^mu&Mund                                   399 0
+bkdttpae&Blutkultur (DTTP) aerob^^^shal&Shaldon-Katheter                        403 0
+bkdttpan&Blutkultur (DTTP) anaerob^^^shal&Shaldon-Katheter                      408 0
+abwund&Abstrich oberfl�chlich, Wunde^^^lei_r&Leiste rechts                      416 0
+abober&Abstrich Haut, oberfl�chlich^^^kopfh&Kopfhaut                            426 0
+abwund&Abstrich oberfl�chlich, Wunde^^^na&Nase                                  430 0
+abober&Abstrich Haut, oberfl�chlich^^^trst&Tracheostoma                         432 0
+bkped&Blutkultur p�diatrisch^^^bl&Blut                                          433 0
+abintr&Abstrich tief, Wunde intraoperativ^^^sprg_l&Sprunggelenk links           446 0
+ur&Urin                                                                         482 0
+nb&Nierenbecken-Urin^^^_l&links                                                 484 0
+nb&Nierenbecken-Urin^^^_r&rechts                                                510 0
+fremdm&Fremdmaterial^^^zvks&ZVK-Spitze                                          511 0
+li&Liquor^^^abl&Ableitung                                                       517 0
+st&Stuhl                                                                        519 0
+ababsz&Abstrich Abszess^^^fin_l&Fingernagel links                               528 0
+abintr&Abstrich tief, Wunde intraoperativ^^^mu&Mund                             532 0
+sek&Sekret/Fl�ssigkeit^^Erbrochenes                                             533 0
+bal&Bronchoalveol�re Lavage^^^ol_r&Oberlappen rechts                            534 0
+bal&Bronchoalveol�re Lavage^^^ml_r&Mittellappen rechts                          536 0
+bal&Bronchoalveol�re Lavage^^^_r&rechts                                         538 0
+bal&Bronchoalveol�re Lavage^^Hauptbronchus links                                539 0
+bal&Bronchoalveol�re Lavage^^^_l&links                                          540 0
+abwund&Abstrich oberfl�chlich, Wunde^^^h�_l&H�fte links                         577 0
+abober&Abstrich Haut, oberfl�chlich^^^gg_r&Geh�rgang rechts                     590 0
+abwund&Abstrich oberfl�chlich, Wunde^^^lei_l&Leiste links                       593 0
+abober&Abstrich Haut, oberfl�chlich^^^r�&R�cken                                 674 0
+abwund&Abstrich oberfl�chlich, Wunde^^^unta_r&Unterarm rechts                   677 0
+abwund&Abstrich oberfl�chlich, Wunde^^^ohr_l&Ohr links                          682 0
+abober&Abstrich Haut, oberfl�chlich^^^ohr_l&Ohr links                           697 0
+abober&Abstrich Haut, oberfl�chlich^^^bru_l&Brust links                         705 0
+abwund&Abstrich oberfl�chlich, Wunde^^^ges&Ges��                                723 0
+abwund&Abstrich oberfl�chlich, Wunde^^^mu&Mund                                  724 0
+abwund&Abstrich oberfl�chlich, Wunde^^^oba_l&Oberarm links                      749 0
+stbl&Stuhl blutig                                                               753 0
+bal&Bronchoalveol�re Lavage^^^ol_l&Oberlappen links                             765 0
+li&Liquor                                                                       776 0
+fremdm&Fremdmaterial                                                            814 0
+abintr&Abstrich tief, Wunde intraoperativ^^^hals&Hals                           836 0
+abver&Abstrich Verbrennung^^^unta_l&Unterarm links                              852 0
+ababsz&Abstrich Abszess^^^bad&Bauchdecke                                        864 0
+gew&Gewebe^^Os naviculare 2 links^gelenk&Gelenk                                 867 0
+gew&Gewebe^^^anu&Anus                                                           868 0
+gew&Gewebe^^Wadenmuskulatur US rechts                                           875 0
+abintr&Abstrich tief, Wunde intraoperativ^^^oba_r&Oberarm rechts                876 0
+gew&Gewebe^^Os naviculare 1 links^gelenk&Gelenk                                 909 0
+gew&Gewebe^^MiBi subcutan radial PE 2                                           930 0
+abintr&Abstrich tief, Wunde intraoperativ^^^sprg_r&Sprunggelenk rechts          932 0
+abintr&Abstrich tief, Wunde intraoperativ^^^kn_l&Knie links                     942 0
+abintr&Abstrich tief, Wunde intraoperativ^^^ax_r&Axilla rechts                  943 0
+abwund&Abstrich oberfl�chlich, Wunde^^^kopfh&Kopfhaut                           964 0
+abober&Abstrich Haut, oberfl�chlich^^^gg_l&Geh�rgang links                      966 0
+seqf&Serum                                                                      999 0
+
+Placer Field 1: (Bsp)
+2851771180              1 0
+2851428580              2 0
+
+Filler Field 1: (Bsp)
+202207054021            1 0
+2022062823745           2 0
+
+Diagnostic Serv Sect ID:
+MB                      1 0
+
+Result Status:
+S                       1 0
+F                       5 0
+P                       26 0
