@@ -43,7 +43,6 @@ public class Script {
                     Path path = Path.of("src/main/resources/observationValue.txt");
                     List<String> contentList = Files.readAllLines(path, StandardCharsets.UTF_8);
                     Writer writer = new BufferedWriter(new FileWriter("src/main/resources/observationValue.txt", true));
-                    System.out.println(contentList);
                     if (!contentList.contains(identifier)) {
                         writer.write(identifier);
                         writer.write("\n");
