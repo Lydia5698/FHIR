@@ -1,1 +1,4 @@
 **/*.hl7
+src/main/resources/data/*
+!src/main/resources/data/.gitkeep
+target/

@@ -11,6 +11,7 @@ import ca.uhn.hl7v2.util.Hl7InputStreamMessageIterator;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.*;
+import java.util.HashSet;
 import java.util.List;
 
 public class Script {
@@ -23,7 +24,7 @@ public class Script {
 
     public void ausgabe() throws HL7Exception, IOException {
         File folder = new File("src/main/resources/data/");
-        File[] listOfFiles = folder.listFiles((dir, name) -> !name.equals(".DS_Store"));
+        File[] listOfFiles = folder.listFiles((dir, name) -> !name.equals(".DS_Store") && !name.equals(".gitkeep"));
         assert listOfFiles != null;
         for (File file : listOfFiles){
             InputStream inputStream = new FileInputStream(file.getAbsolutePath());
@@ -41,7 +42,7 @@ public class Script {
                         identifier = identifier.concat(obx.getObservationValue(n).encode());
                     }
                     Path path = Path.of("src/main/resources/observationValue.txt");
-                    List<String> contentList = Files.readAllLines(path, StandardCharsets.UTF_8);
+                    HashSet<String> contentList = new HashSet<>(Files.readAllLines(path, StandardCharsets.UTF_8));
                     Writer writer = new BufferedWriter(new FileWriter("src/main/resources/observationValue.txt", true));
                     if (!contentList.contains(identifier)) {
                         writer.write(identifier);
