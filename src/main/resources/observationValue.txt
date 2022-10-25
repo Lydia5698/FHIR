@@ -1,3 +1,13 @@
+Corona Observation Values{
+!folgt
+!fehlt
+!storno
+neg
+pos
+grenzw.
+entf.
+kMat
+}
 MRSA (Kultur)
 Erreger/Resistenz
 Kulturell kein Nachweis von Bakterien und Pilzen.
@@ -127,14 +137,5 @@ citbra^Citrobacter braakii^keim^1820
 pseaer4^Pseudomonas aeruginosa (4MRGN)^keim^12890
 32
 Quantiferon TB-Test
-Corona Observation Values{
-!folgt
-!fehlt
-!storno
-neg
-pos
-grenzw.
-entf.
-kMat
-}
+
 
