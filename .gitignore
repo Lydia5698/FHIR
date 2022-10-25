@@ -1,5 +1,6 @@
 **/*.hl7
 src/main/resources/data/*
 !src/main/resources/data/.gitkeep
-
+src/main/resources/KC/ORU*
+src/main/resources/MiBi/multiple*
 target/
