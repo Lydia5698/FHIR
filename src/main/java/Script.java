@@ -71,6 +71,7 @@ public class Script {
                                 identifier = identifier.concat(obx.getObservationValue(n).encode());
                             }
                             if (!contentList.contains(identifier)) {
+                                contentList.add(identifier);
                                 writer.write(identifier);
                                 writer.write("\n");
                             }
