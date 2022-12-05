@@ -35,23 +35,31 @@ public class Script {
         //Stream<Path> streamOfPaths;
         Path outputPath = Path.of(this.outputFilename);
         HashSet<String> contentList;
+        // the file may not exist at first
         if (outputPath.toFile().exists()) {
             contentList = new HashSet<>(Files.readAllLines(outputPath, StandardCharsets.ISO_8859_1));
         } else {
             contentList = new HashSet<>();
         }
+        // try-with-resources allows for automatic closing of a buffer, so we can keep the writer open as long as we need it,
+        // since re-opening the writer takes some time.
         try (Writer writer = new BufferedWriter(new FileWriter(outputPath.toFile(), StandardCharsets.ISO_8859_1, true))) {
             System.out.printf("Collecting files from input directory %s\n", this.startFolder);
 
+            // files.walk is recursive, so we can find files in subdirs; and we can also pre-filter the stream
             try (Stream<Path> streamOfPaths = Files.walk(Path.of(this.startFolder)).filter(p ->
                     p.toFile().isFile() && !p.endsWith(".DS_Store") && !p.endsWith(".gitkeep"))) {
 
                 Iterator<Path> pathIterator = streamOfPaths.iterator();
                 long pathIndex = 0;
+                // streamOfPaths is a stream that only enumerates its members when requested
+                // this is *much* more performant than collecting this to a list with some million entries, and
+                // requires much less RAM
                 while (pathIterator.hasNext()) {
                     Path path = pathIterator.next();
                     File file = path.toFile();
                     pathIndex++;
+                    // only print every few files, so we don't artificially slow down the process
                     if (pathIndex % 100 == 0) {
                         System.out.printf("Reading file %d - %s\n", pathIndex, path);
                     }
@@ -74,6 +82,8 @@ public class Script {
                                 contentList.add(identifier);
                                 writer.write(identifier);
                                 writer.write("\n");
+                                writer.flush(); // the output file is buffered, and only occasionally written to file
+                                // we want to be able to track the progress while it's running.
                             }
                         }
                     }
