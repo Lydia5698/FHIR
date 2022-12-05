@@ -4,3 +4,4 @@ src/main/resources/data/*
 src/main/resources/KC/ORU*
 src/main/resources/MiBi/multiple*
 target/
+out/

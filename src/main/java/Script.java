@@ -2,13 +2,18 @@ import ca.uhn.hl7v2.DefaultHapiContext;
 import ca.uhn.hl7v2.HL7Exception;
 import ca.uhn.hl7v2.HapiContext;
 import ca.uhn.hl7v2.model.Message;
+import ca.uhn.hl7v2.model.Type;
+import ca.uhn.hl7v2.model.Varies;
+import ca.uhn.hl7v2.model.v25.datatype.ST;
 import ca.uhn.hl7v2.model.v25.group.ORU_R01_ORDER_OBSERVATION;
 import ca.uhn.hl7v2.model.v25.message.ORU_R01;
 import ca.uhn.hl7v2.model.v25.segment.OBX;
 import ca.uhn.hl7v2.parser.Parser;
-import ca.uhn.hl7v2.util.Hl7InputStreamMessageIterator;
 
-import java.io.*;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.Writer;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -38,6 +43,7 @@ public class Script {
         // the file may not exist at first
         if (outputPath.toFile().exists()) {
             contentList = new HashSet<>(Files.readAllLines(outputPath, StandardCharsets.ISO_8859_1));
+            System.out.printf("Read file from %s with %d known observation values\n", outputFilename, contentList.size());
         } else {
             contentList = new HashSet<>();
         }
@@ -57,16 +63,14 @@ public class Script {
                 // requires much less RAM
                 while (pathIterator.hasNext()) {
                     Path path = pathIterator.next();
-                    File file = path.toFile();
                     pathIndex++;
                     // only print every few files, so we don't artificially slow down the process
                     if (pathIndex % 100 == 0) {
                         System.out.printf("Reading file %d - %s\n", pathIndex, path);
                     }
 
-                    InputStream inputStream = new FileInputStream(file.getAbsolutePath());
-                    Hl7InputStreamMessageIterator streamMessageIterator = new Hl7InputStreamMessageIterator(inputStream);
-                    Message message = streamMessageIterator.next();
+                    String hl7String = Files.readString(path, StandardCharsets.ISO_8859_1);
+                    Message message = p.parse(hl7String);
                     ORU_R01 oruR01 = (ORU_R01) p.parse(message.encode());
                     ORU_R01_ORDER_OBSERVATION orderObservation;
                     // When there are more than one OBX,OBR,ORC
@@ -76,7 +80,19 @@ public class Script {
                             OBX obx = orderObservation.getOBSERVATION().getOBX();
                             String identifier = "";
                             for (int n = 0; n < obx.getObservationValue().length; n++) {
-                                identifier = identifier.concat(obx.getObservationValue(n).encode());
+                                Varies observationValue = obx.getObservationValue(n);
+                                Type data = observationValue.getData();
+                                String encoded;
+                                //noinspection SwitchStatementWithTooFewBranches
+                                switch (obx.getValueType().getValue()) {
+                                    case "ST":
+                                        encoded = ((ST)data).getValue();
+                                        break;
+                                    default:
+                                        encoded = obx.getObservationValue(n).encode();
+                                        break;
+                                }
+                                identifier = identifier.concat(encoded);
                             }
                             if (!contentList.contains(identifier)) {
                                 contentList.add(identifier);
