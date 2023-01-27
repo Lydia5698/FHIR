@@ -1,0 +1,37 @@
+Placer Order Number: (Bsp)
+20552400^LABOR   1
+20552401^LABOR   2
+
+Filler Order Number: (Bsp)
+20552400^OSMCLAR  1
+20552401^OSMCLAR  2
+
+Universal Service Identifier:
+99^Sonstiges 1
+- 883
+
+Placer Field 1: (Bsp)
+2055240082   1
+2055240182   2
+
+Placer Field 2:
+Sonstiges  1
+
+Filler Field 1: (Bsp)
+2055240082   1
+2055240182   2
+
+Filler Field 2:
+Sonstiges  1
+
+Results Rpt/Status Chng - Date/Time: (Bsp)
+202207041412   48
+202207041413   52
+
+Result Status:
+S   1
+F   48
+P   121
+X   883
+
+
