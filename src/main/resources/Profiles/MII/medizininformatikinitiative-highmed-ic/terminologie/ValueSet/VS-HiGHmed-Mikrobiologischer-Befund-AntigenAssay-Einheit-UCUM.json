@@ -1,0 +1,44 @@
+{
+  "resourceType": "ValueSet",
+  "url": "http://highmed.org/fhir/ValueSet/ic/AntigenAssayEinheit",
+  "title": "VS HiGHmed Mikrobiologischer Befund AntigenAssay Einheit UCUM",
+  "status": "draft",
+  "compose": {
+    "include": [
+      {
+        "system": "http://unitsofmeasure.org",
+        "concept": [
+          {
+            "code": "ng/mL"
+          },
+          {
+            "code": "[arb'U]/mL"
+          },
+          {
+            "code": "{titer}"
+          },
+          {
+            "code": "%"
+          },
+          {
+            "code": "/10*5{PMN}"
+          },
+          {
+            "code": "/{slide}"
+          },
+          {
+            "code": "[IU]/L"
+          },
+          {
+            "code": "[arb'U]"
+          }
+        ]
+      }
+    ]
+  },
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>antigenQn</h2><tt>http://highmed.org/fhir/ValueSet/ic/AntigenAssayEinheit</tt></div>"
+  },
+  "name": "VS_HiGHmed_Mikrobiologischer_Befund_AntigenAssay_Einheit_UCUM"
+}

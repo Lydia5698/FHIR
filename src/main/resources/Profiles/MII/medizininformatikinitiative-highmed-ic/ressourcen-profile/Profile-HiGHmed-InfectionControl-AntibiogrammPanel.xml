@@ -1,0 +1,67 @@
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="Profile-HiGHmed-InfectionControl-AntibiogrammPanel" />
+  <url value="http://highmed.org/fhir/StructureDefinition/ic/AntibiogrammPanel" />
+  <version value="1.0.0" />
+  <name value="Profile_HiGHmed_InfectionControl_AntibiogrammPanel" />
+  <title value="Profile - HiGHmed - Infection Control- Antibiogramm Panel" />
+  <status value="active" />
+  <fhirVersion value="4.0.1" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Observation" />
+  <baseDefinition value="https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/ObservationLab" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Observation.category.coding">
+      <path value="Observation.category.coding" />
+      <min value="3" />
+    </element>
+    <element id="Observation.category.coding:loinc-microbiology-studies">
+      <path value="Observation.category.coding" />
+      <sliceName value="loinc-microbiology-studies" />
+      <min value="1" />
+      <max value="1" />
+      <patternCoding>
+        <system value="http://loinc.org" />
+        <code value="18725-2" />
+      </patternCoding>
+    </element>
+    <element id="Observation.code.coding">
+      <path value="Observation.code.coding" />
+      <slicing>
+        <discriminator>
+          <type value="pattern" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Observation.code.coding:loinc">
+      <path value="Observation.code.coding" />
+      <sliceName value="loinc" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+      <binding>
+        <strength value="required" />
+        <valueSet value="http://highmed.org/fhir/ValueSet/ic/susceptibilitypanels" />
+      </binding>
+    </element>
+    <element id="Observation.value[x]">
+      <path value="Observation.value[x]" />
+      <max value="0" />
+    </element>
+    <element id="Observation.hasMember">
+      <path value="Observation.hasMember" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://highmed.org/fhir/StructureDefinition/ic/MREKlasse" />
+        <targetProfile value="http://highmed.org/fhir/StructureDefinition/ic/Antiinfektiva-Resistenz" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+  </differential>
+</StructureDefinition>

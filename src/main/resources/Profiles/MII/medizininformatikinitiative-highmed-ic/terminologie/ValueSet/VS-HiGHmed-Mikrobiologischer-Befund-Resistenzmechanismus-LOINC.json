@@ -1,0 +1,48 @@
+{
+  "resourceType": "ValueSet",
+  "id": "VS-HiGHmed-Mikrobiologischer-Befund-Resistenzmechanismus-LOINC",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
+    ]
+  },
+  "url": "http://highmed.org/ValueSet/resistenzmechanismus-loinc",
+  "version": "1.0.0",
+  "name": "VS_HiGHmed_Mikrobiologischer_Befund_Resistenzmechanismus_LOINC",
+  "title": "VS HiGHmed Mikrobiologischer Befund Resistenzmechanismus [LOINC]",
+  "status": "active",
+  "experimental": false,
+  "publisher": "http://highmed.org",
+  "description": "A set of codes representing the mechanisms of resistence",
+  "immutable": false,
+  "copyright": "This content LOINC® is copyright © 1995 Regenstrief Institute, Inc. and the LOINC Committee, and available at no cost under the license at http://loinc.org/terms-of-use",
+  "compose": {
+    "include": [
+      {
+        "system": "http://loinc.org",
+        "concept": [
+          {
+            "code": "63368-5",
+            "display": "Carbapenem resistance genes [Identifier] by NAA with probe detection"
+          },
+          {
+            "code": "72421-1",
+            "display": "Vancomycin resistance vanB gene [Presence] by Molecular method"
+          },
+          {
+            "code": "48814-8",
+            "display": "Vancomycin resistance vanA gene [Presence] by Molecular method"
+          },
+          {
+            "code": "86621-0",
+            "display": "Methicillin resistance mecC gene [Presence] by Molecular method"
+          },
+          {
+            "code": "48813-0",
+            "display": "Methicillin resistance mecA gene [Presence] by Molecular method"
+          }
+        ]
+      }
+    ]
+  }
+}

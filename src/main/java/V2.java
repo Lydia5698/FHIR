@@ -19,6 +19,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.Scanner;
 
 
@@ -28,23 +31,28 @@ public class V2 {
     Parser p = context.getPipeParser();
     Message hapiMsg;
     int anhang = 1;
+    Fhir fhir = new Fhir();
        
     public void ausgabe() throws HL7Exception, IOException  {
-        for (int i = 0; i< 2; i++){
+        for (int i = 0; i< 1; i++){
             // todo Only absolute Path possible ??
-            InputStream inputStream = new FileInputStream("/Users/lydia/Desktop/Uni/6 Semester/BA/mibi-on-fhir/Code/src/main/resources/adt/KC/ORU"+ anhang);
-            Hl7InputStreamMessageIterator streamMessageIterator = new Hl7InputStreamMessageIterator(inputStream);
-            Message message = streamMessageIterator.next();
+            //InputStream inputStream = new FileInputStream("/Users/lydia/Desktop/Uni/6 Semester/BA Script/src/main/resources/KC/ORU"+ anhang);
+            //Hl7InputStreamMessageIterator streamMessageIterator = new Hl7InputStreamMessageIterator(inputStream);
+            Path path = Path.of("/Users/lydia/Desktop/Uni/6 Semester/BA Script/src/main/resources/MiBi/multiple3");
+            String hl7String = Files.readString(path, StandardCharsets.ISO_8859_1);
+            Message message = p.parse(hl7String);
+            //Message message = streamMessageIterator.next();
             ORU_R01 oruR01 = (ORU_R01) p.parse(message.encode());
             ORU_R01_ORDER_OBSERVATION orderObservation;
             // When there are more than one OBX,OBR,ORC
-            for (int j = 0; j<2; j++){
+           /* for (int j = 0; j<2; j++){
                 if(!oruR01.getPATIENT_RESULT().getORDER_OBSERVATION(j).isEmpty()){
                     orderObservation = oruR01.getPATIENT_RESULT().getORDER_OBSERVATION(j);
                     obx(orderObservation);
 
                 }
-            }
+            }*/
+            fhir.saveToFhir(oruR01);
 
             anhang+=1;
             System.out.println(i);
@@ -63,10 +71,10 @@ public class V2 {
         // Observation Result Status v2-0085
         // Order Control v2-0119
         // Order Status v2-0038
-        String fieldId = "v2-0038";
+        //String fieldId = "v2-0078";
 
 
-        JSONArray resultStatus = checkIfInOntoserver(fieldId);
+        JSONArray resultStatus = checkOntoserver("allCodes", " ");
         assert !resultStatus.isEmpty();
         if (resultStatus.contains(check)){
             System.out.println(resultStatus);
@@ -74,8 +82,22 @@ public class V2 {
 
     }
 
-    private JSONArray checkIfInOntoserver(String fieldId) throws IOException {
+    public JSONArray checkOntoserver(String toCheck, String checkLetter) throws IOException {
         JSONArray code = null;
+        String fieldId = null; // TODO: 06.02.23 Vielleicht einen standard einbauen wegen null exception?
+        switch (toCheck){
+            case "abnormal":
+                fieldId = "v2-0078";
+                break;
+            case "observationStatus":
+                fieldId = "v2-0085";
+                break;
+            case "orderControl":
+                fieldId = "v2-0119";
+                break;
+            case "orderStatus":
+                fieldId = "v2-0038";
+        }
         HttpURLConnection connection = (HttpURLConnection) new URL("https://r4.ontoserver.csiro.au/fhir/CodeSystem/" + fieldId + "?_format=application/fhir+json").openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -98,8 +120,17 @@ public class V2 {
                 //convert Object to JSONObject
                 JSONObject jsonObject = (JSONObject) object;
                 // All codes from Result Status OBR
-                code = JsonPath.read(jsonObject, "$.concept[*].code");
-                // Test Result Status OBR mit Code = S
+                switch (toCheck){
+                    // gets Display for Abnormal Flag OBX.8 where the code equals the gives Letter, Example Letter = N than Display would be = Normal
+                    case "abnormal":
+                        code = JsonPath.read(jsonObject, "$.concept[?(@.code =='" + checkLetter + "')].display");
+                        break;
+                        // gets all Codes
+                    case "allCodes":
+                        code = JsonPath.read(jsonObject, "$.concept[*].code");
+                        break;
+                }
+
 
             } catch (ParseException e) {
                 e.printStackTrace();

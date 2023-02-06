@@ -1,0 +1,2324 @@
+{
+  "resourceType": "ValueSet",
+  "id": "VS-HiGHmed-Mikrobiologische-Erreger-Bakterien-Explizit-SNOMEDCT",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
+    ]
+  },
+  "url": "http://highmed.org/fhir/ValueSet/ic/mikrobiologische-erreger-bakterien-snomedct-explizit",
+  "version": "1.0.0",
+  "name": "VS_HiGHmed_Mikrobiologische_Erreger_Bakterien_Explizit_SNOMEDCT",
+  "title": "VS HiGHmed Mikrobiologische Erreger Bakterien Explizit [SNOMED CT]",
+  "status": "active",
+  "experimental": false,
+  "publisher": "http://highmed.org",
+  "description": "A set of codes representing bacteria (organism) which may be detected by a microbiology laboratory test.",
+  "immutable": false,
+  "copyright": "This artefact includes content from SNOMED Clinical Terms® (SNOMED CT®) which is copyright of the International Health Terminology Standards Development Organisation (IHTSDO). Implementers of these artefacts must have the appropriate SNOMED CT Affiliate license - for more information contact http://www.snomed.org/snomed-ct/getsnomed-ct or info@snomed.org.",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "113714003",
+            "display": "Abiotrophia defectiva (organism);"
+          },
+          {
+            "code": "413414001",
+            "display": "Achromobacter denitrificans (organism);"
+          },
+          {
+            "code": "413417008",
+            "display": "Achromobacter insolitus (organism);"
+          },
+          {
+            "code": "413420000",
+            "display": "Achromobacter piechaudii (organism);"
+          },
+          {
+            "code": "413421001",
+            "display": "Achromobacter ruhlandii (organism);"
+          },
+          {
+            "code": "91620006",
+            "display": "Genus Achromobacter (organism);"
+          },
+          {
+            "code": "413422008",
+            "display": "Achromobacter spanius (organism);"
+          },
+          {
+            "code": "413424009",
+            "display": "Achromobacter xylosoxidans (organism);"
+          },
+          {
+            "code": "423897003",
+            "display": "Achromobacter xylosoxidans xylosoxidans (organism);"
+          },
+          {
+            "code": "91288006",
+            "display": "Acinetobacter baumannii (organism);"
+          },
+          {
+            "code": "113376007",
+            "display": "Acinetobacter calcoaceticus-Acinetobacter baumannii complex (organism);"
+          },
+          {
+            "code": "423974000",
+            "display": "Acinetobacter baylyi (organism);"
+          },
+          {
+            "code": "700398000",
+            "display": "Acinetobacter bereziniae (organism);"
+          },
+          {
+            "code": "424539001",
+            "display": "Acinetobacter bouvetii (organism);"
+          },
+          {
+            "code": "82550008",
+            "display": "Acinetobacter calcoaceticus (organism);"
+          },
+          {
+            "code": "787183008",
+            "display": "Acinetobacter dijkshoorniae (organism);"
+          },
+          {
+            "code": "131203002",
+            "display": "Acinetobacter genospecies (organism);"
+          },
+          {
+            "code": "113380002",
+            "display": "Acinetobacter genospecies 11 (organism);"
+          },
+          {
+            "code": "113377003",
+            "display": "Acinetobacter genospecies 3 (organism);"
+          },
+          {
+            "code": "708859003",
+            "display": "Acinetobacter nosocomialis (organism);"
+          },
+          {
+            "code": "424700008",
+            "display": "Acinetobacter gerneri (organism);"
+          },
+          {
+            "code": "700397005",
+            "display": "Acinetobacter guillouiae (organism);"
+          },
+          {
+            "code": "77045006",
+            "display": "Acinetobacter haemolyticus (organism);"
+          },
+          {
+            "code": "252000",
+            "display": "Acinetobacter johnsonii (organism);"
+          },
+          {
+            "code": "13879009",
+            "display": "Acinetobacter junii (organism);"
+          },
+          {
+            "code": "83088009",
+            "display": "Acinetobacter lwoffi (organism);"
+          },
+          {
+            "code": "698244000",
+            "display": "Acinetobacter pittii (organism);"
+          },
+          {
+            "code": "113381003",
+            "display": "Acinetobacter radioresistens (organism);"
+          },
+          {
+            "code": "423732001",
+            "display": "Acinetobacter schindleri (organism);"
+          },
+          {
+            "code": "787184002",
+            "display": "Acinetobacter seifertii (organism);"
+          },
+          {
+            "code": "7757008",
+            "display": "Genus Acinetobacter (organism);"
+          },
+          {
+            "code": "424021002",
+            "display": "Acinetobacter tandoii (organism);"
+          },
+          {
+            "code": "425109008",
+            "display": "Acinetobacter tjernbergiae (organism);"
+          },
+          {
+            "code": "424930007",
+            "display": "Acinetobacter towneri (organism);"
+          },
+          {
+            "code": "424791004",
+            "display": "Acinetobacter ursingii (organism);"
+          },
+          {
+            "code": "113384006",
+            "display": "Acinetobacter variabilis (organism);"
+          },
+          {
+            "code": "716526006",
+            "display": "Actinotignum schaalii (organism);"
+          },
+          {
+            "code": "44762009",
+            "display": "Genus Bacillus (organism);"
+          },
+          {
+            "code": "9008009",
+            "display": "Genus Aerococcus (organism);"
+          },
+          {
+            "code": "243230001",
+            "display": "Aerococcus urinae (organism);"
+          },
+          {
+            "code": "409819000",
+            "display": "Aerococcus urinaehominis (organism);"
+          },
+          {
+            "code": "115027006",
+            "display": "Aeromonas bestiarum (organism);"
+          },
+          {
+            "code": "115036005",
+            "display": "Aeromonas caviae (organism);"
+          },
+          {
+            "code": "115028001",
+            "display": "Aeromonas encheleia (organism);"
+          },
+          {
+            "code": "243316008",
+            "display": "Aeromonas trota (organism);"
+          },
+          {
+            "code": "115030004",
+            "display": "Aeromonas eucrenophilia (organism);"
+          },
+          {
+            "code": "85823000",
+            "display": "Aeromonas hydrophila (organism);"
+          },
+          {
+            "code": "115033002",
+            "display": "Aeromonas ichthiosmia (organism);"
+          },
+          {
+            "code": "115034008",
+            "display": "Aeromonas jandei (organism);"
+          },
+          {
+            "code": "65192005",
+            "display": "Aeromonas media (organism);"
+          },
+          {
+            "code": "425862003",
+            "display": "Aeromonas molluscorum (organism);"
+          },
+          {
+            "code": "115035009",
+            "display": "Aeromonas popoffii (organism);"
+          },
+          {
+            "code": "62520007",
+            "display": "Aeromonas salmonicida ss. salmonicida (organism);"
+          },
+          {
+            "code": "115039003",
+            "display": "Aeromonas schubertii (organism);"
+          },
+          {
+            "code": "426333004",
+            "display": "Aeromonas simiae (organism);"
+          },
+          {
+            "code": "43731003",
+            "display": "Aeromonas sobria (organism);"
+          },
+          {
+            "code": "88529008",
+            "display": "Genus Aeromonas (organism);"
+          },
+          {
+            "code": "9281006",
+            "display": "Aeromonas veronii (organism);"
+          },
+          {
+            "code": "25223004",
+            "display": "Alcaligenes faecalis (organism);"
+          },
+          {
+            "code": "424719003",
+            "display": "Alcaligenes faecalis subspecies faecalis (organism);"
+          },
+          {
+            "code": "68571003",
+            "display": "Genus Alcaligenes (organism);"
+          },
+          {
+            "code": "243386003",
+            "display": "Anaerobic Gram-negative bacillus (organism);"
+          },
+          {
+            "code": "243398008",
+            "display": "Anaerobic Gram-positive bacillus (organism);"
+          },
+          {
+            "code": "59343002",
+            "display": "Anaerobic bacteria (organism);"
+          },
+          {
+            "code": "413518000",
+            "display": "Genus Anaerococcus (organism);"
+          },
+          {
+            "code": "113436001",
+            "display": "Pseudoglutamicibacter cumminsii (organism);"
+          },
+          {
+            "code": "84408007",
+            "display": "Bacillus cereus (organism);"
+          },
+          {
+            "code": "413618005",
+            "display": "Bacillus cereus group (organism);"
+          },
+          {
+            "code": "71812004",
+            "display": "Bacillus circulans (organism);"
+          },
+          {
+            "code": "74867004",
+            "display": "Bacillus licheniformis (organism);"
+          },
+          {
+            "code": "114101003",
+            "display": "Paenibacillus macerans (organism);"
+          },
+          {
+            "code": "79109002",
+            "display": "Bacillus megaterium (organism);"
+          },
+          {
+            "code": "16580009",
+            "display": "Bacillus pumilus (organism);"
+          },
+          {
+            "code": "113479004",
+            "display": "Bacillus simplex (organism);"
+          },
+          {
+            "code": "83512007",
+            "display": "Bacillus subtilis (organism);"
+          },
+          {
+            "code": "64840009",
+            "display": "Bacillus thuringiensis (organism);"
+          },
+          {
+            "code": "14342006",
+            "display": "Bacteroides caccae (organism);"
+          },
+          {
+            "code": "55247009",
+            "display": "Bacteroides fragilis (organism);"
+          },
+          {
+            "code": "417375007",
+            "display": "Bacteroides fragilis group (organism);"
+          },
+          {
+            "code": "86936008",
+            "display": "Bacteroides ovatus (organism);"
+          },
+          {
+            "code": "57522007",
+            "display": "Genus Bacteroides (organism);"
+          },
+          {
+            "code": "163009",
+            "display": "Bacteroides stercoris (organism);"
+          },
+          {
+            "code": "34236001",
+            "display": "Bacteroides thetaiotaomicron (organism);"
+          },
+          {
+            "code": "59604009",
+            "display": "Bacteroides uniformis (organism);"
+          },
+          {
+            "code": "52798008",
+            "display": "Bacteroides vulgatus (organism);"
+          },
+          {
+            "code": "35011006",
+            "display": "Bifidobacterium breve (organism);"
+          },
+          {
+            "code": "36623007",
+            "display": "Bifidobacterium dentium (organism);"
+          },
+          {
+            "code": "5247005",
+            "display": "Bordetella pertussis (organism);"
+          },
+          {
+            "code": "423035009",
+            "display": "Brevundimonas aurantiaca;"
+          },
+          {
+            "code": "113689009",
+            "display": "Brevundimonas diminuta (organism);"
+          },
+          {
+            "code": "423923008",
+            "display": "Brevundimonas intermedia;"
+          },
+          {
+            "code": "424717001",
+            "display": "Brevundimonas nasdae;"
+          },
+          {
+            "code": "115154006",
+            "display": "Genus Brevundimonas (organism);"
+          },
+          {
+            "code": "423492004",
+            "display": "Brevundimonas subvibrioides;"
+          },
+          {
+            "code": "113690000",
+            "display": "Brevundimonas vesicularis (organism);"
+          },
+          {
+            "code": "416467009",
+            "display": "Burkholderia ambifaria;"
+          },
+          {
+            "code": "113667005",
+            "display": "Paraburkholderia andropogonis;"
+          },
+          {
+            "code": "417565005",
+            "display": "Burkholderia anthina;"
+          },
+          {
+            "code": "423159001",
+            "display": "Burkholderia caledonica;"
+          },
+          {
+            "code": "431682004",
+            "display": "Burkholderia caribensis;"
+          },
+          {
+            "code": "416941006",
+            "display": "Burkholderia cenocepacia (organism);"
+          },
+          {
+            "code": "113669008",
+            "display": "Burkholderia cepacia (organism);"
+          },
+          {
+            "code": "131281002",
+            "display": "Burkholderia cepacia complex (organism);"
+          },
+          {
+            "code": "431173006",
+            "display": "Burkholderia dolosa;"
+          },
+          {
+            "code": "417285005",
+            "display": "Paraburkholderia fungorum (organism);"
+          },
+          {
+            "code": "113671008",
+            "display": "Burkholderia gladioli (organism);"
+          },
+          {
+            "code": "113673006",
+            "display": "Burkholderia glumae;"
+          },
+          {
+            "code": "113674000",
+            "display": "Burkholderia mallei;"
+          },
+          {
+            "code": "113675004",
+            "display": "Burkholderia multivorans (organism);"
+          },
+          {
+            "code": "431166001",
+            "display": "Paraburkholderia phenazinium;"
+          },
+          {
+            "code": "431165002",
+            "display": "Paraburkholderia phymatum;"
+          },
+          {
+            "code": "113676003",
+            "display": "Burkholderia plantarii;"
+          },
+          {
+            "code": "116399000",
+            "display": "Burkholderia pseudomallei (organism);"
+          },
+          {
+            "code": "1003634005",
+            "display": "Burkholderia pseudomultivorans (organism);"
+          },
+          {
+            "code": "113677007",
+            "display": "Burkholderia pyrrocinia;"
+          },
+          {
+            "code": "431164003",
+            "display": "Paraburkholderia sacchari;"
+          },
+          {
+            "code": "414324002",
+            "display": "Genus Burkholderia (organism);"
+          },
+          {
+            "code": "416616001",
+            "display": "Burkholderia stabilis;"
+          },
+          {
+            "code": "431683009",
+            "display": "Paraburkholderia terricola;"
+          },
+          {
+            "code": "113678002",
+            "display": "Burkholderia thailandensis (organism);"
+          },
+          {
+            "code": "431175004",
+            "display": "Paraburkholderia tropica;"
+          },
+          {
+            "code": "431167005",
+            "display": "Paraburkholderia tuberum;"
+          },
+          {
+            "code": "113680008",
+            "display": "Burkholderia vietnamiensis (organism);"
+          },
+          {
+            "code": "431176003",
+            "display": "Paraburkholderia xenovorans;"
+          },
+          {
+            "code": "40614002",
+            "display": "Campylobacter coli;"
+          },
+          {
+            "code": "66543000",
+            "display": "Campylobacter jejuni (organism);"
+          },
+          {
+            "code": "450602004",
+            "display": "Campylobacter ureolyticus (organism);"
+          },
+          {
+            "code": "22294008",
+            "display": "Genus Capnocytophaga (organism);"
+          },
+          {
+            "code": "113548000",
+            "display": "Chryseobacterium gleum (organism);"
+          },
+          {
+            "code": "113549008",
+            "display": "Chryseobacterium indologenes (organism);"
+          },
+          {
+            "code": "425774009",
+            "display": "Elizabethkingia meningoseptica (organism);"
+          },
+          {
+            "code": "55744003",
+            "display": "Citrobacter amalonaticus (organism);"
+          },
+          {
+            "code": "114262000",
+            "display": "Citrobacter braakii (organism);"
+          },
+          {
+            "code": "114264004",
+            "display": "Citrobacter koseri (organism);"
+          },
+          {
+            "code": "114263005",
+            "display": "Citrobacter farmeri (organism);"
+          },
+          {
+            "code": "6265002",
+            "display": "Citrobacter freundii (organism);"
+          },
+          {
+            "code": "782522004",
+            "display": "Citrobacter freundii complex (organism);"
+          },
+          {
+            "code": "416990006",
+            "display": "Citrobacter gillenii;"
+          },
+          {
+            "code": "417581000",
+            "display": "Citrobacter murliniae;"
+          },
+          {
+            "code": "114444007",
+            "display": "Citrobacter rodentium;"
+          },
+          {
+            "code": "114265003",
+            "display": "Citrobacter sedlakii;"
+          },
+          {
+            "code": "75972000",
+            "display": "Genus Citrobacter (organism);"
+          },
+          {
+            "code": "114443001",
+            "display": "Citrobacter youngae (organism);"
+          },
+          {
+            "code": "5933001",
+            "display": "Clostridioides difficile (organism);"
+          },
+          {
+            "code": "19415008",
+            "display": "Clostridium innocuum (organism);"
+          },
+          {
+            "code": "41966004",
+            "display": "Clostridium paraputrificum (organism);"
+          },
+          {
+            "code": "8331005",
+            "display": "Clostridium perfringens (organism);"
+          },
+          {
+            "code": "42706008",
+            "display": "Clostridium ramosum (organism);"
+          },
+          {
+            "code": "33101000",
+            "display": "Clostridium septicum (organism);"
+          },
+          {
+            "code": "8191000",
+            "display": "Genus Clostridium (organism);"
+          },
+          {
+            "code": "243254006",
+            "display": "Corynebacterium accolens (organism);"
+          },
+          {
+            "code": "113608003",
+            "display": "Corynebacterium afermentans (organism);"
+          },
+          {
+            "code": "385503009",
+            "display": "Corynebacterium aurimucosum (organism);"
+          },
+          {
+            "code": "5851001",
+            "display": "Corynebacterium diphtheriae (organism);"
+          },
+          {
+            "code": "413927008",
+            "display": "Corynebacterium glucuronolyticum (organism);"
+          },
+          {
+            "code": "63410006",
+            "display": "Corynebacterium jeikeium (organism);"
+          },
+          {
+            "code": "113612009",
+            "display": "Corynebacterium propinquum (organism);"
+          },
+          {
+            "code": "12050008",
+            "display": "Corynebacterium pseudodiphtheriticum (organism);"
+          },
+          {
+            "code": "77086004",
+            "display": "Genus Corynebacterium (organism);"
+          },
+          {
+            "code": "63815007",
+            "display": "Corynebacterium striatum (organism);"
+          },
+          {
+            "code": "416356007",
+            "display": "Corynebacterium tuberculostearicum (organism);"
+          },
+          {
+            "code": "5711000087108",
+            "display": "Cronobacter dublinensis subspecies lausannensis;"
+          },
+          {
+            "code": "707335003",
+            "display": "Cronobacter universalis (organism);"
+          },
+          {
+            "code": "445560007",
+            "display": "Cronobacter malonaticus;"
+          },
+          {
+            "code": "445561006",
+            "display": "Cronobacter muytjensii;"
+          },
+          {
+            "code": "445562004",
+            "display": "Cronobacter sakazakii (organism);"
+          },
+          {
+            "code": "445639005",
+            "display": "Cronobacter turicensis;"
+          },
+          {
+            "code": "7299008",
+            "display": "Cryptococcus laurentii (organism);"
+          },
+          {
+            "code": "17579001",
+            "display": "Cryptococcus (organism);"
+          },
+          {
+            "code": "429465001",
+            "display": "Cupriavidus pauculus (organism);"
+          },
+          {
+            "code": "763051006",
+            "display": "Genus Cutibacterium (organism);"
+          },
+          {
+            "code": "20432002",
+            "display": "Delftia acidovorans (organism);"
+          },
+          {
+            "code": "413977006",
+            "display": "Dermabacter hominis (organism);"
+          },
+          {
+            "code": "414077004",
+            "display": "Eggerthella lenta (organism);"
+          },
+          {
+            "code": "52591004",
+            "display": "Eikenella corrodens (organism);"
+          },
+          {
+            "code": "444815005",
+            "display": "Elizabethkingia miricola (organism);"
+          },
+          {
+            "code": "62592009",
+            "display": "Klebsiella aerogenes (organism);"
+          },
+          {
+            "code": "84221003",
+            "display": "Enterobacter amnigenus;"
+          },
+          {
+            "code": "114452005",
+            "display": "Enterobacter amnigenus biogroup I (organism);"
+          },
+          {
+            "code": "114453000",
+            "display": "Enterobacter amnigenus biogroup II (organism);"
+          },
+          {
+            "code": "33115003",
+            "display": "Enterobacter asburiae (organism);"
+          },
+          {
+            "code": "114451003",
+            "display": "Enterobacter cancerogenus;"
+          },
+          {
+            "code": "14385002",
+            "display": "Enterobacter cloacae (organism);"
+          },
+          {
+            "code": "414102007",
+            "display": "Enterobacter cloacae complex (organism);"
+          },
+          {
+            "code": "721950003",
+            "display": "Enterobacter cloacae subsp. cloacae;"
+          },
+          {
+            "code": "56813009",
+            "display": "Enterobacter cloacae subspecies dissolvens;"
+          },
+          {
+            "code": "416229008",
+            "display": "Kosakonia cowanii;"
+          },
+          {
+            "code": "716346000",
+            "display": "Pluralibacter gergoviae;"
+          },
+          {
+            "code": "114454006",
+            "display": "Enterobacter hormaechei (organism);"
+          },
+          {
+            "code": "431977008",
+            "display": "Kluyvera intermedia;"
+          },
+          {
+            "code": "114456008",
+            "display": "Enterobacter kobei (organism);"
+          },
+          {
+            "code": "432763001",
+            "display": "Enterobacter ludwigii (organism);"
+          },
+          {
+            "code": "114455007",
+            "display": "Enterobacter pyrinus;"
+          },
+          {
+            "code": "8181000146108",
+            "display": "Kosakonia radicincitans;"
+          },
+          {
+            "code": "58683007",
+            "display": "Genus Enterobacter (organism);"
+          },
+          {
+            "code": "106544002",
+            "display": "Family Enterobacteriaceae (organism);"
+          },
+          {
+            "code": "87875008",
+            "display": "Enterococcus avium (organism);"
+          },
+          {
+            "code": "30949009",
+            "display": "Enterococcus casseliflavus (organism);"
+          },
+          {
+            "code": "46464008",
+            "display": "Enterococcus durans (organism);"
+          },
+          {
+            "code": "78065002",
+            "display": "Enterococcus faecalis (organism);"
+          },
+          {
+            "code": "90272000",
+            "display": "Enterococcus faecium (organism);"
+          },
+          {
+            "code": "53233007",
+            "display": "Enterococcus gallinarum (organism);"
+          },
+          {
+            "code": "73852008",
+            "display": "Enterococcus hirae (organism);"
+          },
+          {
+            "code": "10262005",
+            "display": "Enterococcus malodoratus (organism);"
+          },
+          {
+            "code": "2785000",
+            "display": "Genus Enterococcus (organism);"
+          },
+          {
+            "code": "116395006",
+            "display": "Enterohemorrhagic Escherichia coli (organism);"
+          },
+          {
+            "code": "112283007",
+            "display": "Escherichia coli (organism);"
+          },
+          {
+            "code": "407166006",
+            "display": "Escherichia coli serogroup O157 (organism);"
+          },
+          {
+            "code": "53013003",
+            "display": "Escherichia vulneris (organism);"
+          },
+          {
+            "code": "87632000",
+            "display": "Eubacterium limosum (organism);"
+          },
+          {
+            "code": "417469002",
+            "display": "Finegoldia magna (organism);"
+          },
+          {
+            "code": "27274008",
+            "display": "Fusobacterium necrophorum (organism);"
+          },
+          {
+            "code": "32763000",
+            "display": "Fusobacterium nucleatum (organism);"
+          },
+          {
+            "code": "33562003",
+            "display": "Genus Fusobacterium (organism);"
+          },
+          {
+            "code": "64071004",
+            "display": "Gardnerella vaginalis (organism);"
+          },
+          {
+            "code": "87172008",
+            "display": "Gram-negative bacillus (organism);"
+          },
+          {
+            "code": "59206002",
+            "display": "Gram-positive coccus (organism);"
+          },
+          {
+            "code": "243416009",
+            "display": "Anaerobic Gram-positive coccus (organism);"
+          },
+          {
+            "code": "83514008",
+            "display": "Gram-positive bacillus (organism);"
+          },
+          {
+            "code": "243399000",
+            "display": "Anaerobic non-sporing Gram-positive bacillus (organism);"
+          },
+          {
+            "code": "113713009",
+            "display": "Granulicatella adiacens (organism);"
+          },
+          {
+            "code": "442683005",
+            "display": "Aggregatibacter aphrophilus (organism);"
+          },
+          {
+            "code": "54950008",
+            "display": "Haemophilus haemolyticus (organism);"
+          },
+          {
+            "code": "44470000",
+            "display": "Haemophilus influenzae (organism);"
+          },
+          {
+            "code": "103442008",
+            "display": "Haemophilus influenzae type b (organism);"
+          },
+          {
+            "code": "89800007",
+            "display": "Haemophilus parahaemolyticus (organism);"
+          },
+          {
+            "code": "51593004",
+            "display": "Haemophilus parainfluenzae (organism);"
+          },
+          {
+            "code": "76694001",
+            "display": "Hafnia alvei (organism);"
+          },
+          {
+            "code": "427977006",
+            "display": "Inquilinus limosus (organism);"
+          },
+          {
+            "code": "40886007",
+            "display": "Klebsiella oxytoca (organism);"
+          },
+          {
+            "code": "65186004",
+            "display": "Klebsiella pneumoniae ss. ozaenae (organism);"
+          },
+          {
+            "code": "56415008",
+            "display": "Klebsiella pneumoniae (organism);"
+          },
+          {
+            "code": "1113401000112105",
+            "display": "Klebsiella pneumoniae complex (organism);"
+          },
+          {
+            "code": "18400002",
+            "display": "Klebsiella pneumoniae ss. pneumoniae (organism);"
+          },
+          {
+            "code": "17688001",
+            "display": "Klebsiella pneumoniae ss. rhinoscleromatis (organism);"
+          },
+          {
+            "code": "75032006",
+            "display": "Genus Klebsiella (organism);"
+          },
+          {
+            "code": "416096003",
+            "display": "Raoultella terrigena (organism);"
+          },
+          {
+            "code": "431976004",
+            "display": "Klebsiella variicola (organism);"
+          },
+          {
+            "code": "116197008",
+            "display": "Staphylococcus"
+          },
+          {
+            "code": "113772007",
+            "display": "Kocuria kristinae (organism);"
+          },
+          {
+            "code": "428721003",
+            "display": "Kytococcus schroeteri (organism);"
+          },
+          {
+            "code": "1017006",
+            "display": "Lactobacillus casei (organism);"
+          },
+          {
+            "code": "89237007",
+            "display": "Lactobacillus crispatus (organism);"
+          },
+          {
+            "code": "65506008",
+            "display": "Lactobacillus fermentum (organism);"
+          },
+          {
+            "code": "71158000",
+            "display": "Lactobacillus gasseri (organism);"
+          },
+          {
+            "code": "65904004",
+            "display": "Lactobacillus jensenii (organism);"
+          },
+          {
+            "code": "113792000",
+            "display": "Lactobacillus paracasei (organism);"
+          },
+          {
+            "code": "113798001",
+            "display": "Lactobacillus rhamnosus (organism);"
+          },
+          {
+            "code": "43690008",
+            "display": "Genus Lactobacillus (organism);"
+          },
+          {
+            "code": "38518005",
+            "display": "Lactococcus lactis subspecies lactis (organism);"
+          },
+          {
+            "code": "57459006",
+            "display": "Leclercia adecarboxylata (organism);"
+          },
+          {
+            "code": "18214000",
+            "display": "Legionella anisa (organism);"
+          },
+          {
+            "code": "432714000",
+            "display": "Legionella beliardensis (organism);"
+          },
+          {
+            "code": "22592008",
+            "display": "Legionella birminghamensis (organism);"
+          },
+          {
+            "code": "450611004",
+            "display": "Legionella bozemanae (organism);"
+          },
+          {
+            "code": "103448007",
+            "display": "Legionella brunensis (organism);"
+          },
+          {
+            "code": "52462004",
+            "display": "Legionella cherrii (organism);"
+          },
+          {
+            "code": "58923007",
+            "display": "Legionella cincinnatiensis (organism);"
+          },
+          {
+            "code": "113720002",
+            "display": "Legionella dumoffii (organism);"
+          },
+          {
+            "code": "28109006",
+            "display": "Legionella erythra (organism);"
+          },
+          {
+            "code": "17083009",
+            "display": "Legionella feeleii (organism);"
+          },
+          {
+            "code": "113721003",
+            "display": "Legionella gormanii (organism);"
+          },
+          {
+            "code": "58939000",
+            "display": "Legionella hackeliae (organism);"
+          },
+          {
+            "code": "5121000146103",
+            "display": "Legionella impletisoli (organism);"
+          },
+          {
+            "code": "3128001",
+            "display": "Legionella israelensis (organism);"
+          },
+          {
+            "code": "89709001",
+            "display": "Legionella jamestowniensis (organism);"
+          },
+          {
+            "code": "39739007",
+            "display": "Legionella jordanis (organism);"
+          },
+          {
+            "code": "103452007",
+            "display": "Legionella lansingensis (organism);"
+          },
+          {
+            "code": "89605004",
+            "display": "Legionella longbeachae (organism);"
+          },
+          {
+            "code": "116380009",
+            "display": "Legionella micdadei (organism);"
+          },
+          {
+            "code": "103454008",
+            "display": "Legionella moravica (organism);"
+          },
+          {
+            "code": "638008",
+            "display": "Legionella oakridgensis (organism);"
+          },
+          {
+            "code": "38322001",
+            "display": "Legionella parisiensis (organism);"
+          },
+          {
+            "code": "80897008",
+            "display": "Legionella pneumophila (organism);"
+          },
+          {
+            "code": "103463005",
+            "display": "Legionella pneumophila serogroup 1 (organism);"
+          },
+          {
+            "code": "131322009",
+            "display": "Legionella pneumophilia serogroup 10 (organism);"
+          },
+          {
+            "code": "131323004",
+            "display": "Legionella pneumophilia serogroup 11 (organism);"
+          },
+          {
+            "code": "131324005",
+            "display": "Legionella pneumophilia serogroup 12 (organism);"
+          },
+          {
+            "code": "131325006",
+            "display": "Legionella pneumophilia serogroup 13 (organism);"
+          },
+          {
+            "code": "131326007",
+            "display": "Legionella pneumophilia serogroup 14 (organism);"
+          },
+          {
+            "code": "1003646009",
+            "display": "Legionella pneumophila serogroup"
+          },
+          {
+            "code": "103465003",
+            "display": "Legionella pneumophila serogroup 3 (organism);"
+          },
+          {
+            "code": "103466002",
+            "display": "Legionella pneumophila serogroup 4 (organism);"
+          },
+          {
+            "code": "103467006",
+            "display": "Legionella pneumophila serogroup 5 (organism);"
+          },
+          {
+            "code": "103468001",
+            "display": "Legionella pneumophila serogroup 6 (organism);"
+          },
+          {
+            "code": "103469009",
+            "display": "Legionella pneumophila serogroup 7 (organism);"
+          },
+          {
+            "code": "103470005",
+            "display": "Legionella pneumophila serogroup 8 (organism);"
+          },
+          {
+            "code": "103471009",
+            "display": "Legionella pneumophila serogroup 9 (organism);"
+          },
+          {
+            "code": "17298000",
+            "display": "Legionella rubrilucens (organism);"
+          },
+          {
+            "code": "87271006",
+            "display": "Legionella sainthelens (organism);"
+          },
+          {
+            "code": "72814000",
+            "display": "Legionella santicrucis (organism);"
+          },
+          {
+            "code": "7527002",
+            "display": "Genus Legionella (organism);"
+          },
+          {
+            "code": "103461007",
+            "display": "Legionella tucsonensis (organism);"
+          },
+          {
+            "code": "8147000",
+            "display": "Legionella wadsworthii (organism);"
+          },
+          {
+            "code": "5131000146101",
+            "display": "Legionella yabuuchiae (organism);"
+          },
+          {
+            "code": "70285009",
+            "display": "Leuconostoc lactis (organism);"
+          },
+          {
+            "code": "36094007",
+            "display": "Listeria monocytogenes (organism);"
+          },
+          {
+            "code": "3092008",
+            "display": "Staphylococcus aureus (organism);"
+          },
+          {
+            "code": "114061003",
+            "display": "Microbacterium flavescens (organism);"
+          },
+          {
+            "code": "48299003",
+            "display": "Micrococcus luteus (organism);"
+          },
+          {
+            "code": "24226003",
+            "display": "Moraxella catarrhalis (organism);"
+          },
+          {
+            "code": "427057001",
+            "display": "Subgenus Moraxella (organism);"
+          },
+          {
+            "code": "84066001",
+            "display": "Moraxella lacunata (organism);"
+          },
+          {
+            "code": "46455003",
+            "display": "Moraxella nonliquefaciens (organism);"
+          },
+          {
+            "code": "72401008",
+            "display": "Moraxella osloensis (organism);"
+          },
+          {
+            "code": "243301005",
+            "display": "Morganella morganii (organism);"
+          },
+          {
+            "code": "243302003",
+            "display": "Morganella morganii subsp morganii (organism);"
+          },
+          {
+            "code": "243303008",
+            "display": "Morganella morganii subsp sibonii (organism);"
+          },
+          {
+            "code": "115127008",
+            "display": "Genus Myroides (organism);"
+          },
+          {
+            "code": "68704007",
+            "display": "Neisseria gonorrhoeae (organism);"
+          },
+          {
+            "code": "17872004",
+            "display": "Neisseria meningitidis (organism);"
+          },
+          {
+            "code": "59083001",
+            "display": "Genus Neisseria (organism);"
+          },
+          {
+            "code": "77700001",
+            "display": "Neisseria subflava (organism);"
+          },
+          {
+            "code": "22339002",
+            "display": "Gamma-hemolytic streptococcus (organism);"
+          },
+          {
+            "code": "59674005",
+            "display": "Genus Nocardia (organism);"
+          },
+          {
+            "code": "116490002",
+            "display": "Ochrobactrum anthropi (organism);"
+          },
+          {
+            "code": "115015008",
+            "display": "Pantoea agglomerans (organism);"
+          },
+          {
+            "code": "115014007",
+            "display": "Pantoea ananatis (organism);"
+          },
+          {
+            "code": "709310002",
+            "display": "Mixta calida (organism);"
+          },
+          {
+            "code": "115017000",
+            "display": "Pantoea dispersa (organism);"
+          },
+          {
+            "code": "5681000146105",
+            "display": "Pantoea septica (organism);"
+          },
+          {
+            "code": "115013001",
+            "display": "Genus Pantoea (organism);"
+          },
+          {
+            "code": "131300002",
+            "display": "Pantoea stewartii (organism);"
+          },
+          {
+            "code": "8301000146102",
+            "display": "Tatumella terrea (organism);"
+          },
+          {
+            "code": "447512008",
+            "display": "Parabacteroides distasonis (organism);"
+          },
+          {
+            "code": "434293007",
+            "display": "Parvimonas micra (organism);"
+          },
+          {
+            "code": "87075007",
+            "display": "Pasteurella aerogenes (organism);"
+          },
+          {
+            "code": "113902004",
+            "display": "Pasteurella bettyae (organism);"
+          },
+          {
+            "code": "7784009",
+            "display": "Pasteurella canis (organism);"
+          },
+          {
+            "code": "80948000",
+            "display": "Pasteurella dagmatis (organism);"
+          },
+          {
+            "code": "128385005",
+            "display": "Mannheimia haemolytica (organism);"
+          },
+          {
+            "code": "113905002",
+            "display": "Pasteurella mairii (organism);"
+          },
+          {
+            "code": "10879005",
+            "display": "Pasteurella multocida (organism);"
+          },
+          {
+            "code": "32562008",
+            "display": "Pasteurella pneumotropica (organism);"
+          },
+          {
+            "code": "87579009",
+            "display": "Genus Pasteurella (organism);"
+          },
+          {
+            "code": "46827009",
+            "display": "Pasteurella stomatis (organism);"
+          },
+          {
+            "code": "243237003",
+            "display": "Pediococcus acidilactici (organism);"
+          },
+          {
+            "code": "243242006",
+            "display": "Pediococcus pentosaceus (organism);"
+          },
+          {
+            "code": "433440001",
+            "display": "Peptoniphilus asaccharolyticus (organism);"
+          },
+          {
+            "code": "433373007",
+            "display": "Peptoniphilus harei (organism);"
+          },
+          {
+            "code": "430742009",
+            "display": "Genus Peptoniphilus (organism);"
+          },
+          {
+            "code": "19217002",
+            "display": "Peptostreptococcus anaerobius (organism);"
+          },
+          {
+            "code": "708941000",
+            "display": "Prevotella bergensis (organism);"
+          },
+          {
+            "code": "114131009",
+            "display": "Prevotella bivia (organism);"
+          },
+          {
+            "code": "114134001",
+            "display": "Prevotella buccae (organism);"
+          },
+          {
+            "code": "114138003",
+            "display": "Prevotella denticola (organism);"
+          },
+          {
+            "code": "114139006",
+            "display": "Prevotella disiens (organism);"
+          },
+          {
+            "code": "114142000",
+            "display": "Prevotella intermedia (organism);"
+          },
+          {
+            "code": "114144004",
+            "display": "Prevotella melaninogenica (organism);"
+          },
+          {
+            "code": "441625003",
+            "display": "Prevotella nanceiensis (organism);"
+          },
+          {
+            "code": "114147006",
+            "display": "Prevotella oris (organism);"
+          },
+          {
+            "code": "114129000",
+            "display": "Genus Prevotella (organism);"
+          },
+          {
+            "code": "39473003",
+            "display": "Cutibacterium acnes (organism);"
+          },
+          {
+            "code": "34844008",
+            "display": "Genus Propionibacterium (organism);"
+          },
+          {
+            "code": "417592004",
+            "display": "Proteus hauseri (organism);"
+          },
+          {
+            "code": "73457008",
+            "display": "Proteus mirabilis (organism);"
+          },
+          {
+            "code": "86145008",
+            "display": "Proteus myxofaciens (organism);"
+          },
+          {
+            "code": "45298005",
+            "display": "Proteus penneri (organism);"
+          },
+          {
+            "code": "50517009",
+            "display": "Genus Proteus (organism);"
+          },
+          {
+            "code": "45834001",
+            "display": "Proteus vulgaris (organism);"
+          },
+          {
+            "code": "46349009",
+            "display": "Providencia alcalifaciens (organism);"
+          },
+          {
+            "code": "47300009",
+            "display": "Providencia heimbachae (organism);"
+          },
+          {
+            "code": "14196002",
+            "display": "Providencia rettgeri (organism);"
+          },
+          {
+            "code": "19196004",
+            "display": "Providencia rustigianii (organism);"
+          },
+          {
+            "code": "112284001",
+            "display": "Genus Providencia (organism);"
+          },
+          {
+            "code": "1445008",
+            "display": "Providencia stuartii (organism);"
+          },
+          {
+            "code": "6031000146109",
+            "display": "Providencia vermicola (organism);"
+          },
+          {
+            "code": "113931000",
+            "display": "Flavimonas oryzihabitans (organism);"
+          },
+          {
+            "code": "52499004",
+            "display": "Pseudomonas aeruginosa (organism);"
+          },
+          {
+            "code": "733537009",
+            "display": "Mucoid Pseudomonas aeruginosa (organism);"
+          },
+          {
+            "code": "31277003",
+            "display": "Pseudomonas citronellolis (organism);"
+          },
+          {
+            "code": "39289003",
+            "display": "Pseudomonas fluorescens (organism);"
+          },
+          {
+            "code": "415197003",
+            "display": "Pseudomonas fluorescens group (organism);"
+          },
+          {
+            "code": "438724003",
+            "display": "Pseudomonas koreensis (organism);"
+          },
+          {
+            "code": "33919008",
+            "display": "Chryseomonas luteola (organism);"
+          },
+          {
+            "code": "59419001",
+            "display": "Pseudomonas mendocina (organism);"
+          },
+          {
+            "code": "68608003",
+            "display": "Pseudomonas putida (organism);"
+          },
+          {
+            "code": "57032008",
+            "display": "Genus Pseudomonas (organism);"
+          },
+          {
+            "code": "710336008",
+            "display": "Pseudomonas species not aeruginosa (organism);"
+          },
+          {
+            "code": "58024003",
+            "display": "Pseudomonas stutzeri (organism);"
+          },
+          {
+            "code": "416832000",
+            "display": "Raoultella ornithinolytica (organism);"
+          },
+          {
+            "code": "416264004",
+            "display": "Raoultella planticola (organism);"
+          },
+          {
+            "code": "417468005",
+            "display": "Genus Raoultella (organism);"
+          },
+          {
+            "code": "438107000",
+            "display": "Rhizobium radiobacter (organism);"
+          },
+          {
+            "code": "416544005",
+            "display": "Rothia mucilaginosa (organism);"
+          },
+          {
+            "code": "35379007",
+            "display": "Rothia dentocariosa (organism);"
+          },
+          {
+            "code": "90163001",
+            "display": "Genus Rothia (organism);"
+          },
+          {
+            "code": "10343005",
+            "display": "Salmonella Adelaide;"
+          },
+          {
+            "code": "80627004",
+            "display": "Salmonella Agona;"
+          },
+          {
+            "code": "72033009",
+            "display": "Salmonella Albany;"
+          },
+          {
+            "code": "47229009",
+            "display": "Salmonella Altona;"
+          },
+          {
+            "code": "46399008",
+            "display": "Salmonella Apapa;"
+          },
+          {
+            "code": "397502001",
+            "display": "Salmonella enterica subsp. arizonae (organism);"
+          },
+          {
+            "code": "8044005",
+            "display": "Salmonella Bareilly;"
+          },
+          {
+            "code": "53684004",
+            "display": "Salmonella Blockley;"
+          },
+          {
+            "code": "81938008",
+            "display": "Salmonella Bovismorbificans;"
+          },
+          {
+            "code": "35225001",
+            "display": "Salmonella Braenderup;"
+          },
+          {
+            "code": "16888008",
+            "display": "Salmonella Brandenburg;"
+          },
+          {
+            "code": "82364007",
+            "display": "Salmonella Bredeney;"
+          },
+          {
+            "code": "80232006",
+            "display": "Salmonella Choleraesuis (organism);"
+          },
+          {
+            "code": "370577001",
+            "display": "Salmonella Choleraesuis var. Kunzendorf;"
+          },
+          {
+            "code": "45548005",
+            "display": "Salmonella Corvallis;"
+          },
+          {
+            "code": "398467008",
+            "display": "Salmonella group O:4 (organism);"
+          },
+          {
+            "code": "116048001",
+            "display": "Salmonella"
+          },
+          {
+            "code": "115408009",
+            "display": "Salmonella"
+          },
+          {
+            "code": "115409001",
+            "display": "Salmonella"
+          },
+          {
+            "code": "404294002",
+            "display": "Salmonella group O:18 (organism);"
+          },
+          {
+            "code": "404341009",
+            "display": "Salmonella group O:35 (organism);"
+          },
+          {
+            "code": "37091006",
+            "display": "Salmonella Derby;"
+          },
+          {
+            "code": "62136003",
+            "display": "Salmonella Dublin;"
+          },
+          {
+            "code": "42410007",
+            "display": "Salmonella Duisburg;"
+          },
+          {
+            "code": "398428002",
+            "display": "Salmonella enterica subspecies diarizonae;"
+          },
+          {
+            "code": "73525009",
+            "display": "Salmonella Enteritidis (organism);"
+          },
+          {
+            "code": "370576005",
+            "display": "Salmonella Gallinarum;"
+          },
+          {
+            "code": "71768003",
+            "display": "Salmonella Give;"
+          },
+          {
+            "code": "16820003",
+            "display": "Salmonella Goldcoast;"
+          },
+          {
+            "code": "49491006",
+            "display": "Salmonella Hadar;"
+          },
+          {
+            "code": "38788001",
+            "display": "Salmonella Havana;"
+          },
+          {
+            "code": "71865006",
+            "display": "Salmonella Heidelberg;"
+          },
+          {
+            "code": "12278000",
+            "display": "Salmonella Indiana;"
+          },
+          {
+            "code": "82071007",
+            "display": "Salmonella Infantis;"
+          },
+          {
+            "code": "128388007",
+            "display": "Salmonella Paratyphi B var. Java;"
+          },
+          {
+            "code": "8455004",
+            "display": "Salmonella Kentucky;"
+          },
+          {
+            "code": "11901002",
+            "display": "Salmonella Kiambu;"
+          },
+          {
+            "code": "58946009",
+            "display": "Salmonella Kumasi;"
+          },
+          {
+            "code": "66713000",
+            "display": "Salmonella Livingstone;"
+          },
+          {
+            "code": "2291004",
+            "display": "Salmonella London;"
+          },
+          {
+            "code": "70605000",
+            "display": "Salmonella Manchester;"
+          },
+          {
+            "code": "20073008",
+            "display": "Salmonella Manhattan;"
+          },
+          {
+            "code": "42709001",
+            "display": "Salmonella Mikawasima;"
+          },
+          {
+            "code": "65132007",
+            "display": "Salmonella Monschaui;"
+          },
+          {
+            "code": "80268001",
+            "display": "Salmonella Montevideo;"
+          },
+          {
+            "code": "77584005",
+            "display": "Salmonella Muenchen;"
+          },
+          {
+            "code": "68916009",
+            "display": "Salmonella Muenster;"
+          },
+          {
+            "code": "56077000",
+            "display": "Salmonella Newport;"
+          },
+          {
+            "code": "67210008",
+            "display": "Salmonella Ohio;"
+          },
+          {
+            "code": "46667007",
+            "display": "Salmonella Oranienburg;"
+          },
+          {
+            "code": "40114001",
+            "display": "Salmonella Panama;"
+          },
+          {
+            "code": "79128009",
+            "display": "Salmonella Paratyphi A;"
+          },
+          {
+            "code": "85908006",
+            "display": "Salmonella Paratyphi B;"
+          },
+          {
+            "code": "32488009",
+            "display": "Salmonella Paratyphi C;"
+          },
+          {
+            "code": "112314009",
+            "display": "Salmonella Pomona;"
+          },
+          {
+            "code": "57101009",
+            "display": "Salmonella Poona;"
+          },
+          {
+            "code": "8544001",
+            "display": "Salmonella Potsdam;"
+          },
+          {
+            "code": "63396002",
+            "display": "Salmonella Reading;"
+          },
+          {
+            "code": "31517006",
+            "display": "Salmonella Richmond;"
+          },
+          {
+            "code": "2820001",
+            "display": "Salmonella Saintpaul;"
+          },
+          {
+            "code": "112287008",
+            "display": "Salmonella Sandiego;"
+          },
+          {
+            "code": "45651006",
+            "display": "Salmonella Schwarzengrund;"
+          },
+          {
+            "code": "18163008",
+            "display": "Salmonella Senftenberg;"
+          },
+          {
+            "code": "71443004",
+            "display": "Salmonella Sinstorf;"
+          },
+          {
+            "code": "27268008",
+            "display": "Salmonella species;"
+          },
+          {
+            "code": "88091007",
+            "display": "Salmonella Stanley;"
+          },
+          {
+            "code": "47441000",
+            "display": "Salmonella Stanleyville;"
+          },
+          {
+            "code": "398508004",
+            "display": "Salmonella enterica subsp. enterica (organism);"
+          },
+          {
+            "code": "79153007",
+            "display": "Salmonella Tennessee;"
+          },
+          {
+            "code": "4361005",
+            "display": "Salmonella Thompson;"
+          },
+          {
+            "code": "5595000",
+            "display": "Salmonella Typhi (organism);"
+          },
+          {
+            "code": "50136005",
+            "display": "Salmonella Typhimurium (organism);"
+          },
+          {
+            "code": "370578006",
+            "display": "Salmonella Typhimurium var. Copenhagen;"
+          },
+          {
+            "code": "2434007",
+            "display": "Salmonella Uganda;"
+          },
+          {
+            "code": "5929008",
+            "display": "Salmonella Virchow;"
+          },
+          {
+            "code": "21975008",
+            "display": "Salmonella Wien;"
+          },
+          {
+            "code": "76656001",
+            "display": "Serratia entomophila (organism);"
+          },
+          {
+            "code": "802004",
+            "display": "Serratia ficaria (organism);"
+          },
+          {
+            "code": "112329006",
+            "display": "Serratia fonticola (organism);"
+          },
+          {
+            "code": "115005002",
+            "display": "Serratia grimesii (organism);"
+          },
+          {
+            "code": "23787004",
+            "display": "Serratia liquefaciens (organism);"
+          },
+          {
+            "code": "722258003",
+            "display": "Serratia liquefaciens complex (organism);"
+          },
+          {
+            "code": "33522002",
+            "display": "Serratia marcescens (organism);"
+          },
+          {
+            "code": "10413007",
+            "display": "Serratia odorifera (organism);"
+          },
+          {
+            "code": "28955009",
+            "display": "Serratia plymuthica (organism);"
+          },
+          {
+            "code": "116135003",
+            "display": "Serratia proteamaculans (organism);"
+          },
+          {
+            "code": "438199009",
+            "display": "Serratia quinivorans (organism);"
+          },
+          {
+            "code": "55825002",
+            "display": "Serratia rubidaea (organism);"
+          },
+          {
+            "code": "42025004",
+            "display": "Genus Serratia (organism);"
+          },
+          {
+            "code": "450416004",
+            "display": "Serratia ureilytica (organism);"
+          },
+          {
+            "code": "113702006",
+            "display": "Shewanella algae (organism);"
+          },
+          {
+            "code": "113700003",
+            "display": "Shewanella putrefaciens (organism);"
+          },
+          {
+            "code": "55462008",
+            "display": "Shigella boydii (organism);"
+          },
+          {
+            "code": "43612004",
+            "display": "Shigella dysenteriae (organism);"
+          },
+          {
+            "code": "85729005",
+            "display": "Shigella flexneri (organism);"
+          },
+          {
+            "code": "4298009",
+            "display": "Shigella sonnei (organism);"
+          },
+          {
+            "code": "77352002",
+            "display": "Genus Shigella (organism);"
+          },
+          {
+            "code": "51595006",
+            "display": "Sphingobacterium multivorum (organism);"
+          },
+          {
+            "code": "782316009",
+            "display": "Staphylococcus argenteus (organism);"
+          },
+          {
+            "code": "40347003",
+            "display": "Staphylococcus capitis (organism);"
+          },
+          {
+            "code": "76969000",
+            "display": "Staphylococcus caprae (organism);"
+          },
+          {
+            "code": "60875001",
+            "display": "Staphylococcus epidermidis (organism);"
+          },
+          {
+            "code": "83452006",
+            "display": "Staphylococcus haemolyticus (organism);"
+          },
+          {
+            "code": "44827007",
+            "display": "Staphylococcus hominis (organism);"
+          },
+          {
+            "code": "432505008",
+            "display": "Staphylococcus hominis subspecies hominis (organism);"
+          },
+          {
+            "code": "34605002",
+            "display": "Staphylococcus intermedius (organism);"
+          },
+          {
+            "code": "103494005",
+            "display": "Staphylococcus lugdunensis (organism);"
+          },
+          {
+            "code": "103495006",
+            "display": "Staphylococcus pasteuri (organism);"
+          },
+          {
+            "code": "428731005",
+            "display": "Staphylococcus pettenkoferi (organism);"
+          },
+          {
+            "code": "41103009",
+            "display": "Staphylococcus saccharolyticus (organism);"
+          },
+          {
+            "code": "19743000",
+            "display": "Staphylococcus saprophyticus;"
+          },
+          {
+            "code": "52122005",
+            "display": "Staphylococcus simulans (organism);"
+          },
+          {
+            "code": "65119002",
+            "display": "Genus Staphylococcus (organism);"
+          },
+          {
+            "code": "63550006",
+            "display": "Staphylococcus warneri (organism);"
+          },
+          {
+            "code": "32737005",
+            "display": "Staphylococcus xylosus (organism);"
+          },
+          {
+            "code": "415583001",
+            "display": "Stenotrophomonas acidaminiphila (organism);"
+          },
+          {
+            "code": "113697002",
+            "display": "Stenotrophomonas maltophilia (organism);"
+          },
+          {
+            "code": "416746005",
+            "display": "Stenotrophomonas nitritireducens (organism);"
+          },
+          {
+            "code": "416084005",
+            "display": "Stenotrophomonas rhizophila (organism);"
+          },
+          {
+            "code": "115656007",
+            "display": "Genus Stenotrophomonas (organism);"
+          },
+          {
+            "code": "43492007",
+            "display": "Streptococcus agalactiae (organism);"
+          },
+          {
+            "code": "698166003",
+            "display": "Streptococcus agalactiae serotype Ib (organism);"
+          },
+          {
+            "code": "44304009",
+            "display": "Streptococcus anginosus (organism);"
+          },
+          {
+            "code": "415597009",
+            "display": "Streptococcus anginosus group (organism);"
+          },
+          {
+            "code": "88231003",
+            "display": "Streptococcus canis (organism);"
+          },
+          {
+            "code": "76199005",
+            "display": "Streptococcus constellatus (organism);"
+          },
+          {
+            "code": "415601009",
+            "display": "Streptococcus constellatus subspecies constellatus (organism);"
+          },
+          {
+            "code": "415602002",
+            "display": "Streptococcus constellatus subspecies pharyngis (organism);"
+          },
+          {
+            "code": "113980005",
+            "display": "Streptococcus cristatus (organism);"
+          },
+          {
+            "code": "40812000",
+            "display": "Streptococcus dysgalactiae (organism);"
+          },
+          {
+            "code": "128338004",
+            "display": "Streptococcus dysgalactiae subspecies equisimilis (organism);"
+          },
+          {
+            "code": "113982002",
+            "display": "Streptococcus dysgalactiae subspecies dysgalactiae (organism);"
+          },
+          {
+            "code": "72646003",
+            "display": "Streptococcus equinus (organism);"
+          },
+          {
+            "code": "113985000",
+            "display": "Streptococcus gallolyticus (organism);"
+          },
+          {
+            "code": "421544007",
+            "display": "Streptococcus gallolyticus subspecies gallolyticus (organism);"
+          },
+          {
+            "code": "113986004",
+            "display": "Streptococcus gordonii (organism);"
+          },
+          {
+            "code": "62170002",
+            "display": "Streptococcus intermedius (organism);"
+          },
+          {
+            "code": "57997003",
+            "display": "Streptococcus mitis (organism);"
+          },
+          {
+            "code": "127539005",
+            "display": "Streptococcus mitis group (organism);"
+          },
+          {
+            "code": "19870004",
+            "display": "Streptococcus oralis (organism);"
+          },
+          {
+            "code": "113990002",
+            "display": "Streptococcus parasanguinis (organism);"
+          },
+          {
+            "code": "9861002",
+            "display": "Streptococcus pneumoniae (organism);"
+          },
+          {
+            "code": "80166006",
+            "display": "Streptococcus pyogenes (organism);"
+          },
+          {
+            "code": "39888004",
+            "display": "Streptococcus salivarius (organism);"
+          },
+          {
+            "code": "127537007",
+            "display": "Streptococcus salivarius group (organism);"
+          },
+          {
+            "code": "113993000",
+            "display": "Streptococcus sanguinis (organism);"
+          },
+          {
+            "code": "413643004",
+            "display": "Beta-hemolytic Streptococcus"
+          },
+          {
+            "code": "58800005",
+            "display": "Genus Streptococcus (organism);"
+          },
+          {
+            "code": "23310006",
+            "display": "Streptococcus salivarius subspecies thermophilus (organism);"
+          },
+          {
+            "code": "113997004",
+            "display": "Streptococcus thoraltensis (organism);"
+          },
+          {
+            "code": "113998009",
+            "display": "Streptococcus vestibularis (organism);"
+          },
+          {
+            "code": "29680004",
+            "display": "Genus Ureaplasma (organism);"
+          },
+          {
+            "code": "12006007",
+            "display": "Ureaplasma urealyticum (organism);"
+          },
+          {
+            "code": "116418005",
+            "display": "Vagococcus fluvialis (organism);"
+          },
+          {
+            "code": "90435009",
+            "display": "Veillonella parvula (organism);"
+          },
+          {
+            "code": "29875005",
+            "display": "Genus Veillonella (organism);"
+          },
+          {
+            "code": "31703004",
+            "display": "Streptococcus"
+          },
+          {
+            "code": "83326004",
+            "display": "Weeksella virosa (organism);"
+          },
+          {
+            "code": "65255000",
+            "display": "Yersinia enterocolitica (organism);"
+          },
+          {
+            "code": "103430003",
+            "display": "Yersinia enterocolitica serogroup O:3 (organism);"
+          },
+          {
+            "code": "103431004",
+            "display": "Yersinia enterocolitica serogroup O:5 (organism);"
+          },
+          {
+            "code": "103433001",
+            "display": "Yersinia enterocolitica serogroup O:9 (organism);"
+          },
+          {
+            "code": "90530002",
+            "display": "Yersinia pseudotuberculosis (organism);"
+          },
+          {
+            "code": "736050006",
+            "display": "Toxigenic Clostridium difficile (organism);"
+          },
+          {
+            "code": "736051005",
+            "display": "Non-Toxigenic Clostridium difficile (organism);"
+          },
+          {
+            "code": "8940004",
+            "display": "Actinomyces naeslundii (organism);"
+          },
+          {
+            "code": "877802991000087109",
+            "display": "Actinomyces neuii (organism);"
+          },
+          {
+            "code": "12069003",
+            "display": "Actinomyces odontolyticus (organism);"
+          },
+          {
+            "code": "40560008",
+            "display": "Genus Actinomyces (organism);"
+          },
+          {
+            "code": "113422006",
+            "display": "Actinomyces turicensis (organism);"
+          },
+          {
+            "code": "442680008",
+            "display": "Aggregatibacter actinomycetemcomitans (organism);"
+          },
+          {
+            "code": "113611002",
+            "display": "Corynebacterium amycolatum (organism);"
+          },
+          {
+            "code": "113838007",
+            "display": "Mycobacterium abscessus (organism);"
+          },
+          {
+            "code": "51320008",
+            "display": "Mycobacterium africanum (organism);"
+          },
+          {
+            "code": "83723009",
+            "display": "Mycobacterium avium (organism);"
+          },
+          {
+            "code": "27142009",
+            "display": "Mycobacterium bovis (organism);"
+          },
+          {
+            "code": "832924651000087107",
+            "display": "Mycobacterium bovis subspecies bovis (organism);"
+          },
+          {
+            "code": "430579009",
+            "display": "Mycobacterium caprae (organism);"
+          },
+          {
+            "code": "243377008",
+            "display": "Mycobacterium chelonae (organism);"
+          },
+          {
+            "code": "113858008",
+            "display": "Mycobacterium tuberculosis complex (organism);"
+          },
+          {
+            "code": "24871004",
+            "display": "Mycobacterium gordonae (organism);"
+          },
+          {
+            "code": "83841006",
+            "display": "Mycobacterium intracellulare (organism);"
+          },
+          {
+            "code": "1507005",
+            "display": "Mycobacterium kansasii (organism);"
+          },
+          {
+            "code": "70801007",
+            "display": "Mycobacterium microti (organism);"
+          },
+          {
+            "code": "243368001",
+            "display": "Genus Mycobacterium (organism);"
+          },
+          {
+            "code": "113861009",
+            "display": "Mycobacterium tuberculosis (organism);"
+          },
+          {
+            "code": "78981005",
+            "display": "Genus Mycoplasma (organism);"
+          }
+        ]
+      }
+    ]
+  }
+}

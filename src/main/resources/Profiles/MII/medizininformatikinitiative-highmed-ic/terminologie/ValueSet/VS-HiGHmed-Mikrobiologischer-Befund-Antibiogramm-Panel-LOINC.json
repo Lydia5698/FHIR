@@ -1,0 +1,40 @@
+{
+  "resourceType": "ValueSet",
+  "id": "VS-HiGHmed-Mikrobiologischer-Befund-Antibiogramm-Panel-LOINC",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
+    ]
+  },
+  "url": "http://highmed.org/fhir/ValueSet/ic/susceptibilitypanels",
+  "version": "1.0.0",
+  "name": "VS_HiGHmed_Mikrobiologischer_Befund_Antibiogramm_Panel_LOINC",
+  "title": "VS_HiGHmed_Mikrobiologischer_Befund_Antibiogramm_Panel [LOINC]",
+  "status": "active",
+  "experimental": false,
+  "publisher": "http://highmed.org",
+  "description": "Defines codes for Bacteria Susceptibility Panels",
+  "immutable": false,
+  "copyright": "This content LOINC® is copyright © 1995 Regenstrief Institute, Inc. and the LOINC Committee, and available at no cost under the license at http://loinc.org/terms-of-use",
+  "compose": {
+    "include": [
+      {
+        "system": "http://loinc.org",
+        "concept": [
+          {
+            "code": "29576-6",
+            "display": "Bacterial susceptibility panel"
+          },
+          {
+            "code": "29577-4",
+            "display": "Fungal susceptibility panel"
+          },
+          {
+            "code": "29578-2",
+            "display": "Viral susceptibility panel"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "resourceType": "ServiceRequest",
+  "id": "234",
+  "meta": {
+    "profile": [
+      "http://highmed.org/StructureDefinition/ic/ServiceRequestLab"
+    ]
+  },
+  "identifier": [
+    {
+      "type": {
+        "coding": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+          "code": "PLAC"
+        }
+      },
+      "system": "http://www.acme.com/identifiers/patient",
+      "value": "123456",
+      "assigner": {
+        "reference": "Organization/Charite"
+      }
+    },
+    {
+      "type": {
+        "coding": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+          "code": "FILL"
+        }
+      },
+      "system": "http://www.acme.com/identifiers/service",
+      "value": "12345678",
+      "assigner": {
+        "reference": "Organization/Charite"
+      }
+    }
+  ],
+  "status": "completed",
+  "intent": "order",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "78702-8"
+      }
+    ],
+    "text": "Multiple drug resistant gram negative organism [Identifier] in Unspecified specimen by Culture"
+  },
+  "subject": {
+    "reference": "Patient/123"
+  },
+  "authoredOn": "2021-05-16T08:49:21+02:00"
+}

@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "isRoot": true,
+  "tools": {
+    "dotnetsay": {
+      "version": "2.1.3",
+      "commands": [
+        "dotnetsay"
+      ]
+    },
+    "firely.terminal": {
+      "version": "3.1.0",
+      "commands": [
+        "fhir"
+      ]
+    }
+  }
+}

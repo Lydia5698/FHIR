@@ -1,0 +1,2138 @@
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="LogicalModelUseCaseInfectionControl" />
+  <url value="http://highmed.org/fhir/StructureDefinition/ic/LogicalModelUseCaseInfectionControl" />
+  <version value="1.0" />
+  <name value="LogicalModelUseCaseInfectionControl" />
+  <title value="Logical Model - UseCase InfectionControl" />
+  <status value="draft" />
+  <fhirVersion value="4.0.1" />
+  <kind value="logical" />
+  <abstract value="false" />
+  <type value="http://highmed.org/fhir/StructureDefinition/ic/UseCaseInfectionControl" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Element" />
+  <derivation value="specialization" />
+  <differential>
+    <element id="UseCaseInfectionControl">
+      <path value="UseCaseInfectionControl" />
+      <definition value="Data model for UCIC" />
+      <comment value="Data model for UCIC" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="Element" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Person">
+      <path value="UseCaseInfectionControl.Person" />
+      <label value="KDS Basis Module" />
+      <short value="Patient" />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="BackboneElement" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Person.PersonenID">
+      <path value="UseCaseInfectionControl.Person.PersonenID" />
+      <short value="Identifizierungsmerkmal der Person (PID bei Patient, Mitarbeiter-ID bei Heilberufler)" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Person.ArtderPerson">
+      <path value="UseCaseInfectionControl.Person.ArtderPerson" />
+      <short value="Art der Person" />
+      <definition value="Mitarbeiter &#xD;&#xA;Patient &#xD;&#xA;sonstiges" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="code" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Person.Titel">
+      <path value="UseCaseInfectionControl.Person.Titel" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="code" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/code" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Person.Vorname">
+      <path value="UseCaseInfectionControl.Person.Vorname" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Person.WeitererVorname">
+      <path value="UseCaseInfectionControl.Person.WeitererVorname" />
+      <short value="Weiterer Vorname" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Person.Nachname">
+      <path value="UseCaseInfectionControl.Person.Nachname" />
+      <short value="Nachname" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Person.Suffix">
+      <path value="UseCaseInfectionControl.Person.Suffix" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Person.Geburtsdatum">
+      <path value="UseCaseInfectionControl.Person.Geburtsdatum" />
+      <short value="Geburtsdatum des Patienten" />
+      <comment value="FHIR_mapping: Patient.birthDate" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="date" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/date" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Person.Adresse">
+      <path value="UseCaseInfectionControl.Person.Adresse" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="BackboneElement" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Person.Adresse.Zeile">
+      <path value="UseCaseInfectionControl.Person.Adresse.Zeile" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Person.Adresse.Stadt">
+      <path value="UseCaseInfectionControl.Person.Adresse.Stadt" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="code" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/code" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Person.Adresse.Postleitzahl">
+      <path value="UseCaseInfectionControl.Person.Adresse.Postleitzahl" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="code" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/code" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Person.Kontakttyp">
+      <path value="UseCaseInfectionControl.Person.Kontakttyp" />
+      <short value="Typ des Kontakts z.B. Telefon, Fax, Pager etc. ENV 13606-4:2000 7.11.19." />
+      <definition value="Telefon" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Person.Kontaktdaten">
+      <path value="UseCaseInfectionControl.Person.Kontaktdaten" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Person.PersoenlicheDatenHeilberufler">
+      <path value="UseCaseInfectionControl.Person.PersoenlicheDatenHeilberufler" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="BackboneElement" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Person.PersoenlicheDatenHeilberufler.Fachbezeichnung">
+      <path value="UseCaseInfectionControl.Person.PersoenlicheDatenHeilberufler.Fachbezeichnung" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="code" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/code" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Person.PersoenlicheDatenHeilberufler.Adresse">
+      <path value="UseCaseInfectionControl.Person.PersoenlicheDatenHeilberufler.Adresse" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="BackboneElement" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Person.PersoenlicheDatenHeilberufler.Adresse.Zeile">
+      <path value="UseCaseInfectionControl.Person.PersoenlicheDatenHeilberufler.Adresse.Zeile" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Person.PersoenlicheDatenHeilberufler.Adresse.Stadt">
+      <path value="UseCaseInfectionControl.Person.PersoenlicheDatenHeilberufler.Adresse.Stadt" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="code" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/code" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Person.PersoenlicheDatenHeilberufler.Adresse.Postleitzahl">
+      <path value="UseCaseInfectionControl.Person.PersoenlicheDatenHeilberufler.Adresse.Postleitzahl" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Diagnose">
+      <path value="UseCaseInfectionControl.Diagnose" />
+      <short value="Problemliste Diagnosen" />
+      <definition value="Angaben über einen einzelnen identifizierten Gesundheitszustand, eine Verletzung, eine Behinderung oder ein Problem, welches das körperliche, geistige und/oder soziale Wohlergehen einer Einzelperson beeinträchtigt." />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="BackboneElement" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Diagnose.BerichtID">
+      <path value="UseCaseInfectionControl.Diagnose.BerichtID" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="id" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/id" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Diagnose.FallKennung">
+      <path value="UseCaseInfectionControl.Diagnose.FallKennung" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="Identifier" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Identifier" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Diagnose.Diagnosekodiert">
+      <path value="UseCaseInfectionControl.Diagnose.Diagnosekodiert" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="CodeableConcept" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/CodeableConcept" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Diagnose.Freitextbeschreibung">
+      <path value="UseCaseInfectionControl.Diagnose.Freitextbeschreibung" />
+      <short value="Beschreibung des Problems oder der Diagnose." />
+      <definition value="Wo möglich, ist die Kodierung des Problems oder der Diagnose über eine Terminologie zu bevorzugen." />
+      <comment value="Wird verwendet, um Hintergrund und Kontext, einschließlich Entwicklung, Episoden oder Verschlechterungen, Fortschritt und andere relevante Details über das Problem oder die Diagnose zu liefern" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Diagnose.ZeitpunktdesAuftretens">
+      <path value="UseCaseInfectionControl.Diagnose.ZeitpunktdesAuftretens" />
+      <short value="Klinisch relevanter Zeitraum" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="dateTime" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/dateTime" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Diagnose.Feststellungsdatum">
+      <path value="UseCaseInfectionControl.Diagnose.Feststellungsdatum" />
+      <short value="Geschätzte oder exakte Zeit (bzw. Datum), zu der die Diagnose oder das Problem von einer medizinischen Fachkraft festgestellt wurde." />
+      <comment value="FHIR_mapping: Condition.encounter (Reference)" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="dateTime" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/dateTime" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Diagnose.KlinischerStatus">
+      <path value="UseCaseInfectionControl.Diagnose.KlinischerStatus" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="code" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/code" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Diagnose.Koerperstelle">
+      <path value="UseCaseInfectionControl.Diagnose.Koerperstelle" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="CodeableConcept" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/CodeableConcept" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Diagnose.Seitenlokalisation">
+      <path value="UseCaseInfectionControl.Diagnose.Seitenlokalisation" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="code" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/code" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Diagnose.LebensphaseBeginn">
+      <path value="UseCaseInfectionControl.Diagnose.LebensphaseBeginn" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="dateTime" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/dateTime" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Diagnose.LebensphaseEnde">
+      <path value="UseCaseInfectionControl.Diagnose.LebensphaseEnde" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="dateTime" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/dateTime" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Diagnose.ZeitpunktderGenesung">
+      <path value="UseCaseInfectionControl.Diagnose.ZeitpunktderGenesung" />
+      <short value="Geschätzte oder exakte Zeit (bzw. Datum), zu der von einer medizinischen Fachkraft die Genesung oder die Remission des Problems oder der Diagnose festgestellt wurde." />
+      <comment value="Unvollständige Datumsangaben sind zulässig. Wenn der Patient unter einem Jahr alt ist, dann ist das vollständige Datum oder ein Minimum von Monat und Jahr notwendig, um genaue Altersberechnungen zu ermöglichen - z.B. wenn es zur Entscheidungsunterstützung verwendet wird. Datumswerte, die als &quot;Alter zum Zeitpunkt der Genesung&quot; erfasst/importiert werden, sollten anhand des Geburtsdatums der Person in ein Datum umgewandelt werden" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="dateTime" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/dateTime" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Diagnose.Diagnosesicherheit">
+      <path value="UseCaseInfectionControl.Diagnose.Diagnosesicherheit" />
+      <short value="Grad der Sicherheit, mit der die Diagnose festgestellt wurde." />
+      <definition value="Vermutet  [Die Diagnose wurde mit einem niedrigen Grad an Sicherheit gestellt.]&#xD;&#xA;Wahrscheinlich  [Die Diagnose wurde mit einem hohen Maß an Sicherheit gestellt.]&#xD;&#xA;Bestätigt  [Die Diagnose wurde anhand anerkannter Kriterien bestätigt.]" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="code" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/code" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Diagnose.Diagnoseerlaeuterung">
+      <path value="UseCaseInfectionControl.Diagnose.Diagnoseerlaeuterung" />
+      <short value="Ergänzende Beschreibung des Problems oder der Diagnose, die nicht anderweitig erfasst wurde" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Diagnose.LetztesDokumentationsdatum">
+      <path value="UseCaseInfectionControl.Diagnose.LetztesDokumentationsdatum" />
+      <short value="Datum der letzten Aktualisierung der Diagnose bzw. des Problems." />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="dateTime" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/dateTime" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Prozedur">
+      <path value="UseCaseInfectionControl.Prozedur" />
+      <short value="Ein Dokument zur Übermittlung von Informationen an andere, meist als Antwort auf eine Anfrage." />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="BackboneElement" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Prozedur.BerichtID">
+      <path value="UseCaseInfectionControl.Prozedur.BerichtID" />
+      <short value="Identifizierungsmerkmal des Berichts." />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="id" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/id" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Prozedur.FallKennung">
+      <path value="UseCaseInfectionControl.Prozedur.FallKennung" />
+      <short value="Zur Erfassung von Details zur Identifikation eines Falls im Gesundheitswesen." />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="Identifier" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Identifier" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Prozedur.NamederProzedur">
+      <path value="UseCaseInfectionControl.Prozedur.NamederProzedur" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="CodeableConcept" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/CodeableConcept" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Prozedur.Freitextbeschreibung">
+      <path value="UseCaseInfectionControl.Prozedur.Freitextbeschreibung" />
+      <short value="Beschreibung der Prozedur, angepasst an den &quot;Pathway&quot;-Verlaufsschritt." />
+      <comment value="Zum Beispiel: Beschreibung der Durchführung und der Ergebnisse dieser Prozedur, des abgebrochenen Versuchs oder der Stornierung der Prozedur" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Prozedur.Koerperstelle">
+      <path value="UseCaseInfectionControl.Prozedur.Koerperstelle" />
+      <short value="Anatomische Lokalisation, an der die Prozedur durchgeführt wird." />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="CodeableConcept" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/CodeableConcept" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Prozedur.Seitenlokalisation">
+      <path value="UseCaseInfectionControl.Prozedur.Seitenlokalisation" />
+      <short value="Die Seite des Körpers, an der sich die identifizierte Körperstelle befindet." />
+      <definition value="Links  [Die linke Körperseite.]&#xD;&#xA;Rechts  [Die rechte Körperseite.]" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="code" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/code" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Prozedur.KategorieDerProzedur">
+      <path value="UseCaseInfectionControl.Prozedur.KategorieDerProzedur" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Prozedur.Durchfuehrungsabsicht">
+      <path value="UseCaseInfectionControl.Prozedur.Durchfuehrungsabsicht" />
+      <short value="Grund, warum die angegebene Aktivität für diese Prozedur durchgeführt wurde." />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="CodeableConcept" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/CodeableConcept" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Prozedur.Kommentar">
+      <path value="UseCaseInfectionControl.Prozedur.Kommentar" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Probendetails">
+      <path value="UseCaseInfectionControl.Probendetails" />
+      <short value="Eine physikalische Probe zur Erforschung, Untersuchung oder Analyse, die von einer Person entnommen wurde oder die sich auf die Person bezieht." />
+      <comment value="Zum Beispiel: Gewebe, Körperflüssigkeit oder Lebensmittel." />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="BackboneElement" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Probendetails.Probenart">
+      <path value="UseCaseInfectionControl.Probendetails.Probenart" />
+      <short value="Die Art der Probe" />
+      <comment value="Zum Beispiel: Venöses Blut, Bakterienkultur, Zytologie oder Prostatabiopsie. Nach Möglichkeit wird die Kodierung der Probenart mit einer Terminologie bevorzugt.&#xD;&#xA;FHIR_mapping: Specimen.type" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="CodeableConcept" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/CodeableConcept" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Probendetails.LaborprobenIdentifikator">
+      <path value="UseCaseInfectionControl.Probendetails.LaborprobenIdentifikator" />
+      <short value="Eine eindeutige Kennung der Probe, die normalerweise vom Labor vergeben wird." />
+      <comment value="Wird manchmal als &quot;Accession Identifier&quot; bezeichnet.&#xD;&#xA;FHIR_mapping: Specimen.accession.identifier" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="Identifier" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Identifier" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Probendetails.ExternerIdentifikator">
+      <path value="UseCaseInfectionControl.Probendetails.ExternerIdentifikator" />
+      <short value="Eine eindeutige Kennung der Probe, die von einer Organisation außerhalb des Labors wie dem Auftraggeber zugeordnet wurde." />
+      <comment value="FHIR_mapping: Specimen.identifier" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="Identifier" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Identifier" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Probendetails.ZeitpunktdesProbeneingangs">
+      <path value="UseCaseInfectionControl.Probendetails.ZeitpunktdesProbeneingangs" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="dateTime" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/dateTime" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Probendetails.KommentardesProbennehmers">
+      <path value="UseCaseInfectionControl.Probendetails.KommentardesProbennehmers" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Probendetails.NamederKoerperstelle">
+      <path value="UseCaseInfectionControl.Probendetails.NamederKoerperstelle" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="CodeableConcept" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/CodeableConcept" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Probendetails.ZeitpunktderProbenentnahme">
+      <path value="UseCaseInfectionControl.Probendetails.ZeitpunktderProbenentnahme" />
+      <short value="Das Datum und die Uhrzeit, zu der die Probennahme angeordnet wurde oder stattfand." />
+      <comment value="FHIR_mapping: Specimen.collection.collected.collectedDateTime" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="dateTime" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/dateTime" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Probendetails.IdentifikatordesProbennehmers">
+      <path value="UseCaseInfectionControl.Probendetails.IdentifikatordesProbennehmers" />
+      <short value="Die Person oder Organisation die für die Entnahme der Probe verantwortlich war." />
+      <comment value="Dieses Element soll verwendet werden, wenn die Probe bereits abgenommen wurde und der tatsächliche Probennehmer bekannt ist.&#xD;&#xA;FHIR_mapping: Specimen.collection.collector" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="Identifier" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Identifier" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Probendetails.IdentifikatorDerUebergeordnetenProbe">
+      <path value="UseCaseInfectionControl.Probendetails.IdentifikatorDerUebergeordnetenProbe" />
+      <short value="Eindeutige Kennung der verwandten Probe(n), bei der die Probe in Teilproben aufgeteilt ist." />
+      <comment value="Zum Beispiel: eine bestimmte Probe eines Objektträgers für die Histologie würde einen bestimmten Paraffinwachsblock als Ausgangsprobe haben.&#xD;&#xA;FHIR_mapping: Specimen.parent" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="Identifier" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Identifier" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Probendetails.Kommentar">
+      <path value="UseCaseInfectionControl.Probendetails.Kommentar" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Empfaengerstandort">
+      <path value="UseCaseInfectionControl.Empfaengerstandort" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="BackboneElement" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Empfaengerstandort.Typ">
+      <path value="UseCaseInfectionControl.Empfaengerstandort.Typ" />
+      <short value="Art der Organisationseinheit." />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="code" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/code" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Empfaengerstandort.Name">
+      <path value="UseCaseInfectionControl.Empfaengerstandort.Name" />
+      <short value="Bezeichnung für die Organisationseinheit" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Empfaengerstandort.Organisationsschluessel">
+      <path value="UseCaseInfectionControl.Empfaengerstandort.Organisationsschluessel" />
+      <short value="Eindeutiger Identifikator der Organisationseinheit." />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="code" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/code" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/code" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Empfaengerstandort.Aktiv-Inaktiv">
+      <path value="UseCaseInfectionControl.Empfaengerstandort.Aktiv-Inaktiv" />
+      <short value="Gibt an, ob die Organisationseinheit noch aktiv ist." />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="boolean" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/boolean" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Empfaengerstandort.ZusaetzlicheBeschreibung">
+      <path value="UseCaseInfectionControl.Empfaengerstandort.ZusaetzlicheBeschreibung" />
+      <short value="Zusätzliche Informationen" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Mikrobiologischerbefund">
+      <path value="UseCaseInfectionControl.Mikrobiologischerbefund" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="BackboneElement" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Mikrobiologischerbefund.BerichtID">
+      <path value="UseCaseInfectionControl.Mikrobiologischerbefund.BerichtID" />
+      <short value="Eindeutige Identifikation des Berichts." />
+      <comment value="FHIR_mapping:DiagnosticReport.identifier." />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="Identifier" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Identifier" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Mikrobiologischerbefund.Status">
+      <path value="UseCaseInfectionControl.Mikrobiologischerbefund.Status" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="code" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/code" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Mikrobiologischerbefund.FallKennung">
+      <path value="UseCaseInfectionControl.Mikrobiologischerbefund.FallKennung" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="Identifier" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Identifier" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Mikrobiologischerbefund.LabortestBezeichnung">
+      <path value="UseCaseInfectionControl.Mikrobiologischerbefund.LabortestBezeichnung" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="CodeableConcept" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/CodeableConcept" />
+      </type>
+      <fixedCodeableConcept>
+        <text value="Microbiology studies" />
+      </fixedCodeableConcept>
+    </element>
+    <element id="UseCaseInfectionControl.Mikrobiologischerbefund.Kultur">
+      <path value="UseCaseInfectionControl.Mikrobiologischerbefund.Kultur" />
+      <short value="Laborergebnis als Panel/Profil von Einzelresultaten. Verbreitet im medizinischen Labor." />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="BackboneElement" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Mikrobiologischerbefund.Kultur.Isolatnummer">
+      <path value="UseCaseInfectionControl.Mikrobiologischerbefund.Kultur.Isolatnummer" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="id" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/id" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Mikrobiologischerbefund.Kultur.Nachweis">
+      <path value="UseCaseInfectionControl.Mikrobiologischerbefund.Kultur.Nachweis" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="code" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/code" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Mikrobiologischerbefund.Kultur.Erregername">
+      <path value="UseCaseInfectionControl.Mikrobiologischerbefund.Kultur.Erregername" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="CodeableConcept" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/CodeableConcept" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Mikrobiologischerbefund.Kultur.Erregerdetails">
+      <path value="UseCaseInfectionControl.Mikrobiologischerbefund.Kultur.Erregerdetails" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="BackboneElement" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Mikrobiologischerbefund.Kultur.Erregerdetails.KeimSubtyp">
+      <path value="UseCaseInfectionControl.Mikrobiologischerbefund.Kultur.Erregerdetails.KeimSubtyp" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="CodeableConcept" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/CodeableConcept" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Mikrobiologischerbefund.Kultur.Erregerdetails.Keimzahl">
+      <path value="UseCaseInfectionControl.Mikrobiologischerbefund.Kultur.Erregerdetails.Keimzahl" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="Quantity" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Quantity" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Mikrobiologischerbefund.Kultur.Erregerdetails.Haeufigkeit">
+      <path value="UseCaseInfectionControl.Mikrobiologischerbefund.Kultur.Erregerdetails.Haeufigkeit" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="code" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/code" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Mikrobiologischerbefund.Kultur.Erregerdetails.Virulenzfaktor">
+      <path value="UseCaseInfectionControl.Mikrobiologischerbefund.Kultur.Erregerdetails.Virulenzfaktor" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Mikrobiologischerbefund.Kultur.Erregerdetails.Antibiogramm">
+      <path value="UseCaseInfectionControl.Mikrobiologischerbefund.Kultur.Erregerdetails.Antibiogramm" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="BackboneElement" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Mikrobiologischerbefund.Kultur.Erregerdetails.Antibiogramm.Antibiotikum">
+      <path value="UseCaseInfectionControl.Mikrobiologischerbefund.Kultur.Erregerdetails.Antibiogramm.Antibiotikum" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="CodeableConcept" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/CodeableConcept" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Mikrobiologischerbefund.Kultur.Erregerdetails.Antibiogramm.MinimaleHemmkonzentration">
+      <path value="UseCaseInfectionControl.Mikrobiologischerbefund.Kultur.Erregerdetails.Antibiogramm.MinimaleHemmkonzentration" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="Quantity" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Quantity" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Mikrobiologischerbefund.Kultur.Erregerdetails.Antibiogramm.Resistenzelement">
+      <path value="UseCaseInfectionControl.Mikrobiologischerbefund.Kultur.Erregerdetails.Antibiogramm.Resistenzelement" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="code" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/code" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Mikrobiologischerbefund.Kultur.Erregerdetails.Antibiogramm.Kommentar">
+      <path value="UseCaseInfectionControl.Mikrobiologischerbefund.Kultur.Erregerdetails.Antibiogramm.Kommentar" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Mikrobiologischerbefund.Kultur.Erregerdetails.Resistenzmechanismus">
+      <path value="UseCaseInfectionControl.Mikrobiologischerbefund.Kultur.Erregerdetails.Resistenzmechanismus" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Mikrobiologischerbefund.Kultur.Erregerdetails.MREKlasse">
+      <path value="UseCaseInfectionControl.Mikrobiologischerbefund.Kultur.Erregerdetails.MREKlasse" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="code" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/code" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Mikrobiologischerbefund.Kultur.Erregerdetails.Kommentar">
+      <path value="UseCaseInfectionControl.Mikrobiologischerbefund.Kultur.Erregerdetails.Kommentar" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Mikrobiologischerbefund.Kultur.ZugehoerigeLaborprobe">
+      <path value="UseCaseInfectionControl.Mikrobiologischerbefund.Kultur.ZugehoerigeLaborprobe" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="Identifier" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Identifier" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Mikrobiologischerbefund.Kultur.Kommentar">
+      <path value="UseCaseInfectionControl.Mikrobiologischerbefund.Kultur.Kommentar" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Virologischerbefund">
+      <path value="UseCaseInfectionControl.Virologischerbefund" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="BackboneElement" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Virologischerbefund.BerichtID">
+      <path value="UseCaseInfectionControl.Virologischerbefund.BerichtID" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="Identifier" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Identifier" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Virologischerbefund.Status">
+      <path value="UseCaseInfectionControl.Virologischerbefund.Status" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="CodeableConcept" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/CodeableConcept" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Virologischerbefund.FallKennung">
+      <path value="UseCaseInfectionControl.Virologischerbefund.FallKennung" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="Identifier" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Identifier" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Virologischerbefund.LabortestBezeichnung">
+      <path value="UseCaseInfectionControl.Virologischerbefund.LabortestBezeichnung" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="CodeableConcept" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/CodeableConcept" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Virologischerbefund.Virusnachweis">
+      <path value="UseCaseInfectionControl.Virologischerbefund.Virusnachweis" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="BackboneElement" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Virologischerbefund.Virusnachweis.AnalyseergebnisReihenfolge">
+      <path value="UseCaseInfectionControl.Virologischerbefund.Virusnachweis.AnalyseergebnisReihenfolge" />
+      <definition value="Die beabsichtigte Position dieses Analyseergebnisses in der Reihenfolge aller Analyseergebnisse.&#xD;&#xA;Comment: z.B. '1', '2', '3'. Werden mehrere Analysenergebnisse berichtet, gibt die Analyseergebnis-Reihenfolge explizit die Reihenfolge der Analyseergebnisse an." />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="Identifier" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Identifier" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Virologischerbefund.Virusnachweis.Virusnachweistest">
+      <path value="UseCaseInfectionControl.Virologischerbefund.Virusnachweis.Virusnachweistest" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="CodeableConcept" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/CodeableConcept" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Virologischerbefund.Virusnachweis.Nachweis">
+      <path value="UseCaseInfectionControl.Virologischerbefund.Virusnachweis.Nachweis" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="CodeableConcept" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/CodeableConcept" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Virologischerbefund.Virusnachweis.QuantitativesErgebnis">
+      <path value="UseCaseInfectionControl.Virologischerbefund.Virusnachweis.QuantitativesErgebnis" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="Quantity" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Quantity" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Virologischerbefund.Virusnachweis.Interpretation">
+      <path value="UseCaseInfectionControl.Virologischerbefund.Virusnachweis.Interpretation" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="CodeableConcept" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/CodeableConcept" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Virologischerbefund.Virusnachweis.ZeitpunktDerValidierung">
+      <path value="UseCaseInfectionControl.Virologischerbefund.Virusnachweis.ZeitpunktDerValidierung" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="dateTime" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/dateTime" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Virologischerbefund.Virusnachweis.ErgebnisStatus">
+      <path value="UseCaseInfectionControl.Virologischerbefund.Virusnachweis.ErgebnisStatus" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="CodeableConcept" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/CodeableConcept" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Virologischerbefund.Virusnachweis.ZeitpunktErgebnisStatus">
+      <path value="UseCaseInfectionControl.Virologischerbefund.Virusnachweis.ZeitpunktErgebnisStatus" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="CodeableConcept" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/CodeableConcept" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Virologischerbefund.Virusnachweis.ZugehoerigeLaborprobe">
+      <path value="UseCaseInfectionControl.Virologischerbefund.Virusnachweis.ZugehoerigeLaborprobe" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="Identifier" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Identifier" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Virologischerbefund.Virusnachweis.KommentarAnalyt">
+      <path value="UseCaseInfectionControl.Virologischerbefund.Virusnachweis.KommentarAnalyt" />
+      <short value="Kommentar zum Analyt-Ergebnis, soweit noch nicht in anderen Feldern erfasst." />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Virologischerbefund.Virusnachweis.KommentarEreignis">
+      <path value="UseCaseInfectionControl.Virologischerbefund.Virusnachweis.KommentarEreignis" />
+      <short value="Weitere Informationen über das Laborergebnis, welche bisher nicht in den anderen Feldern erfasst wurden" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Serologischerbefund">
+      <path value="UseCaseInfectionControl.Serologischerbefund" />
+      <definition value="Das Model dient dazu einen serologischen Befund strukturiert abzubilden." />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="BackboneElement" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Serologischerbefund.BerichtID">
+      <path value="UseCaseInfectionControl.Serologischerbefund.BerichtID" />
+      <short value="Eindeutige Identifikation des Berichts." />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="Identifier" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Identifier" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Serologischerbefund.Status">
+      <path value="UseCaseInfectionControl.Serologischerbefund.Status" />
+      <short value="Status des gesamten Ergebnisberichts." />
+      <definition value="Hinweis: Dies ist nicht der Status einzelner Berichtskomponenten." />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="code" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/code" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Serologischerbefund.FallKennung">
+      <path value="UseCaseInfectionControl.Serologischerbefund.FallKennung" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="Identifier" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Identifier" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Serologischerbefund.LabortestBezeichnung">
+      <path value="UseCaseInfectionControl.Serologischerbefund.LabortestBezeichnung" />
+      <short value="Der Bezeichner/die Kennung dieses Falls." />
+      <comment value="DiagnosticReport.code" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="CodeableConcept" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/CodeableConcept" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Serologischerbefund.Antikoerpernachweis">
+      <path value="UseCaseInfectionControl.Serologischerbefund.Antikoerpernachweis" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="BackboneElement" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Serologischerbefund.Antikoerpernachweis.AnalyseergebnisReihenfolge">
+      <path value="UseCaseInfectionControl.Serologischerbefund.Antikoerpernachweis.AnalyseergebnisReihenfolge" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="Identifier" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Identifier" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Serologischerbefund.Antikoerpernachweis.Virusnachweistest">
+      <path value="UseCaseInfectionControl.Serologischerbefund.Antikoerpernachweis.Virusnachweistest" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="CodeableConcept" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/CodeableConcept" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Serologischerbefund.Antikoerpernachweis.Nachweis">
+      <path value="UseCaseInfectionControl.Serologischerbefund.Antikoerpernachweis.Nachweis" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="CodeableConcept" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/CodeableConcept" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Serologischerbefund.Antikoerpernachweis.QuantitativesErgebnis">
+      <path value="UseCaseInfectionControl.Serologischerbefund.Antikoerpernachweis.QuantitativesErgebnis" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="Quantity" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Quantity" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Serologischerbefund.Antikoerpernachweis.Interpretation">
+      <path value="UseCaseInfectionControl.Serologischerbefund.Antikoerpernachweis.Interpretation" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="code" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/code" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Serologischerbefund.Antikoerpernachweis.ZeitpunktderValidierung">
+      <path value="UseCaseInfectionControl.Serologischerbefund.Antikoerpernachweis.ZeitpunktderValidierung" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="time" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/time" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Serologischerbefund.Antikoerpernachweis.ErgebnisStatus">
+      <path value="UseCaseInfectionControl.Serologischerbefund.Antikoerpernachweis.ErgebnisStatus" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="code" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/code" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Serologischerbefund.Antikoerpernachweis.ZeitpunktErgebnisStatus">
+      <path value="UseCaseInfectionControl.Serologischerbefund.Antikoerpernachweis.ZeitpunktErgebnisStatus" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="time" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/time" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Serologischerbefund.Antikoerpernachweis.ZugehoerigeLaborprobe">
+      <path value="UseCaseInfectionControl.Serologischerbefund.Antikoerpernachweis.ZugehoerigeLaborprobe" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="Identifier" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Identifier" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Serologischerbefund.Antikoerpernachweis.Kommentar">
+      <path value="UseCaseInfectionControl.Serologischerbefund.Antikoerpernachweis.Kommentar" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.DetailsDerTestanforderung">
+      <path value="UseCaseInfectionControl.DetailsDerTestanforderung" />
+      <definition value="Details zur Testanforderung.&#xD;&#xA;Comment: In den meisten Fällen gibt es eine Testanfrage und ein einzelnes entsprechendes Testergebnis. Jedoch ermöglicht dieser wiederholte Cluster die Situation, dass mehrere Testanfragen mit einem einzigen Testergebnis gemeldet werden können. Als Beispiel: &quot;Ein Arzt fordert in einer Anfrage Blutzucker und in einer zweiten Anfrage Harnstoff/Elektrolyte an, aber das Laboranalysegerät führt beides durch und das Labor möchte diese zusammen melden&quot;." />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="BackboneElement" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.DetailsDerTestanforderung.Anforderung">
+      <path value="UseCaseInfectionControl.DetailsDerTestanforderung.Anforderung" />
+      <definition value="Name des ursprünglich angeforderten Tests.&#xD;&#xA;Comment: Dieses Datenelement ist zu verwenden, wenn die angeforderte Testung von der tatsächlich vom Labor durchgeführten Testung abweicht." />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="CodeableConcept" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/CodeableConcept" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/CodeableConcept" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.DetailsDerTestanforderung.Auftrags-IdDesAnforderndenSystems">
+      <path value="UseCaseInfectionControl.DetailsDerTestanforderung.Auftrags-IdDesAnforderndenSystems" />
+      <definition value="Lokale Auftrags-ID des anfordernden/einsendenden Systems.&#xD;&#xA;Comment: Äquivalent zur &quot;HL7 Placer Order Identifier&quot;." />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="Identifier" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Identifier" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.DetailsDerTestanforderung.AuftragsIdEmpfaenger">
+      <path value="UseCaseInfectionControl.DetailsDerTestanforderung.AuftragsIdEmpfaenger" />
+      <definition value="Lokale Auftrags-ID, die vom auftragsempfangendem System, gewöhnlich dem Laborinformationssystem (LIS) zugewiesen wird.&#xD;&#xA;Comment: Die Vergabe einer solchen ID ermöglicht das Nachverfolgen des Auftragsstatus und das Verlinken der Ergebnisse zum Auftrag. Es erlaubt auch das Verwalten von weiteren Erkundigungen und Nachfragen und ist äquivalent zum &quot;HL7 Filler Order Identifier&quot;." />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="Identifier" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Identifier" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.DetailsDerTestanforderung.Einsenderstandort">
+      <path value="UseCaseInfectionControl.DetailsDerTestanforderung.Einsenderstandort" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="BackboneElement" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.DetailsDerTestanforderung.Einsenderstandort.Typ">
+      <path value="UseCaseInfectionControl.DetailsDerTestanforderung.Einsenderstandort.Typ" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="code" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/code" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.DetailsDerTestanforderung.Einsenderstandort.Name">
+      <path value="UseCaseInfectionControl.DetailsDerTestanforderung.Einsenderstandort.Name" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.DetailsDerTestanforderung.Einsenderstandort.Organisationsschluessel">
+      <path value="UseCaseInfectionControl.DetailsDerTestanforderung.Einsenderstandort.Organisationsschluessel" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="code" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/code" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.DetailsDerTestanforderung.Einsenderstandort.AktivInaktiv">
+      <path value="UseCaseInfectionControl.DetailsDerTestanforderung.Einsenderstandort.AktivInaktiv" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="boolean" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/boolean" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.DetailsDerTestanforderung.Einsenderstandort.ZusaetzlicheBeschreibung">
+      <path value="UseCaseInfectionControl.DetailsDerTestanforderung.Einsenderstandort.ZusaetzlicheBeschreibung" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten">
+      <path value="UseCaseInfectionControl.Bewegungsdaten" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="BackboneElement" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall" />
+      <definition value="Zur Repräsentation der administrativen Daten eines Falls (Fallinformationen, Aufnahme, Entlassung) eines Patienten innerhalb einer Einrichtung. Ein “Fall” beginnt mit der Aufnahme ins Krankenhaus an einem Aufnahmedatum und endet mit der Entlassung an einem Entlassungsdatum." />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="BackboneElement" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.FallTyp">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.FallTyp" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="code" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/code" />
+      </type>
+      <fixedCode value="Einrichtungskontakt" />
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Fallklasse">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Fallklasse" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="code" />
+      </type>
+      <fixedCode value="stationär" />
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.FallStatus">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.FallStatus" />
+      <definition value="http://hl7.org/fhir/encounter-status" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="code" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/code" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.FallKennung">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.FallKennung" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="Identifier" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.UebergeordneterFall">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.UebergeordneterFall" />
+      <short value="Versorgungsfall-Kennung" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="Identifier" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Identifier" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Identifier" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Identifier" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.FachlicheOrganisationseinheit">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.FachlicheOrganisationseinheit" />
+      <short value="FachlicheOrganisationseinheit" />
+      <definition value="Der Standort umfasst sowohl zufällige Standorte (ein Ort, der ohne vorherige Bestimmung oder Freigabe für die Gesundheitsversorgung genutzt wird) als auch spezielle, formal zugeordnete Standorte. Die Standorte können privat, öffentlich, mobil oder feststehend sein." />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="BackboneElement" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.FachlicheOrganisationseinheit.Typ">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.FachlicheOrganisationseinheit.Typ" />
+      <short value="Art der Organisationseinheit.z.B Hospital Department" />
+      <definition value="Zum Beispiel: Fachabteilung im Krankenhaus, Versicherungsunternehmen, Sponsor&#xD;&#xA;fhirOrganization.type" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="code" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/code" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.FachlicheOrganisationseinheit.Organisationsschluessel">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.FachlicheOrganisationseinheit.Organisationsschluessel" />
+      <short value="[Anhang 1 der BPflV (31.12.2003)]" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="code" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/code" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.FachlicheOrganisationseinheit.Name">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.FachlicheOrganisationseinheit.Name" />
+      <short value="Bezeichnung für die Organisationseinheit" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.FachlicheOrganisationseinheit.AktivInaktiv">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.FachlicheOrganisationseinheit.AktivInaktiv" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="boolean" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/boolean" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.FachlicheOrganisationseinheit.ZusaetzlicheBeschreibung">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.FachlicheOrganisationseinheit.ZusaetzlicheBeschreibung" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Aufnahmedaten">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Aufnahmedaten" />
+      <definition value="Wird nur für aufgenommene Patienten verwendet. Es signalisiert den Beginn des Aufenthalts eines Patienten in einer Gesundheitseinrichtung." />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="BackboneElement" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Aufnahmedaten.Aufnahmegrund">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Aufnahmedaten.Aufnahmegrund" />
+      <short value="Der Umstand, unter dem der Patient aufgenommen wird." />
+      <definition value="Terminology: §21 KHEntgG&#xD;&#xA;Krankenhausbehandlung, vollstationär &#xD;&#xA;Krankenhausbehandlung, vollstationär mit vorausgegangener vorstationärer Behandlung &#xD;&#xA;Krankenhausbehandlung, teilstationär &#xD;&#xA;vorstationäre Behandlung ohne anschließende vollstationäre Behandlung &#xD;&#xA;Stationäre Entbindung &#xD;&#xA;Geburt &#xD;&#xA;Wiederaufnahme wegen Komplikationen (Fallpauschale) nach KFPV 2003 &#xD;&#xA;Stationäre Aufnahme zur Organentnahme &#xD;&#xA;Stationsäquivalente Behandlung" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="code" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Aufnahmedaten.Aufnahmeanlass">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Aufnahmedaten.Aufnahmeanlass" />
+      <short value="Nähere Beschreibung der Art der Aufnahme, z.B. Unfall oder Notfall." />
+      <definition value="Terminology: §21 KHEntgG&#xD;&#xA;Einweisung durch einen Arzt &#xD;&#xA;Einweisung durch einen Zahnarzt &#xD;&#xA;Notfall &#xD;&#xA;Aufnahme nach vorausgehender Behandlung in einer Rehabilitationseinrichtung &#xD;&#xA;Verlegung mit Behandlungsdauer im verlegenden Krankenhaus länger als 24 Stunden &#xD;&#xA;Verlegung mit Behandlungsdauer im verlegenden Krankenhaus bis zu 24 Stunden &#xD;&#xA;Geburt &#xD;&#xA;Begleitperson oder mitaufgenommene Pflegekraft" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="code" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/code" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Aufnahmedaten.KennungvorderAufnahme">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Aufnahmedaten.KennungvorderAufnahme" />
+      <short value="Identifikationsnummer des Patienten vor der Aufnahme" />
+      <definition value="Identifikationsnummer des Patienten vor der Aufnahme" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="Identifier" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Identifier" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Aufnahmedaten.DatumUhrzeitderAufnahme">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Aufnahmedaten.DatumUhrzeitderAufnahme" />
+      <short value="Datum/Zeit, an dem der Patient aufgenommen wurde." />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="dateTime" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Aufnahmedaten.VorherigerPatientenstandortvorAufnahme">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Aufnahmedaten.VorherigerPatientenstandortvorAufnahme" />
+      <short value="Standort umfasst sowohl beiläufige Orte (ein Ort, der für die medizinische Versorgung ohne vorherige Benennung oder Genehmigung genutzt wird) als auch spezielle, offiziell benannte Orte. Die Standorte können privat, öffentlich, mobil oder stationär sein." />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="BackboneElement" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Aufnahmedaten.VorherigerPatientenstandortvorAufnahme.Campus">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Aufnahmedaten.VorherigerPatientenstandortvorAufnahme.Campus" />
+      <short value="Eine Gruppe von Gebäuden an anderen Orten, wie ein örtlich entfernter Campus, der außerhalb der Einrichtung liegt, aber zur Institution gehört." />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Aufnahmedaten.VorherigerPatientenstandortvorAufnahme.Gebaeudegruppe">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Aufnahmedaten.VorherigerPatientenstandortvorAufnahme.Gebaeudegruppe" />
+      <short value="Ein Gebäude oder Bauwerk. Dazu können Räume, Flure, Flügel, etc. gehören. Es hat möglicherweise keine Wände oder ein Dach, wird aber dennoch als definierter/zugeordneter Raum angesehen." />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Aufnahmedaten.VorherigerPatientenstandortvorAufnahme.Ebene">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Aufnahmedaten.VorherigerPatientenstandortvorAufnahme.Ebene" />
+      <short value="Die Ebene in einem mehrstöckigen Gebäude/Bauwerk." />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Aufnahmedaten.VorherigerPatientenstandortvorAufnahme.Station">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Aufnahmedaten.VorherigerPatientenstandortvorAufnahme.Station" />
+      <short value="Die Station ist ein Bestandteil einer medizinischen Einrichtung, die Räume und andere Arten von Aufenthaltsorten umfasst, z. B. Station 12A. Auch als Raumgruppe erfassbar." />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Aufnahmedaten.VorherigerPatientenstandortvorAufnahme.Zimmer">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Aufnahmedaten.VorherigerPatientenstandortvorAufnahme.Zimmer" />
+      <short value="Ein Ort, der als Zimmer deklariert wurde. Er kann durch Wände oder anderes abgegrenzt sein, muss es aber nicht." />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Aufnahmedaten.VorherigerPatientenstandortvorAufnahme.Bettstellplatz">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Aufnahmedaten.VorherigerPatientenstandortvorAufnahme.Bettstellplatz" />
+      <short value="Beschreibung des Bettstellplatzes z.B. Bett stand neben dem Fenster oder neben der Tür." />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Aufnahmedaten.VorherigerPatientenstandortvorAufnahme.ZusaetzlicheBeschreibung">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Aufnahmedaten.VorherigerPatientenstandortvorAufnahme.ZusaetzlicheBeschreibung" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Aufnahmedaten.VorherigeverantwortlicheOrganisationseinheitvorAufnahme">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Aufnahmedaten.VorherigeverantwortlicheOrganisationseinheitvorAufnahme" />
+      <definition value="Eine fachliche Einheit, Organisation, Abteilung, Zusammenschluss, Gruppierung mit einem gemeinsamen Ziel." />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="BackboneElement" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Aufnahmedaten.VorherigeverantwortlicheOrganisationseinheitvorAufnahme.Typ">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Aufnahmedaten.VorherigeverantwortlicheOrganisationseinheitvorAufnahme.Typ" />
+      <definition value="Art der Organisationseinheit.&#xD;&#xA;Comment: Zum Beispiel: Fachabteilung im Krankenhaus, Versicherungsunternehmen, Sponsor" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="code" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/code" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Aufnahmedaten.VorherigeverantwortlicheOrganisationseinheitvorAufnahme.Organisationsschluessel">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Aufnahmedaten.VorherigeverantwortlicheOrganisationseinheitvorAufnahme.Organisationsschluessel" />
+      <short value="Eindeutiger Identifikator der Organisationseinheit." />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="code" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/code" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Aufnahmedaten.VorherigeverantwortlicheOrganisationseinheitvorAufnahme.Name">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Aufnahmedaten.VorherigeverantwortlicheOrganisationseinheitvorAufnahme.Name" />
+      <short value="Bezeichnung für die Organisationseinheit" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Aufnahmedaten.VorherigeverantwortlicheOrganisationseinheitvorAufnahme.Aktiv-Inaktiv">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Aufnahmedaten.VorherigeverantwortlicheOrganisationseinheitvorAufnahme.Aktiv-Inaktiv" />
+      <short value="Gibt an, ob die Organisationseinheit noch aktiv ist." />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="boolean" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/boolean" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Aufnahmedaten.VorherigeverantwortlicheOrganisationseinheitvorAufnahme.ZusaetzlicheBeschreibung">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Aufnahmedaten.VorherigeverantwortlicheOrganisationseinheitvorAufnahme.ZusaetzlicheBeschreibung" />
+      <short value="Zusätzliche Informationen" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Entlassungsdaten">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Entlassungsdaten" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="BackboneElement" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Entlassungsdaten.ArtderEntlassung">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Entlassungsdaten.ArtderEntlassung" />
+      <short value="[§21 KHEntgG]" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="code" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/code" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Entlassungsdaten.KlinischerZustanddesPatienten">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Entlassungsdaten.KlinischerZustanddesPatienten" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="code" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/code" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Entlassungsdaten.DatumUhrzeitderEntlassung">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Entlassungsdaten.DatumUhrzeitderEntlassung" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="dateTime" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/dateTime" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Entlassungsdaten.ZusaetzlicheInformationen">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Entlassungsdaten.ZusaetzlicheInformationen" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Entlassungsdaten.ZugewiesenerStandortbeiEntlassung">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Entlassungsdaten.ZugewiesenerStandortbeiEntlassung" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="BackboneElement" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Entlassungsdaten.ZugewiesenerStandortbeiEntlassung.Campus">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Entlassungsdaten.ZugewiesenerStandortbeiEntlassung.Campus" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Entlassungsdaten.ZugewiesenerStandortbeiEntlassung.Gebaeudegruppe">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Entlassungsdaten.ZugewiesenerStandortbeiEntlassung.Gebaeudegruppe" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Entlassungsdaten.ZugewiesenerStandortbeiEntlassung.Ebene">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Entlassungsdaten.ZugewiesenerStandortbeiEntlassung.Ebene" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Entlassungsdaten.ZugewiesenerStandortbeiEntlassung.Station">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Entlassungsdaten.ZugewiesenerStandortbeiEntlassung.Station" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Entlassungsdaten.ZugewiesenerStandortbeiEntlassung.Zimmer">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Entlassungsdaten.ZugewiesenerStandortbeiEntlassung.Zimmer" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Entlassungsdaten.ZugewiesenerStandortbeiEntlassung.Bettstellplatz">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Entlassungsdaten.ZugewiesenerStandortbeiEntlassung.Bettstellplatz" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Entlassungsdaten.ZugewiesenerStandortbeiEntlassung.ZusaetzlicheBeschreibung">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Entlassungsdaten.ZugewiesenerStandortbeiEntlassung.ZusaetzlicheBeschreibung" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Entlassungsdaten.ZugewiesenerStandortbeiEntlassung.ZugewieseneverantwortlicheOrganisationseinheitbeiEntlassung">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Entlassungsdaten.ZugewiesenerStandortbeiEntlassung.ZugewieseneverantwortlicheOrganisationseinheitbeiEntlassung" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="BackboneElement" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Entlassungsdaten.ZugewiesenerStandortbeiEntlassung.ZugewieseneverantwortlicheOrganisationseinheitbeiEntlassung.Typ">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Entlassungsdaten.ZugewiesenerStandortbeiEntlassung.ZugewieseneverantwortlicheOrganisationseinheitbeiEntlassung.Typ" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="code" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/code" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Entlassungsdaten.ZugewiesenerStandortbeiEntlassung.ZugewieseneverantwortlicheOrganisationseinheitbeiEntlassung.Organisationsschluessel">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Entlassungsdaten.ZugewiesenerStandortbeiEntlassung.ZugewieseneverantwortlicheOrganisationseinheitbeiEntlassung.Organisationsschluessel" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="code" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/code" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Entlassungsdaten.ZugewiesenerStandortbeiEntlassung.ZugewieseneverantwortlicheOrganisationseinheitbeiEntlassung.Name">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Entlassungsdaten.ZugewiesenerStandortbeiEntlassung.ZugewieseneverantwortlicheOrganisationseinheitbeiEntlassung.Name" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Entlassungsdaten.ZugewiesenerStandortbeiEntlassung.ZugewieseneverantwortlicheOrganisationseinheitbeiEntlassung.AktivInaktiv">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Entlassungsdaten.ZugewiesenerStandortbeiEntlassung.ZugewieseneverantwortlicheOrganisationseinheitbeiEntlassung.AktivInaktiv" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="boolean" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/boolean" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Entlassungsdaten.ZugewiesenerStandortbeiEntlassung.ZugewieseneverantwortlicheOrganisationseinheitbeiEntlassung.ZusaetzlicheBeschreibung">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.StationaererVersorgungsfall.Entlassungsdaten.ZugewiesenerStandortbeiEntlassung.ZugewieseneverantwortlicheOrganisationseinheitbeiEntlassung.ZusaetzlicheBeschreibung" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.Patientenaufenthalt">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.Patientenaufenthalt" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="BackboneElement" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.Patientenaufenthalt.ZugehoerigerVersorgungsfallKennung">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.Patientenaufenthalt.ZugehoerigerVersorgungsfallKennung" />
+      <definition value="Zur Erfassung von Details zur Identifikation eines Falls im Gesundheitswesen." />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="Identifier" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Identifier" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.Patientenaufenthalt.ZugehoerigerAbteilungsfallKennung">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.Patientenaufenthalt.ZugehoerigerAbteilungsfallKennung" />
+      <definition value="Zur Erfassung von Details zur Identifikation eines Falls im Gesundheitswesen." />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="Identifier" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Identifier" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.Patientenaufenthalt.ZugehoerigerVersorgungsstellenkontaktKennung">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.Patientenaufenthalt.ZugehoerigerVersorgungsstellenkontaktKennung" />
+      <definition value="Zur Erfassung von Details zur Identifikation eines Falls im Gesundheitswesen." />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="Identifier" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Identifier" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.Patientenaufenthalt.Versorgungsaufenthalt">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.Patientenaufenthalt.Versorgungsaufenthalt" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="BackboneElement" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.Patientenaufenthalt.Versorgungsaufenthalt.Beginn">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.Patientenaufenthalt.Versorgungsaufenthalt.Beginn" />
+      <definition value="Zeitlicher Beginn des Aufenthaltes am beschriebenen Ort." />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="dateTime" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/dateTime" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.Patientenaufenthalt.Versorgungsaufenthalt.Ende">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.Patientenaufenthalt.Versorgungsaufenthalt.Ende" />
+      <definition value="Zeitliches Ende des Aufenthaltes am beschriebenen Ort." />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="dateTime" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/dateTime" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.Patientenaufenthalt.Versorgungsaufenthalt.GrundDesAufenthaltes">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.Patientenaufenthalt.Versorgungsaufenthalt.GrundDesAufenthaltes" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="CodeableConcept" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/CodeableConcept" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.Patientenaufenthalt.Versorgungsaufenthalt.Standort">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.Patientenaufenthalt.Versorgungsaufenthalt.Standort" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="BackboneElement" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.Patientenaufenthalt.Versorgungsaufenthalt.Standort.Campus">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.Patientenaufenthalt.Versorgungsaufenthalt.Standort.Campus" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.Patientenaufenthalt.Versorgungsaufenthalt.Standort.Gebaeudegruppe">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.Patientenaufenthalt.Versorgungsaufenthalt.Standort.Gebaeudegruppe" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.Patientenaufenthalt.Versorgungsaufenthalt.Standort.Ebene">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.Patientenaufenthalt.Versorgungsaufenthalt.Standort.Ebene" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.Patientenaufenthalt.Versorgungsaufenthalt.Standort.Station">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.Patientenaufenthalt.Versorgungsaufenthalt.Standort.Station" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.Patientenaufenthalt.Versorgungsaufenthalt.Standort.Zimmer">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.Patientenaufenthalt.Versorgungsaufenthalt.Standort.Zimmer" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.Patientenaufenthalt.Versorgungsaufenthalt.Standort.Bettplatz">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.Patientenaufenthalt.Versorgungsaufenthalt.Standort.Bettplatz" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.Patientenaufenthalt.Versorgungsaufenthalt.Standort.ZusaetzlicheBeschreibung">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.Patientenaufenthalt.Versorgungsaufenthalt.Standort.ZusaetzlicheBeschreibung" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.Patientenaufenthalt.Versorgungsaufenthalt.Standort.DetailszumBett">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.Patientenaufenthalt.Versorgungsaufenthalt.Standort.DetailszumBett" />
+      <definition value="Ein Instrument, ein Gerät, ein Implantat, ein Material oder ähnliches, das für die Bereitstellung von Gesundheitsleistungen verwendet wird. In diesem Zusammenhang umfasst ein medizinisches Gerät eine breite Palette von Geräten, die auf verschiedene physikalische, mechanische, thermische oder ähnliche Weise wirken, schließt jedoch insbesondere Geräte aus, die auf medizinischem Wege wirken, wie zum Beispiel pharmakologische, metabolische oder immunologische Methoden. Der Geltungsbereich umfasst Einweggeräte sowie langlebige oder dauerhafte Geräte, die nachverfolgt, gewartet oder regelmäßig kalibriert werden müssen, wobei zu berücksichtigen ist, dass für jeden Gerätetyp bestimmte Datenaufzeichnungsanforderungen gelten." />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="BackboneElement" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.Patientenaufenthalt.Versorgungsaufenthalt.Standort.DetailszumBett.Geraetename">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.Patientenaufenthalt.Versorgungsaufenthalt.Standort.DetailszumBett.Geraetename" />
+      <definition value="Identifizierung des Medizingerätes, bevorzugt durch einen allgemein gebräuchlichen Namen, einer formellen und vollständig beschreibenden Bezeichnung oder falls notwendig anhand einer Klasse oder Kategorie des Gerätes." />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.Patientenaufenthalt.Versorgungsaufenthalt.Standort.DetailszumBett.Geraetetyp">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.Patientenaufenthalt.Versorgungsaufenthalt.Standort.DetailszumBett.Geraetetyp" />
+      <definition value="Die Kategorie des Medizingeräts." />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.Patientenaufenthalt.Versorgungsaufenthalt.Standort.DetailszumBett.EindeutigeIdentifikationsnummer">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.Patientenaufenthalt.Versorgungsaufenthalt.Standort.DetailszumBett.EindeutigeIdentifikationsnummer" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="Identifier" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Identifier" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.Patientenaufenthalt.Versorgungsaufenthalt.FachlicheOrganisationseinheit">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.Patientenaufenthalt.Versorgungsaufenthalt.FachlicheOrganisationseinheit" />
+      <definition value="Eine fachliche Einheit, Organisation, Abteilung, Zusammenschluss, Gruppierung mit einem gemeinsamen Ziel." />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="BackboneElement" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.Patientenaufenthalt.Versorgungsaufenthalt.FachlicheOrganisationseinheit.Typ">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.Patientenaufenthalt.Versorgungsaufenthalt.FachlicheOrganisationseinheit.Typ" />
+      <definition value="Art der Organisationseinheit.&#xD;&#xA;Comment: Zum Beispiel: Fachabteilung im Krankenhaus, Versicherungsunternehmen, Sponsor" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="code" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/code" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.Patientenaufenthalt.Versorgungsaufenthalt.FachlicheOrganisationseinheit.Fachabteilungsschluessel">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.Patientenaufenthalt.Versorgungsaufenthalt.FachlicheOrganisationseinheit.Fachabteilungsschluessel" />
+      <short value="Terminology: Anhang 1 der BPflV (31.12.2003)" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="code" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/code" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.Patientenaufenthalt.Versorgungsaufenthalt.FachlicheOrganisationseinheit.Name">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.Patientenaufenthalt.Versorgungsaufenthalt.FachlicheOrganisationseinheit.Name" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.Patientenaufenthalt.Versorgungsaufenthalt.FachlicheOrganisationseinheit.AktivInaktiv">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.Patientenaufenthalt.Versorgungsaufenthalt.FachlicheOrganisationseinheit.AktivInaktiv" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="boolean" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/boolean" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.Patientenaufenthalt.Versorgungsaufenthalt.FachlicheOrganisationseinheit.ZusaetzlicheBeschreibung">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.Patientenaufenthalt.Versorgungsaufenthalt.FachlicheOrganisationseinheit.ZusaetzlicheBeschreibung" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.Patientenaufenthalt.Versorgungsaufenthalt.Kommentar">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.Patientenaufenthalt.Versorgungsaufenthalt.Kommentar" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.SonstigerVersorgungsfall">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.SonstigerVersorgungsfall" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="BackboneElement" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.SonstigerVersorgungsfall.Falltyp">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.SonstigerVersorgungsfall.Falltyp" />
+      <definition value="Charaktierisierung des Falls, bspw. als Einrichtungskontakt, Abteilungskontakt, Versorgungsstellenkontakt.&#xD;&#xA;Einrichtungskontakt&#xD;&#xA;Abteilungskontakt&#xD;&#xA;Versorgungsstellenkontakt&#xD;&#xA;[...]" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="code" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/code" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.SonstigerVersorgungsfall.Fallklasse">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.SonstigerVersorgungsfall.Fallklasse" />
+      <definition value="Nähere Beschreibung des Falls als Fallklasse, z.B. ambulanter Besuch, stationärer, prä- oder nachstationärer Aufenthalt.&#xD;&#xA;Prästationär&#xD;&#xA;Nachstationär&#xD;&#xA;Ambulant&#xD;&#xA;[...]" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="code" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/code" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.SonstigerVersorgungsfall.Fallstatus">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.SonstigerVersorgungsfall.Fallstatus" />
+      <short value="Status des Falls" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="code" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/code" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.SonstigerVersorgungsfall.FallKennung">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.SonstigerVersorgungsfall.FallKennung" />
+      <short value="Eindeutige Identifikation des Falls, z.B. Fallnummer." />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="Identifier" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Identifier" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.SonstigerVersorgungsfall.UebergeordneterFall">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.SonstigerVersorgungsfall.UebergeordneterFall" />
+      <definition value="Ein anderer Fall, von dem dieser Fall ein Teil ist (administrativ oder zeitlich).&#xD;&#xA;Comment: Ein anderer Fall, von dem dieser Fall ein Teil ist (administrativ oder zeitlich).&#xD;&#xA;fhirEncounter.partOf" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="Identifier" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Identifier" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.SonstigerVersorgungsfall.FachlicheOrganisationseinheit">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.SonstigerVersorgungsfall.FachlicheOrganisationseinheit" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="BackboneElement" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.SonstigerVersorgungsfall.FachlicheOrganisationseinheit.Typ">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.SonstigerVersorgungsfall.FachlicheOrganisationseinheit.Typ" />
+      <definition value="Art der Organisationseinheit.&#xD;&#xA;Comment: Zum Beispiel: Fachabteilung im Krankenhaus, Versicherungsunternehmen, Sponsor&#xD;&#xA;e.g Hospital Department" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="code" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/code" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.SonstigerVersorgungsfall.FachlicheOrganisationseinheit.Organisationsschluessel">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.SonstigerVersorgungsfall.FachlicheOrganisationseinheit.Organisationsschluessel" />
+      <short value="erminology: Anhang 1 der BPflV (31.12.2003)" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="code" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/code" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.SonstigerVersorgungsfall.FachlicheOrganisationseinheit.Name">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.SonstigerVersorgungsfall.FachlicheOrganisationseinheit.Name" />
+      <short value="Bezeichnung für die Organisationseinheit" />
+      <definition value="Bezeichnung für die Organisationseinheit" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.SonstigerVersorgungsfall.FachlicheOrganisationseinheit.AktivInaktiv">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.SonstigerVersorgungsfall.FachlicheOrganisationseinheit.AktivInaktiv" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="boolean" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/boolean" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.SonstigerVersorgungsfall.FachlicheOrganisationseinheit.ZusaetzlicheBeschreibung">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.SonstigerVersorgungsfall.FachlicheOrganisationseinheit.ZusaetzlicheBeschreibung" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/string" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.SonstigerVersorgungsfall.Versorgungsaufenthalt">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.SonstigerVersorgungsfall.Versorgungsaufenthalt" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="BackboneElement" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.SonstigerVersorgungsfall.Versorgungsaufenthalt.Beginn">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.SonstigerVersorgungsfall.Versorgungsaufenthalt.Beginn" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="dateTime" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/dateTime" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.SonstigerVersorgungsfall.Versorgungsaufenthalt.Ende">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.SonstigerVersorgungsfall.Versorgungsaufenthalt.Ende" />
+      <definition value="Zeitliches Ende des Aufenthaltes am beschriebenen Ort." />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="dateTime" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/dateTime" />
+      </type>
+    </element>
+    <element id="UseCaseInfectionControl.Bewegungsdaten.SonstigerVersorgungsfall.Versorgungsaufenthalt.GrunddesAufenthaltes">
+      <path value="UseCaseInfectionControl.Bewegungsdaten.SonstigerVersorgungsfall.Versorgungsaufenthalt.GrunddesAufenthaltes" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="CodeableConcept" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/CodeableConcept" />
+      </type>
+    </element>
+  </differential>
+</StructureDefinition>

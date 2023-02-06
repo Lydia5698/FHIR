@@ -1,0 +1,13 @@
+{
+  "name": "project",
+  "version": "0.1.0",
+  "description": "Put a description here",
+  "fhirVersions": [
+    "4.0.1"
+  ],
+  "dependencies": {
+    "de.medizininformatikinitiative.kerndatensatz.laborbefund": "1.0.7-alpha1",
+    "de.medizininformatikinitiative.kerndatensatz.diagnose": "1.0.4",
+    "de.medizininformatikinitiative.kerndatensatz.person": "1.0.16"
+  }
+}

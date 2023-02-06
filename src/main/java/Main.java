@@ -14,5 +14,11 @@ public class Main {
         Script script = new Script(inputFolder, outputFilename);
         script.ausgabe();
 
+        //Fhir fhir = new Fhir();
+        //fhir.saveToFhir();
+
+        //V2 v2 = new V2();
+        //v2.ausgabe();
+
     }
 }

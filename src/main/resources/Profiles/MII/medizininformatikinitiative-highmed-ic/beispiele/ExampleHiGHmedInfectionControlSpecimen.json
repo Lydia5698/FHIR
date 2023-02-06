@@ -1,0 +1,40 @@
+{
+  "resourceType": "Specimen",
+  "id": "ExampleHiGHmedInfectionControlSpecimen",
+  "meta": {
+    "profile": [
+      "http://highmed.org/fhir/StructureDefinition/ic/Specimen"
+    ]
+  },
+  "accessionIdentifier": {
+    "system": "https://www.charite.de/fhir/CodeSystem/lab-identifiers",
+    "assigner": {
+      "reference": "Organization/Charite"
+    }
+  },
+  "status": "available",
+  "type": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "257261003",
+        "display": "Swab (specimen)"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/ExampleHiGHmedInfectionControlPatient"
+  },
+  "collection": {
+    "collectedDateTime": "2021-05-16T08:49:21+02:00",
+    "bodySite": {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "53505006",
+          "display": "Anal structure (body structure)"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,158 @@
+<ImplementationGuide xmlns="http://hl7.org/fhir">
+  <url value="/guide/HiGHmed-InfectionControl-ImplementationGuide?version=current" />
+  <name value="HiGHmed - Infection Control - ImplementationGuide" />
+  <status value="draft" />
+  <fhirVersion value="4.0.0" />
+  <definition>
+    <page>
+      <nameUrl value="IGUseCaseInfectionControl.md" />
+      <title value="IG Use Case Infection Control" />
+      <generation value="markdown" />
+      <page>
+        <nameUrl value="HiGHmed-duplicate-2.md" />
+        <title value="HiGHmed" />
+        <generation value="markdown" />
+      </page>
+      <page>
+        <nameUrl value="BeschreibungUseCase.md" />
+        <title value="Beschreibung Use Case" />
+        <generation value="markdown" />
+      </page>
+      <page>
+        <nameUrl value="Referenzen.md" />
+        <title value="Referenzen" />
+        <generation value="markdown" />
+      </page>
+      <page>
+        <nameUrl value="Datenstzeinkl.Beschreibungen.md" />
+        <title value="Datensätze inkl. Beschreibungen" />
+        <generation value="markdown" />
+      </page>
+      <page>
+        <nameUrl value="TechnischeImplementierung.md" />
+        <title value="Technische Implementierung" />
+        <generation value="markdown" />
+        <page>
+          <nameUrl value="FHIRProfile.md" />
+          <title value="FHIR Profile" />
+          <generation value="markdown" />
+          <page>
+            <nameUrl value="Person-Patient.md" />
+            <title value="Person - Patient" />
+            <generation value="markdown" />
+          </page>
+          <page>
+            <nameUrl value="Person-Heilberufler.md" />
+            <title value="Person - Heilberufler" />
+            <generation value="markdown" />
+          </page>
+          <page>
+            <nameUrl value="Prozedur-Procedure.md" />
+            <title value="Prozedur - Procedure" />
+            <generation value="markdown" />
+          </page>
+          <page>
+            <nameUrl value="Diagnose-Condition.md" />
+            <title value="Diagnose - Condition" />
+            <generation value="markdown" />
+            <page>
+              <nameUrl value="LetztesDokumentationsdatum-Provenance.md" />
+              <title value="Letztes Dokumentationsdatum - Provenance" />
+              <generation value="markdown" />
+            </page>
+          </page>
+          <page>
+            <nameUrl value="Probendetails-Specimen.md" />
+            <title value="Probendetails - Specimen" />
+            <generation value="markdown" />
+          </page>
+          <page>
+            <nameUrl value="Standort-Organization.md" />
+            <title value="Standort - Organization" />
+            <generation value="markdown" />
+          </page>
+          <page>
+            <nameUrl value="Versorgungsort-Location.md" />
+            <title value="Versorgungsort - Location" />
+            <generation value="markdown" />
+          </page>
+          <page>
+            <nameUrl value="Befund-DiagnosticReport.md" />
+            <title value="Befund - DiagnosticReport" />
+            <generation value="markdown" />
+          </page>
+          <page>
+            <nameUrl value="MikrobiologischerBefund.md" />
+            <title value="Mikrobiologischer Befund" />
+            <generation value="markdown" />
+            <page>
+              <nameUrl value="Kulturdiagnostik---Observation.md" />
+              <title value="Kulturdiagnostik - Observation" />
+              <generation value="markdown" />
+              <page>
+                <nameUrl value="Virulenzfaktor-Observation.md" />
+                <title value="Virulenzfaktor - Observation" />
+                <generation value="markdown" />
+              </page>
+              <page>
+                <nameUrl value="Keimzahl-Observation.md" />
+                <title value="Keimzahl - Observation" />
+                <generation value="markdown" />
+              </page>
+              <page>
+                <nameUrl value="Resistenzmechanismus-Observation.md" />
+                <title value="Resistenzmechanismus - Observation" />
+                <generation value="markdown" />
+              </page>
+              <page>
+                <nameUrl value="Antibiogramm-Panel-Observation.md" />
+                <title value="Antibiogramm-Panel - Observation" />
+                <generation value="markdown" />
+                <page>
+                  <nameUrl value="MREKlasse-Observation.md" />
+                  <title value="MRE Klasse - Observation" />
+                  <generation value="markdown" />
+                </page>
+                <page>
+                  <nameUrl value="AntiinfektivaResistenz-Observation.md" />
+                  <title value="Antiinfektiva Resistenz - Observation" />
+                  <generation value="markdown" />
+                </page>
+              </page>
+            </page>
+          </page>
+          <page>
+            <nameUrl value="VirologischerSerologischerBefund.md" />
+            <title value="Virologischer / Serologischer Befund" />
+            <generation value="markdown" />
+            <page>
+              <nameUrl value="Molekulare-Diganostik---Observation.md" />
+              <title value="Molekulare Diganostik - Observation" />
+              <generation value="markdown" />
+            </page>
+            <page>
+              <nameUrl value="Serologische-Diagnostik---Observation.md" />
+              <title value="Serologische Diagnostik - Observation" />
+              <generation value="markdown" />
+            </page>
+          </page>
+          <page>
+            <nameUrl value="DetailsderTestanforderung-ServiceRequest.md" />
+            <title value="Details der Testanforderung - ServiceRequest" />
+            <generation value="markdown" />
+          </page>
+          <page>
+            <nameUrl value="Bewegungsdaten-Encounter.md" />
+            <title value="Bewegungsdaten - Encounter" />
+            <generation value="markdown" />
+          </page>
+        </page>
+        <page>
+          <nameUrl value="Terminologien.md" />
+          <title value="Terminologien" />
+          <generation value="markdown" />
+        </page>
+      </page>
+    </page>
+  </definition>
+</ImplementationGuide>

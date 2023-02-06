@@ -6,14 +6,13 @@ import ca.uhn.hl7v2.model.Type;
 import ca.uhn.hl7v2.model.Varies;
 import ca.uhn.hl7v2.model.v25.datatype.ST;
 import ca.uhn.hl7v2.model.v25.group.ORU_R01_ORDER_OBSERVATION;
+import ca.uhn.hl7v2.model.v25.group.ORU_R01_PATIENT_RESULT;
 import ca.uhn.hl7v2.model.v25.message.ORU_R01;
 import ca.uhn.hl7v2.model.v25.segment.OBX;
 import ca.uhn.hl7v2.parser.Parser;
+import ca.uhn.hl7v2.util.Hl7InputStreamMessageIterator;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.Writer;
+import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -76,30 +75,18 @@ public class Script {
                     // When there are more than one OBX,OBR,ORC
                     for (int j = 0; j < maximumRepetition; j++) {
                         if (!oruR01.getPATIENT_RESULT().getORDER_OBSERVATION(j).isEmpty()) {
-                            orderObservation = oruR01.getPATIENT_RESULT().getORDER_OBSERVATION(j);
-                            OBX obx = orderObservation.getOBSERVATION().getOBX();
-                            String identifier = "";
-                            for (int n = 0; n < obx.getObservationValue().length; n++) {
-                                Varies observationValue = obx.getObservationValue(n);
-                                Type data = observationValue.getData();
-                                String encoded;
-                                //noinspection SwitchStatementWithTooFewBranches
-                                switch (obx.getValueType().getValue()) {
-                                    case "ST":
-                                        encoded = ((ST)data).getValue();
-                                        break;
-                                    default:
-                                        encoded = obx.getObservationValue(n).encode();
-                                        break;
+                            for (ORU_R01_PATIENT_RESULT patient_result : oruR01.getPATIENT_RESULTAll()) {
+                                orderObservation = patient_result.getORDER_OBSERVATION(j);
+                                OBX obx = orderObservation.getOBSERVATION().getOBX();
+                                String identifier = obx.getObservationIdentifier().encode();
+
+                                if (!contentList.contains(identifier)) {
+                                    contentList.add(identifier);
+                                    writer.write(identifier);
+                                    writer.write("\n");
+                                    writer.flush(); // the output file is buffered, and only occasionally written to file
+                                    // we want to be able to track the progress while it's running.
                                 }
-                                identifier = identifier.concat(encoded);
-                            }
-                            if (!contentList.contains(identifier)) {
-                                contentList.add(identifier);
-                                writer.write(identifier);
-                                writer.write("\n");
-                                writer.flush(); // the output file is buffered, and only occasionally written to file
-                                // we want to be able to track the progress while it's running.
                             }
                         }
                     }

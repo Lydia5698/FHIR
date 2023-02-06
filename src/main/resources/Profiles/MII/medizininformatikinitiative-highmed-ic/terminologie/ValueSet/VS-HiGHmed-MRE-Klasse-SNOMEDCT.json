@@ -1,0 +1,60 @@
+{
+  "resourceType": "ValueSet",
+  "id": "VS-HiGHmed-Mikrobiologischer-Befund-MRE-Klasse",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
+    ]
+  },
+  "url": "http://highmed.org/fhir/ValueSet/ic/mre-klassen",
+  "version": "1.0.0",
+  "name": "VS_HiGHmed_Mikrobiologischer_Befund_MRE_Klasse_LOINC_SNOMEDCT",
+  "title": "VS HiGHmed Mikrobiologischer Befund MRE Klasse [LOINC, SNOMED CT]",
+  "status": "active",
+  "experimental": false,
+  "publisher": "http://highmed.org",
+  "description": "Bezeichnungen für Klassen von Multiresistenten Erregern (MRE).",
+  "immutable": false,
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "115329001",
+            "display": "MRSA"
+          },
+          {
+            "code": "113727004",
+            "display": "VRE"
+          },
+          {
+            "code": "838511009",
+            "display": "LVRE"
+          },
+          {
+            "code": "838510005",
+            "display": "LRE"
+          }
+        ]
+      },
+      {
+        "system": "http://loinc.org",
+        "concept": [
+          {
+            "code": "LA33214-0",
+            "display": "2MRGN"
+          },
+          {
+            "code": "LA33215-7",
+            "display": "3MRGN"
+          },
+          {
+            "code": "LA33216-5",
+            "display": "4MRGN"
+          }
+        ]
+      }
+    ]
+  }
+}

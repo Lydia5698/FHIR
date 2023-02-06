@@ -1,0 +1,43 @@
+<ValueSet xmlns="http://hl7.org/fhir">
+  <meta>
+    <profile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset" />
+  </meta>
+  <url value="http://highmed.org/fhir/ValueSet/ic/probenentnahmestelle-anatomische-lokalisation-snomedct" />
+  <version value="0.9" />
+  <name value="Körperstelle" />
+  <title value="ValueSet UCIC Lokalisation" />
+  <status value="draft" />
+  <experimental value="true" />
+  <date value="2020-03-20" />
+  <publisher value="https://www.medizininformatik-initiative.de" />
+  <description value="Defines codes for specimen body sites for HiGHmed Use Case Infection Control." />
+  <compose>
+    <include>
+      <system value="http://snomed.info/sct" />
+      <concept>
+        <code value="53505006" />
+        <display value=" Anal structure (body structure)" />
+      </concept>
+      <concept>
+        <code value="45206002" />
+        <display value=" Nasal structure (body structure)" />
+      </concept>
+      <concept>
+        <code value="400112001" />
+        <display value=" Nose and nasopharynx structure (body structure)" />
+      </concept>
+      <concept>
+        <code value="54066008" />
+        <display value="Pharyngeal structure (body structure)" />
+      </concept>
+      <concept>
+        <code value="34402009" />
+        <display value="Rectum structure (body structure)" />
+      </concept>
+      <concept>
+        <code value="51114001" />
+        <display value="Arterial structure (body structure)" />
+      </concept>
+    </include>
+  </compose>
+</ValueSet>

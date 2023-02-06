@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: ca.uhn.hapi.fhir:org.hl7.fhir.utilities:5.6.92">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/ca/uhn/hapi/fhir/org.hl7.fhir.utilities/5.6.92/org.hl7.fhir.utilities-5.6.92.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/ca/uhn/hapi/fhir/org.hl7.fhir.utilities/5.6.92/org.hl7.fhir.utilities-5.6.92-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/ca/uhn/hapi/fhir/org.hl7.fhir.utilities/5.6.92/org.hl7.fhir.utilities-5.6.92-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

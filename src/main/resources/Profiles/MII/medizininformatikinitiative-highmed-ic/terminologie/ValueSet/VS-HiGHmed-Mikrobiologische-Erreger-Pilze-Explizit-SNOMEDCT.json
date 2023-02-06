@@ -1,0 +1,240 @@
+{
+  "resourceType": "ValueSet",
+  "id": "VS-HiGHmed-Mikrobiologische-Erreger-Pilze-Explizit-SNOMEDCT",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
+    ]
+  },
+  "url": "http://highmed.org/fhir/ValueSet/ic/mikrobiologische-erreger-pilze-snomedct-explizit",
+  "version": "1.0.0",
+  "name": "VS_HiGHmed_Mikrobiologische_Erreger_Pilze_Explizit_SNOMEDCT",
+  "title": "VS HiGHmed Mikrobiologische Erreger Pilze Explizit [SNOMED CT]",
+  "status": "active",
+  "experimental": false,
+  "publisher": "http://highmed.org",
+  "description": "A set of codes representing fungi (organism) which may be detected by a microbiology laboratory test.",
+  "immutable": false,
+  "copyright": "This artefact includes content from SNOMED Clinical Terms® (SNOMED CT®) which is copyright of the International Health Terminology Standards Development Organisation (IHTSDO). Implementers of these artefacts must have the appropriate SNOMED CT Affiliate license - for more information contact http://www.snomed.org/snomed-ct/getsnomed-ct or info@snomed.org.",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "3101000146105",
+            "display": "Aspergillus brasiliensis (organism);"
+          },
+          {
+            "code": "66821001",
+            "display": "Aspergillus flavus (organism);"
+          },
+          {
+            "code": "243491003",
+            "display": "Aspergillus flavus group (organism);"
+          },
+          {
+            "code": "32684000",
+            "display": "Aspergillus fumigatus (organism);"
+          },
+          {
+            "code": "719029007",
+            "display": "Aspergillus fumigatus species complex (organism);"
+          },
+          {
+            "code": "19556009",
+            "display": "Aspergillus glaucus;"
+          },
+          {
+            "code": "414835000",
+            "display": "Neosartorya hiratsukae (organism);"
+          },
+          {
+            "code": "60264008",
+            "display": "Aspergillus nidulans (organism);"
+          },
+          {
+            "code": "415879008",
+            "display": "Aspergillus nidulans Group (organism);"
+          },
+          {
+            "code": "89354002",
+            "display": "Aspergillus niger (organism);"
+          },
+          {
+            "code": "243494006",
+            "display": "Aspergillus niger group (organism);"
+          },
+          {
+            "code": "18651002",
+            "display": "Aspergillus niveus (organism);"
+          },
+          {
+            "code": "60111002",
+            "display": "Aspergillus ochraceus (organism);"
+          },
+          {
+            "code": "2429008",
+            "display": "Aspergillus (organism);"
+          },
+          {
+            "code": "413584009",
+            "display": "Aspergillus species not Aspergillus fumigatus (organism);"
+          },
+          {
+            "code": "46388006",
+            "display": "Aspergillus sydowii (organism);"
+          },
+          {
+            "code": "3111000146107",
+            "display": "Aspergillus tamarii (organism);"
+          },
+          {
+            "code": "26406003",
+            "display": "Aspergillus terreus (organism);"
+          },
+          {
+            "code": "243500005",
+            "display": "Aspergillus terreus group (organism);"
+          },
+          {
+            "code": "23179008",
+            "display": "Aspergillus ustus (organism);"
+          },
+          {
+            "code": "48315007",
+            "display": "Aspergillus versicolor (organism);"
+          },
+          {
+            "code": "53326005",
+            "display": "Candida albicans (organism);"
+          },
+          {
+            "code": "3491000146109",
+            "display": "Candida auris (organism);"
+          },
+          {
+            "code": "115952006",
+            "display": "Candida dubliniensis (organism);"
+          },
+          {
+            "code": "444877006",
+            "display": "Candida glabrata (organism);"
+          },
+          {
+            "code": "16557001",
+            "display": "Candida guilliermondii (organism);"
+          },
+          {
+            "code": "283871001",
+            "display": "Candida inconspicua (organism);"
+          },
+          {
+            "code": "446237006",
+            "display": "Candida kefyr (organism);"
+          },
+          {
+            "code": "76995003",
+            "display": "Candida krusei (organism);"
+          },
+          {
+            "code": "47608006",
+            "display": "Candida lusitaniae (organism);"
+          },
+          {
+            "code": "446239009",
+            "display": "Candida magnoliae (organism);"
+          },
+          {
+            "code": "243458007",
+            "display": "Candida norvegensis (organism);"
+          },
+          {
+            "code": "61302002",
+            "display": "Candida parapsilosis (organism);"
+          },
+          {
+            "code": "717979000",
+            "display": "Candida parapsilosis complex (organism);"
+          },
+          {
+            "code": "23773004",
+            "display": "Candida rugosa (organism);"
+          },
+          {
+            "code": "3265006",
+            "display": "Genus Candida (organism);"
+          },
+          {
+            "code": "714313009",
+            "display": "Candida species not Candida albicans (organism);"
+          },
+          {
+            "code": "47885008",
+            "display": "Candida tropicalis (organism);"
+          },
+          {
+            "code": "243464000",
+            "display": "Candida utilis (organism);"
+          },
+          {
+            "code": "20586007",
+            "display": "Wangiella dermatitidis (organism);"
+          },
+          {
+            "code": "115651002",
+            "display": "Dermatophyte (organism);"
+          },
+          {
+            "code": "41625002",
+            "display": "Geotrichum candidum (organism);"
+          },
+          {
+            "code": "67999003",
+            "display": "Saprochaete capitata (organism);"
+          },
+          {
+            "code": "34324005",
+            "display": "Genus Geotrichum (organism);"
+          },
+          {
+            "code": "62093005",
+            "display": "Yeast (organism);"
+          },
+          {
+            "code": "42993004",
+            "display": "Penicillium (organism);"
+          },
+          {
+            "code": "4163004",
+            "display": "Genus Pichia (organism);"
+          },
+          {
+            "code": "79909001",
+            "display": "Pneumocystis jirovecii (organism);"
+          },
+          {
+            "code": "86724009",
+            "display": "Rhodotorula rubra (organism);"
+          },
+          {
+            "code": "84489001",
+            "display": "Mold (organism);"
+          },
+          {
+            "code": "76040007",
+            "display": "Trichophyton mentagrophytes var. interdigitale (organism);"
+          },
+          {
+            "code": "58296003",
+            "display": "Saccharomyces cerevisiae (organism);"
+          },
+          {
+            "code": "442943004",
+            "display": "Zygosaccharomyces bailii (organism);"
+          }
+        ]
+      }
+    ]
+  }
+}

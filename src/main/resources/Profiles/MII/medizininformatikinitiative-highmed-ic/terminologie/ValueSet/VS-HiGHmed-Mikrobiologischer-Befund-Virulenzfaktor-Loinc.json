@@ -1,0 +1,48 @@
+{
+  "resourceType": "ValueSet",
+  "id": "VS-HiGHmed-Mikrobiologischer-Befund-Virulenzfaktor-Loinc",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
+    ]
+  },
+  "url": "http://highmed.org/fhir/ValueSet/ic/virulenzfaktor",
+  "version": "1.0",
+  "name": "VS_HiGHmed_Mikrobiologischer_Befund_Virulenzfaktor_Loinc",
+  "title": "VS HiGHmed Mikrobiologischer Befund Virulenzfaktor [LOINC]",
+  "status": "active",
+  "experimental": false,
+  "publisher": "http://highmed.org",
+  "description": "A set of codes representing tests concerning bacterial virulence",
+  "immutable": false,
+  "copyright": "This content LOINC® is copyright © 1995 Regenstrief Institute, Inc. and the LOINC Committee, and available at no cost under the license at http://loinc.org/terms-of-use",
+  "compose": {
+    "include": [
+      {
+        "system": "http://loinc.org",
+        "concept": [
+          {
+            "code": "79387-7",
+            "display": "Escherichia coli Stx2 toxin stx2 gene [Presence] in Stool by NAA with probe detection"
+          },
+          {
+            "code": "79386-9",
+            "display": "Escherichia coli Stx1 toxin stx1 gene [Presence] in Stool by NAA with probe detection"
+          },
+          {
+            "code": "10895-1",
+            "display": "Clostridioides difficile toxin B [Presence] in Stool"
+          },
+          {
+            "code": "13957-6",
+            "display": "Clostridioides difficile toxin A [Presence] in Stool by Immunoassay"
+          },
+          {
+            "code": "48816-3",
+            "display": "Staphylococcus aureus Panton-Valentine leukocidin gene [Presence] in Unspecified specimen by NAA with probe detection"
+          }
+        ]
+      }
+    ]
+  }
+}

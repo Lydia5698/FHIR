@@ -1,0 +1,90 @@
+{
+  "resourceType": "Observation",
+  "id": "ExampleHiGHmedInfectionControlObservationErregerNachweis",
+  "meta": {
+    "profile": [
+      "http://highmed.org/fhir/StructureDefinition/ic/Kulturdiagnostik"
+    ]
+  },
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "OBI"
+          }
+        ]
+      },
+      "system": "http://example.org/fhir/sid/obi",
+      "value": "012345678890",
+      "assigner": {
+        "reference": "Organization/ExampleHiGHmedInfectionControlOrganization"
+      }
+    }
+  ],
+  "status": "final",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://loinc.org",
+          "code": "26436-6"
+        },
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory"
+        },
+        {
+          "system": "http://loinc.org",
+          "code": "18725-2"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "11475-1"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/ExampleHiGHmedInfectionControlPatient"
+  },
+  "effectiveDateTime": "2021-05-16T08:49:21+02:00",
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "260373001"
+      }
+    ]
+  },
+  "specimen": {
+    "reference": "Specimen/ExampleHiGHmedInfectionControlSpecimen"
+  },
+  "component": [
+    {
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "6584-7",
+            "display": "Virus identified in Specimen by Culture"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "840533007",
+            "display": "Severe acute respiratory syndrome coronavirus 2 (organism)"
+          }
+        ]
+      }
+    }
+  ]
+}
