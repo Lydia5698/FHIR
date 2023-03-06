@@ -1,0 +1,164 @@
+{
+  "resourceType": "ConceptMap",
+  "id": "?",
+  "meta": {
+    "versionId": "1",
+    "lastUpdated": "2023-03-01T16:27:45.053+00:00",
+    "source": "?",
+    "profile": [ "?" ]
+  },
+  "text": {
+    "status": "generated",
+    "div": "?"
+  },
+  "url": "http://highmed.org/fhir/ConceptMap/highmed-ucic-hl7-virobefund-0085-openehr",
+  "version": "20211004",
+  "name": "Highmed_ucic_hl7_virobefund_0085_openehr",
+  "title": "HiGHmed UCIC Viro-Befund Analyt Status [HL7v2 0085 -> openEHR]",
+  "status": "draft",
+  "publisher": "UKSH MeDIC",
+  "contact": [ {
+    "telecom": [ {
+      "system": "url",
+      "value": "medicsh.de"
+    } ]
+  }, {
+    "telecom": [ {
+      "system": "email"
+    } ]
+  } ],
+  "sourceCanonical": "http://terminology.hl7.org/CodeSystem/v2-0085",
+  "targetCanonical": "http://highmed.org/fhir/ValueSet/highmed-ucic-viro-analyt-status",
+  "group": [ {
+    "source": "http://terminology.hl7.org/CodeSystem/v2-0085",
+    "sourceVersion": "2.5.0",
+    "target": "http://highmed.org/fhir/CodeSystem/highmed-ucic-viro-analyt-status",
+    "targetVersion": "20211004",
+    "element": [ {
+      "code": "C",
+      "display": "Korrektur bereits gemeldeter Ergebnisse",
+      "target": [ {
+        "code": "at0019",
+        "display": "Endbefund, korrigiert",
+        "equivalence": "equivalent"
+      } ]
+    }, {
+      "code": "A",
+      "display": "Geändert auf der Grundlage von Anpassungen",
+      "target": [ {
+        "code": "",
+        "display": "",
+        "equivalence": ""
+      } ]
+    }, {
+      "code": "B",
+      "display": "Anhängender Bericht",
+      "target": [ {
+        "code": "",
+        "display": "",
+        "equivalence": ""
+      } ]
+    }, {
+      "code": "C",
+      "display": "Korrektur ersetzt ein Endergebnis.",
+      "target": [ {
+        "code": "",
+        "display": "",
+        "equivalence": ""
+      } ]
+    }, {
+      "code": "D",
+      "display": "Gemeldete Ergebnisse löschen",
+      "target": [ {
+        "code": "at0023",
+        "display": "Storniert",
+        "equivalence": "wider"
+      } ]
+    }, {
+      "code": "F",
+      "display": "Endergebnis",
+      "target": [ {
+        "code": "at0018",
+        "display": "Endbefund",
+        "equivalence": "equivalent"
+      } ]
+    }, {
+      "code": "I",
+      "display": "Probe im Labor - Ergebnisse stehen an",
+      "target": [ {
+        "code": "at0015",
+        "display": "Erfasst",
+        "equivalence": "equivalent"
+      } ]
+    }, {
+      "code": "N",
+      "display": "ungefragte Übertragung",
+      "target": [ {
+        "equivalence": "unmatched",
+        "comment": "\"\tNot asked; used to affirmatively document that the observation identified in the OBX was not sought when the universal service ID in OBR-4 implies that it would be sought.\" ist kein Status per se"
+      } ]
+    }, {
+      "code": "O",
+      "display": "Anforderungsbeschreibung (ohne Ergebnisse)",
+      "target": [ {
+        "equivalence": "unmatched"
+      } ]
+    }, {
+      "code": "P",
+      "display": "Vorläufige Ergebnisse",
+      "target": [ {
+        "code": "at0017",
+        "display": "Vorläufig",
+        "equivalence": "equivalent"
+      } ]
+    }, {
+      "code": "R",
+      "display": "Nicht validierte Ergebnisse",
+      "target": [ {
+        "code": "at0016",
+        "display": "Unvollständig",
+        "equivalence": "wider"
+      } ]
+    }, {
+      "code": "S",
+      "display": "Teilergebnisse",
+      "target": [ {
+        "code": "at0016",
+        "display": "Unvollständig",
+        "equivalence": "wider"
+      } ]
+    }, {
+      "code": "V",
+      "display": "Verifiziert",
+      "target": [ {
+        "code": "",
+        "display": "",
+        "equivalence": ""
+      } ]
+    }, {
+      "code": "U",
+      "display": "Vorläufiges Ergebnis wird Endergebnis, da keine Änderung",
+      "target": [ {
+        "code": "at0018",
+        "display": "Endbefund",
+        "equivalence": "wider"
+      } ]
+    }, {
+      "code": "W",
+      "display": "fehlerhafte Übertragung",
+      "target": [ {
+        "code": "at0022",
+        "display": "Endbefund, widerrufen",
+        "equivalence": "equivalent"
+      } ]
+    }, {
+      "code": "X",
+      "display": "Untersuchung führt zu keinem Ergebnis",
+      "target": [ {
+        "code": "at0023",
+        "display": "Storniert",
+        "equivalence": "wider"
+      } ]
+    } ]
+  } ]
+}
