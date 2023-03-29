@@ -1,0 +1,150 @@
+{
+  "resourceType": "ConceptMap",
+  "id": "mibi2fhir-0085-fhir",
+  "meta": {
+    "versionId": "1",
+    "lastUpdated": "2023-03-21T14:56:45.053+00:00"
+  },
+  "url": "https://fhir.imi.uni-luebeck.de/mibi2fhir/ConceptMap",
+  "version": "20211004",
+  "name": "mibi2fhir-0085-fhir",
+  "title": "Observation Result Status [HL7v2 0085 -> Fhir]",
+  "status": "draft",
+  "publisher": " ",
+  "contact": [ {
+    "telecom": [ {
+      "system": "url",
+      "value": " "
+    } ]
+  }, {
+    "telecom": [ {
+      "system": "email"
+    } ]
+  } ],
+  "sourceCanonical": "https://hl7.org/fhir/ValueSet/observation-status",
+  "targetCanonical": "https://fhir.imi.uni-luebeck.de/mibi2fhir/ValueSet/observation-result-status",
+  "group": [ {
+    "source": "https://terminology.hl7.org/CodeSystem/v2-0085",
+    "sourceVersion": "2.5.0",
+    "target": "https://fhir.imi.uni-luebeck.de/mibi2fhir/CodeSystem/observation-result-status",
+    "targetVersion": "20211004",
+    "element": [ {
+      "code": "C",
+      "display": "Korrektur bereits gemeldeter Ergebnisse",
+      "target": [ {
+        "code": "corrected",
+        "display": "Corrected",
+        "equivalence": "equivalent"
+      } ]
+    }, {
+      "code": "A",
+      "display": "Geändert auf der Grundlage von Anpassungen",
+      "target": [ {
+        "code": "amended",
+        "display": "Amended",
+        "equivalence": "equivalent"
+      } ]
+    }, {
+      "code": "B",
+      "display": "Anhängender Bericht",
+      "target": [ {
+        "code": "amended",
+        "display": "Amended",
+        "equivalence": "wider"
+      } ]
+    }, {
+      "code": "D",
+      "display": "Gemeldete Ergebnisse löschen",
+      "target": [ {
+        "code": "cancelled",
+        "display": "Cancelled",
+        "equivalence": "wider"
+      } ]
+    }, {
+      "code": "F",
+      "display": "Endergebnis",
+      "target": [ {
+        "code": "final",
+        "display": "Final",
+        "equivalence": "equivalent"
+      } ]
+    }, {
+      "code": "I",
+      "display": "Probe im Labor - Ergebnisse stehen an",
+      "target": [ {
+        "code": "registered",
+        "display": "Registered",
+        "equivalence": "equivalent"
+      } ]
+    }, {
+      "code": "N",
+      "display": "ungefragte Übertragung",
+      "target": [ {
+        "equivalence": "unmatched",
+        "comment": "\"\tNot asked; used to affirmatively document that the observation identified in the OBX was not sought when the universal service ID in OBR-4 implies that it would be sought.\" ist kein Status per se"
+      } ]
+    }, {
+      "code": "O",
+      "display": "Anforderungsbeschreibung (ohne Ergebnisse)",
+      "target": [ {
+        "equivalence": "unmatched"
+      } ]
+    }, {
+      "code": "P",
+      "display": "Vorläufige Ergebnisse",
+      "target": [ {
+        "code": "preliminary",
+        "display": "Preliminary",
+        "equivalence": "equivalent"
+      } ]
+    }, {
+      "code": "R",
+      "display": "Nicht validierte Ergebnisse",
+      "target": [ {
+        "code": "preliminary",
+        "display": "Preliminary",
+        "equivalence": "wider"
+      } ]
+    }, {
+      "code": "S",
+      "display": "Teilergebnisse",
+      "target": [ {
+        "code": "preliminary",
+        "display": "Preliminary",
+        "equivalence": "wider"
+      } ]
+    }, {
+      "code": "V",
+      "display": "Verifiziert",
+      "target": [ {
+        "code": "final",
+        "display": "Final",
+        "equivalence": "wider"
+      } ]
+    }, {
+      "code": "U",
+      "display": "Vorläufiges Ergebnis wird Endergebnis, da keine Änderung",
+      "target": [ {
+        "code": "final",
+        "display": "Final",
+        "equivalence": "wider"
+      } ]
+    }, {
+      "code": "W",
+      "display": "fehlerhafte Übertragung",
+      "target": [ {
+        "code": "entered-in-error",
+        "display": "Entered in Error",
+        "equivalence": "equivalent"
+      } ]
+    }, {
+      "code": "X",
+      "display": "Untersuchung führt zu keinem Ergebnis",
+      "target": [ {
+        "code": "cancelled",
+        "display": "Cancelled",
+        "equivalence": "wider"
+      } ]
+    } ]
+  } ]
+}
