@@ -15,12 +15,12 @@ import ca.uhn.hl7v2.model.v25.message.ORU_R01;
 import ca.uhn.hl7v2.model.v25.segment.OBX;
 import ca.uhn.hl7v2.parser.Parser;
 import com.jayway.jsonpath.JsonPath;
-import net.minidev.json.JSONArray;
 import net.minidev.json.parser.JSONParser;
 import net.minidev.json.parser.ParseException;
 import org.apache.commons.lang3.ArrayUtils;
 import org.hl7.fhir.r4.model.*;
 import org.json.JSONObject;
+import org.json.JSONArray;
 
 
 import java.io.File;
@@ -50,7 +50,7 @@ public class Fhir {
         String hl7String = Files.readString(path, StandardCharsets.ISO_8859_1);
         Message message = p.parse(hl7String);
         ORU_R01 oruR01 = (ORU_R01) p.parse(message.encode());
-        saveToFhir(oruR01, "src/main/resources/outputs/Directory1");
+        saveToFhir(oruR01, "/Users/lydia/Desktop/Uni/6 Semester/BA Script/src/main/resources/outputs/Directory1");
     }
     public void saveToFhir(ORU_R01 oruR01, String path) throws IOException, HL7Exception {
         File directory = new File(path);
@@ -76,7 +76,7 @@ public class Fhir {
         parentObservation.getMeta().addProfile("https://highmed.org/fhir/StructureDefinition/ic/Kulturdiagnostik&scope=MedizininformatikInitiative-HiGHmed-IC@current");
 
         while (!orderObservation.isEmpty()) {
-            File childFile = new File(path + "/" + orderObservationCount + ".json");
+            File childFile = new File(path + "/child" + orderObservationCount + ".json");
             FileWriter fileWriter = null;
             try {
                 Observation childObservation;
@@ -101,7 +101,9 @@ public class Fhir {
                 ioException.printStackTrace();
             } finally {
                 try {
-                    fileWriter.close();
+                    if (fileWriter != null){
+                        fileWriter.close();
+                    }
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -174,7 +176,7 @@ public class Fhir {
             }
             // OBX.8 Abnormal Flags "https://r4.ontoserver.csiro.au/fhir/CodeSystem/v2-0078?_format=application/fhir+json"
             if (!ArrayUtils.isEmpty(stringArray)) {
-                interpretation.addCoding().setSystem("Abnormal Flags").setCode(stringArray[0]).setDisplay(checkWithOntoserver("abnormal", stringArray[0]).toString().replaceAll("[^a-zA-Z]", ""));
+                interpretation.addCoding().setSystem("Abnormal Flags").setCode(stringArray[0]).setDisplay(checkWithOntoserver("abnormal", stringArray[0]));
             }
             childObservation.getComponent().get(rowCount).addInterpretation(interpretation);
             CodeableConcept code = new CodeableConcept();
@@ -196,8 +198,7 @@ public class Fhir {
      * @return Returns either all codes from the specific table (Example for Abnormal Flags: N,R,S,...) or all contents of the table for a specific code (Example for Abnormal Flags and Letter N: N,	Normal (applies to non-numeric results))
      * @throws IOException If no HTML connection is established
      */
-    public JSONArray checkWithOntoserver(String toCheck, String checkLetter) throws IOException {
-        JSONArray code = null;
+    public String checkWithOntoserver(String toCheck, String checkLetter) throws IOException {
         String fieldId = null; // TODO: 06.02.23 Vielleicht einen standard einbauen wegen null exception?
         switch (toCheck){
             case "abnormal":
@@ -220,6 +221,7 @@ public class Fhir {
         /**
          * read the json document from the URL
          */
+        JSONArray code;
         if (responseCode == 200) {
             StringBuilder response = new StringBuilder();
             Scanner scanner = new Scanner(connection.getInputStream());
@@ -228,31 +230,23 @@ public class Fhir {
                 response.append("\n");
             }
             scanner.close();
-            JSONParser parser = new JSONParser();
-            try {
-                Object object = parser
-                        .parse(response.toString());
+            JSONObject jsonObject = new JSONObject(response.toString());
 
-                //convert Object to JSONObject
-                JSONObject jsonObject = (JSONObject) object;
-                // All codes from Result Status OBR
-                switch (toCheck){
-                    // gets Display for Abnormal Flag OBX.8 where the code equals the gives Letter, Example Letter = N than Display would be = Normal
-                    case "abnormal":
-                        code = JsonPath.read(jsonObject, "$.concept[?(@.code =='" + checkLetter + "')].display");
-                        break;
-                    // gets all Codes
-                    default:
-                        code = JsonPath.read(jsonObject, "$.concept[*].code");
-                        break;
+            // All codes from Result Status OBR
+            // gets Display for Abnormal Flag OBX.8 where the code equals the gives Letter, Example Letter = N than Display would be = Normal
+            if (toCheck.equals("abnormal")) {
+                code = jsonObject.getJSONArray("concept");
+                for (int i = 0; i < code.length(); i++) {
+                    JSONObject element = code.getJSONObject(i);
+                    if (element.getString("code").equals(checkLetter)) {
+                        return element.getString("display");
+                    }
                 }
-
-
-            } catch (ParseException e) {
-                e.printStackTrace();
             }
+
+
         }
-        return code;
+        return null;
 
     }
 }
