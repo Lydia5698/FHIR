@@ -14,24 +14,20 @@ import ca.uhn.hl7v2.model.v25.group.ORU_R01_ORDER_OBSERVATION;
 import ca.uhn.hl7v2.model.v25.message.ORU_R01;
 import ca.uhn.hl7v2.model.v25.segment.OBX;
 import ca.uhn.hl7v2.parser.Parser;
-import com.jayway.jsonpath.JsonPath;
-import net.minidev.json.parser.JSONParser;
-import net.minidev.json.parser.ParseException;
 import org.apache.commons.lang3.ArrayUtils;
 import org.hl7.fhir.r4.model.*;
 import org.json.JSONObject;
 import org.json.JSONArray;
 
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.*;
+import java.util.stream.Stream;
 
 
 public class Fhir {
@@ -40,17 +36,17 @@ public class Fhir {
 // TODO: 16.02.23 baccor^Prevotella corporis^keim^5380 5380 lokaler Code
 // TODO: 29.03.23 Datum OBX.12 mit einfügen?
 
-// TODO: 13.02.23 Paths überprüfen
-
     HapiContext context = new DefaultHapiContext();
     Parser p = context.getPipeParser();
-    private MyConceptMap conceptMap = new MyConceptMap("http://localhost:8888/fhir/ConceptMap/1?_format=application/fhir+json");
-    public void ausgabe() throws HL7Exception, IOException  {
-        Path path = Path.of("src/main/resources/MiBi/multiple868");
+    private ConceptMapResultStatus conceptMap = new ConceptMapResultStatus("http://localhost:8888/fhir/ConceptMap/1?_format=application/fhir+json");
+
+    public void start(String startFolder, String outputFilename) throws HL7Exception, IOException  { // TODO umbauen um den startfile zu finden
+        String directoryName = "ObservationDirectory"; // TODO directory ersetzen
+        Path path = Path.of(startFolder +"/multiple868");
         String hl7String = Files.readString(path, StandardCharsets.ISO_8859_1);
         Message message = p.parse(hl7String);
         ORU_R01 oruR01 = (ORU_R01) p.parse(message.encode());
-        saveToFhir(oruR01, "/Users/lydia/Desktop/Uni/6 Semester/BA Script/src/main/resources/outputs/Directory1");
+        saveToFhir(oruR01, "src/main/resources/outputs/"+ directoryName);
     }
     public void saveToFhir(ORU_R01 oruR01, String path) throws IOException, HL7Exception {
         File directory = new File(path);
@@ -76,23 +72,27 @@ public class Fhir {
         parentObservation.getMeta().addProfile("https://highmed.org/fhir/StructureDefinition/ic/Kulturdiagnostik&scope=MedizininformatikInitiative-HiGHmed-IC@current");
 
         while (!orderObservation.isEmpty()) {
-            File childFile = new File(path + "/child" + orderObservationCount + ".json");
-            FileWriter fileWriter = null;
+            String fileName = "observationMember";
+            if (orderObservation.getOBSERVATION(0).getOBX().getObservationIdentifier().getNameOfCodingSystem().encode().contains("abio")){
+                fileName = "antibiogramm";
+            }
+            File childFile = new File(path + "/"+ fileName + orderObservationCount + ".json");
+            Writer writer = null;
             try {
                 Observation childObservation;
 
                 // Profil der HiGHmed
                 // Beispiel für den Status, OBX.11 getObservationResultStatus()
-                childObservation = antibiogramm(orderObservation);
+                childObservation = castToFhir(orderObservation);
 
                 //System.out.println(parser.encodeResourceToString(childObservation));
                 // String encode = parser.encodeResourceToString(childObservation);
 
-                fileWriter = new FileWriter(childFile);
-                fileWriter.write(parser.encodeResourceToString(childObservation));
+                writer = new OutputStreamWriter(new FileOutputStream(childFile), StandardCharsets.ISO_8859_1);
+                writer.write(parser.encodeResourceToString(childObservation));
 
                 Reference parentReference = new Reference();
-                parentReference.setReference(path + "/child" + orderObservationCount + ".json");
+                parentReference.setReference(path + "/"+ fileName + orderObservationCount + ".json");
                 parentObservation.addHasMember(parentReference);
 
                 orderObservationCount++;
@@ -101,8 +101,8 @@ public class Fhir {
                 ioException.printStackTrace();
             } finally {
                 try {
-                    if (fileWriter != null){
-                        fileWriter.close();
+                    if (writer != null){
+                        writer.close();
                     }
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -111,17 +111,19 @@ public class Fhir {
         }
 
         // Get the file
-        File parentFile = new File(path+"/parent.json");
-        FileWriter fr = null;
+        File parentFile = new File(path+"/observation.json");
+        Writer parentWriter = null;
 
         try {
-            fr = new FileWriter(parentFile);
-            fr.write(parser.encodeResourceToString(parentObservation));
+            parentWriter = new OutputStreamWriter(new FileOutputStream(parentFile), StandardCharsets.ISO_8859_1);
+            parentWriter.write(parser.encodeResourceToString(parentObservation));
         } catch (IOException ioException) {
             ioException.printStackTrace();
         } finally {
             try {
-                fr.close();
+                if (parentWriter != null){
+                    parentWriter.close();
+                }
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -135,7 +137,7 @@ public class Fhir {
     }
 
 
-    public Observation antibiogramm(ORU_R01_ORDER_OBSERVATION orderObservation) throws HL7Exception, IOException {
+    public Observation castToFhir(ORU_R01_ORDER_OBSERVATION orderObservation) throws HL7Exception, IOException {
         Observation childObservation = new Observation();
         int rowCount = 0;
         // Verschiedene unter Observations also OBX|2, OBX|3 ...
@@ -149,7 +151,7 @@ public class Fhir {
             childObservation.setStatus(observationStatus);
 
             String observationValues = "";
-            for (int n = 0; n < obx.getObservationValue().length; n++) {
+            for (int n = 0; n < obx.getObservationValue().length; n++) { // TODO zum mappen die einzelnen teile der Liste durchgehen gibt namen dafür wie z.b Text etc. siehe OBX Seite erklärung
                 Varies observationValueVaries = obx.getObservationValue(n);
                 Type data = observationValueVaries.getData();
                 String encoded;
@@ -199,7 +201,7 @@ public class Fhir {
      * @throws IOException If no HTML connection is established
      */
     public String checkWithOntoserver(String toCheck, String checkLetter) throws IOException {
-        String fieldId = null; // TODO: 06.02.23 Vielleicht einen standard einbauen wegen null exception?
+        String fieldId = null;
         switch (toCheck){
             case "abnormal":
                 fieldId = "v2-0078";
@@ -243,8 +245,6 @@ public class Fhir {
                     }
                 }
             }
-
-
         }
         return null;
 
