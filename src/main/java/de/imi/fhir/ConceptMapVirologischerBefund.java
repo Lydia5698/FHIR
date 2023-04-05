@@ -1,29 +1,38 @@
 package de.imi.fhir;
 
-import org.hl7.fhir.r4.model.Observation;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-public class ConceptMapResultStatus {
+public class ConceptMapVirologischerBefund extends ConceptMap{
     private final JSONObject conceptMap;
     ReadFromServer readFromServer = new ReadFromServer();
 
-    public ConceptMapResultStatus(String url) {
+    public ConceptMapVirologischerBefund(String url){
         conceptMap = readFromServer.readFromUrl(url);
+
     }
 
-    public Observation.ObservationStatus getObservationStatusStatusFor(String statusValue) {
-        if (statusValue == null) {
-            return Observation.ObservationStatus.NULL;
+    public String getTargetCode(String code){
+        if (code != null){
+            return mapStatusValue(code).getString("code");
         }
-        if (conceptMap != null) {
-            String codeString = mapStatusValue(statusValue);
-            return Observation.ObservationStatus.fromCode(codeString);
-        }
-        return Observation.ObservationStatus.NULL;
+        return null;
     }
 
-    private String mapStatusValue(String statusValue) {
+    public String getTargetDisplay(String code){
+        if (code != null){
+            return mapStatusValue(code).getString("display");
+        }
+        return null;
+    }
+
+    public String getEquivalence(String code){
+        if (code != null){
+            return mapStatusValue(code).getString("equivalence");
+        }
+        return null;
+    }
+    private JSONObject mapStatusValue(String statusValue) {
         JSONArray group = conceptMap.getJSONArray("group");
         JSONObject foo = (JSONObject) group.get(0);
         JSONArray elements = foo.getJSONArray("element");
@@ -31,12 +40,9 @@ public class ConceptMapResultStatus {
             JSONObject element = elements.getJSONObject(i);
             if (element.getString("code").equals(statusValue)) {
                 JSONArray target = element.getJSONArray("target");
-                JSONObject targetElement = (JSONObject) target.get(0);
-                return targetElement.getString("code");
+                return (JSONObject) target.get(0);
             }
         }
         return null;
     }
-
-
 }

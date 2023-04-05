@@ -1,0 +1,98 @@
+{
+  "resourceType": "CodeSystem",
+  "title": "Abnormal Flags",
+  "url": "https://fhir.imi.uni-luebeck.de/mibi2fhir/CodeSystem/AbnormalFlags",
+  "status": "draft",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "email"
+        }
+      ]
+    }
+  ],
+  "compositional": false,
+  "content": "complete",
+  "concept": [
+    {
+      "code": "<",
+      "display": "Below absolute low-off instrument scale"
+    },
+    {
+      "display": "Above absolute high-off instrument scale",
+      "code": ">"
+    },
+    {
+      "code": "A",
+      "display": "Abnormal (applies to non-numeric results)"
+    },
+    {
+      "display": "Very abnormal (applies to non-numeric units, analogous to panic limits for numeric units)",
+      "code": "AA"
+    },
+    {
+      "code": "B",
+      "display": "Better--use when direction not relevant"
+    },
+    {
+      "display": "Significant change down",
+      "code": "D"
+    },
+    {
+      "code": "H",
+      "display": "Above high normal"
+    },
+    {
+      "code": "HH",
+      "display": "Above upper panic limits"
+    },
+    {
+      "code": "I",
+      "display": "Intermediate. Indicates for microbiology susceptibilities only."
+    },
+    {
+      "code": "L",
+      "display": "Below low normal"
+    },
+    {
+      "code": "LL",
+      "display": "Below lower panic limits"
+    },
+    {
+      "code": "MS",
+      "display": "Moderately susceptible. Indicates for microbiology susceptibilities only."
+    },
+    {
+      "code": "N",
+      "display": "Normal (applies to non-numeric results)"
+    },
+    {
+      "code": "R",
+      "display": "Resistant. Indicates for microbiology susceptibilities only."
+    },
+    {
+      "code": "S",
+      "display": "Susceptible. Indicates for microbiology susceptibilities only."
+    },
+    {
+      "code": "U",
+      "display": "Significant change up"
+    },
+    {
+      "code": "VS",
+      "display": "Very susceptible. Indicates for microbiology susceptibilities only."
+    },
+    {
+      "code": "W",
+      "display": "Worse--use when direction not relevant"
+    }
+  ],
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>Abnormal Flags</h2><tt>https://fhir.imi.uni-luebeck.de/mibi2fhir/CodeSystem/AbnormalFlags</tt><p></p></div>"
+  },
+  "valueSet": "https://hl7-definition.caristix.com/v2/HL7v2.5/Tables/0078",
+  "count": 18,
+  "name": "Abnormal_Flags"
+}
