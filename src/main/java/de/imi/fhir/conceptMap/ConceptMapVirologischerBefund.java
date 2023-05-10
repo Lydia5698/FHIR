@@ -1,5 +1,6 @@
-package de.imi.fhir;
+package de.imi.fhir.conceptMap;
 
+import de.imi.fhir.ReadFromServer;
 import org.json.JSONArray;
 import org.json.JSONObject;
 

@@ -1,4 +1,4 @@
-package de.imi.fhir;
+package de.imi.fhir.conceptMap;
 
 public class ConceptMapHandler {
 

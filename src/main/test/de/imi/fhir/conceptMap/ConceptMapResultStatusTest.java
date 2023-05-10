@@ -1,4 +1,4 @@
-package de.imi.fhir;
+package de.imi.fhir.conceptMap;
 
 import org.hl7.fhir.r4.model.Observation;
 import org.junit.jupiter.api.Test;

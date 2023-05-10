@@ -1,0 +1,181 @@
+{
+  "resourceType": "CodeSystem",
+  "title": "Diagnostic_Service_Section_ID",
+  "url": "https://fhir.imi.uni-luebeck.de/mibi2fhir/CodeSystem/V2-0074",
+  "status": "draft",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "email"
+        }
+      ]
+    }
+  ],
+  "compositional": false,
+  "content": "complete",
+  "concept": [
+    {
+      "code": "AU",
+      "display": "Audiology"
+    },
+    {
+      "code": "BG",
+      "display": "Blood Gases"
+    },
+    {
+      "code": "BLB",
+      "display": "Blood Bank"
+    },
+    {
+      "code": "CH",
+      "display": "Chemistry"
+    },
+    {
+      "code": "CP",
+      "display": "Cytopathology"
+    },
+    {
+      "code": "CT",
+      "display": "CAT Scan"
+    },
+    {
+      "code": "CTH",
+      "display": "Cardiac Catheterization"
+    },
+    {
+      "code": "CUS",
+      "display": "Cardiac Ultrasound"
+    },
+    {
+      "code": "EC",
+      "display": "Electrocardiac (e.g., EKG,  EEC, Holter)"
+    },
+    {
+      "code": "EN",
+      "display": "Electroneuro (EEG, EMG,EP,PSG)"
+    },
+    {
+      "code": "HM",
+      "display": "Hematology"
+    },
+    {
+      "code": "ICU",
+      "display": "Bedside ICU Monitoring"
+    },
+    {
+      "code": "IMM",
+      "display": "Immunology"
+    },
+    {
+      "code": "LAB",
+      "display": "Laboratory"
+    },
+    {
+      "code": "MB",
+      "display": "Microbiology"
+    },
+    {
+      "code": "MCB",
+      "display": "Mycobacteriology"
+    },
+    {
+      "code": "MYC",
+      "display": "Mycology"
+    },
+    {
+      "code": "NMR",
+      "display": "Nuclear Magnetic Resonance"
+    },
+    {
+      "code": "NMS",
+      "display": "Nuclear Medicine Scan"
+    },
+    {
+      "code": "NRS",
+      "display": "Nursing Service Measures"
+    },
+    {
+      "code": "OSL",
+      "display": "Outside Lab"
+    },
+    {
+      "code": "OT",
+      "display": "Occupational Therapy"
+    },
+    {
+      "code": "OTH",
+      "display": "Other"
+    },
+    {
+      "code": "OUS",
+      "display": "OB Ultrasound"
+    },
+    {
+      "code": "PF",
+      "display": "Pulmonary Function"
+    },
+    {
+      "code": "PHR",
+      "display": "Pharmacy"
+    },
+    {
+      "code": "PHY",
+      "display": "Physician (Hx. Dx, admission note, etc.)"
+    },
+    {
+      "code": "PT",
+      "display": "Physical Therapy"
+    },
+    {
+      "code": "RAD",
+      "display": "Radiology"
+    },
+    {
+      "code": "RC",
+      "display": "Respiratory Care (therapy)"
+    },
+    {
+      "code": "RT",
+      "display": "Radiation Therapy"
+    },
+    {
+      "code": "RUS",
+      "display": "Radiology Ultrasound"
+    },
+    {
+      "code": "RX",
+      "display": "Radiograph"
+    },
+    {
+      "code": "SP",
+      "display": "Surgical Pathology"
+    },
+    {
+      "code": "SR",
+      "display": "Serology"
+    },
+    {
+      "code": "TX",
+      "display": "Toxicology"
+    },
+    {
+      "code": "VR",
+      "display": "Virology"
+    },
+    {
+      "code": "VUS",
+      "display": "Vascular Ultrasound"
+    },
+    {
+      "code": "XRC",
+      "display": "Cineradiograph"
+    }
+  ],
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>Untitled Code System 1</h2><tt>https://fhir.imi.uni-luebeck.de/mibi2fhir/CodeSystem/V2-0074</tt><p></p></div>"
+  },
+  "name": "Diagnostic_Service_Section_ID",
+  "count": 39
+}

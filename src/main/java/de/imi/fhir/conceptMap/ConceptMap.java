@@ -1,4 +1,4 @@
-package de.imi.fhir;
+package de.imi.fhir.conceptMap;
 
 import org.json.JSONArray;
 import org.json.JSONObject;

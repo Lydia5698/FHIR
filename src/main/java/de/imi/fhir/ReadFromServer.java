@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class ReadFromServer {
 
-    JSONObject readFromUrl(String url) {
+    public JSONObject readFromUrl(String url) {
         try {
             HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
             connection.setRequestMethod("GET");

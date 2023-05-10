@@ -11,6 +11,9 @@ import ca.uhn.hl7v2.model.v25.group.ORU_R01_ORDER_OBSERVATION;
 import ca.uhn.hl7v2.model.v25.message.ORU_R01;
 import ca.uhn.hl7v2.model.v25.segment.OBX;
 import ca.uhn.hl7v2.parser.Parser;
+import de.imi.fhir.conceptMap.ConceptMapHandler;
+import de.imi.fhir.conceptMap.ConceptMap;
+import de.imi.fhir.conceptMap.ConceptMapResultStatus;
 import org.apache.commons.lang3.ArrayUtils;
 import org.hl7.fhir.r4.model.*;
 
@@ -22,17 +25,16 @@ import java.nio.file.Path;
 public class Fhir {
 
 
-// TODO: 16.02.23 baccor^Prevotella corporis^keim^5380 5380 lokaler Code
-// TODO: 29.03.23 Datum OBX.12 mit einfügen?
+// TODO: 05.05.23 Die Unterscheidung Serologie etc. einmal alle Daten durchlaufen und Keywort anhängen
 
     HapiContext context = new DefaultHapiContext();
     Parser p = context.getPipeParser();
     private ConceptMapResultStatus conceptMapResultStatus = new ConceptMapResultStatus("http://localhost:8888/fhir/ConceptMap/1?_format=application/fhir+json");
-    private CodeSystemAbnormalFlags codeSystemAbnormalFlags = new CodeSystemAbnormalFlags("http://localhost:8080/fhir/CodeSystem/52/_history/1?_pretty=true");
+    private CodeSystemAbnormalFlags codeSystemAbnormalFlags = new CodeSystemAbnormalFlags("http://localhost:8888/fhir/CodeSystem/52?_format=application/fhir+json");
     private String uri = "http://snomed.info/sct";
     public void start(String startFolder, String outputFilename) throws HL7Exception, IOException  { // TODO umbauen um den startfile zu finden
-        String directoryName = "ObservationDirectory"; // TODO directory ersetzen
-        Path path = Path.of("src/main/resources/MiBi" +"/multiple868");
+        String directoryName = "ObservationDirectoryCorona"; // TODO directory ersetzen
+        Path path = Path.of("src/main/resources/KC" +"/ORU1");
         String hl7String = Files.readString(path, StandardCharsets.ISO_8859_1);
         Message message = p.parse(hl7String);
         ORU_R01 oruR01 = (ORU_R01) p.parse(message.encode());
@@ -152,7 +154,7 @@ public class Fhir {
                 observationValuesAndUnits.addCoding().setSystem("Units").setDisplay(obx.getObservationValue(0).encode() + " " + obx.getUnits().encode()); // Units OBX.6
             }
             else {
-                observationValuesAndUnits.addCoding().setSystem("Units").setDisplay(obx.getUnits().encode()); // Units OBX.6
+                observationValuesAndUnits.addCoding().setSystem("Units").setDisplay(obx.getUnits().encode()); // Units OBX.6 //TODO falls Units leer
             }
             childObservation.getComponent().get(rowCount).setValue(observationValuesAndUnits); // OBX 5 Observation Value and Units OBX.6
 
@@ -167,7 +169,7 @@ public class Fhir {
             }
             childObservation.getComponent().get(rowCount).addInterpretation(interpretation);
 
-            ConceptMap conceptMapObservationIdentifier = conceptMapHandler.getRightConceptMap(obx.getObx3_ObservationIdentifier().getNameOfCodingSystem().encode());
+            ConceptMap conceptMapObservationIdentifier = conceptMapHandler.getRightConceptMap(obx.getObx3_ObservationIdentifier().encode());
             if (conceptMapObservationIdentifier != null){
                 CodeableConcept observationIdentifier = new CodeableConcept();
                 observationIdentifier.addCoding().setSystem("Observation Identifier").setCode(conceptMapObservationIdentifier.getTargetCode(obx.getObx3_ObservationIdentifier().getIdentifier().encode())).setDisplay(conceptMapObservationIdentifier.getTargetDisplay(obx.getObx3_ObservationIdentifier().getIdentifier().encode())).setSystem(uri); // Observation Identifier OBX.3

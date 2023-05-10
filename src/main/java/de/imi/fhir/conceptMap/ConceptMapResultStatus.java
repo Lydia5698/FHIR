@@ -1,5 +1,7 @@
-package de.imi.fhir;
+package de.imi.fhir.conceptMap;
 
+import de.imi.fhir.ReadFromServer;
+import org.hl7.fhir.r4.model.DiagnosticReport;
 import org.hl7.fhir.r4.model.Observation;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -21,6 +23,16 @@ public class ConceptMapResultStatus {
             return Observation.ObservationStatus.fromCode(codeString);
         }
         return Observation.ObservationStatus.NULL;
+    }
+    public DiagnosticReport.DiagnosticReportStatus getDiagnosticReportStatusStatusFor(String statusValue) {
+        if (statusValue == null) {
+            return DiagnosticReport.DiagnosticReportStatus.NULL;
+        }
+        if (conceptMap != null) {
+            String codeString = mapStatusValue(statusValue);
+            return DiagnosticReport.DiagnosticReportStatus.fromCode(codeString);
+        }
+        return DiagnosticReport.DiagnosticReportStatus.NULL;
     }
 
     private String mapStatusValue(String statusValue) {
