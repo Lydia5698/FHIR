@@ -8,7 +8,7 @@ public class ConceptMapHandler {
     private ConceptMapVirologischerBefund conceptMapVirologischerBefund = new ConceptMapVirologischerBefund("https://ontoserver.imi.uni-luebeck.de/fhir/ConceptMap/uksh-medic-ucic-virologischer-befund-virusnachweistest"+ jsonEndung);
             //TODO Was ist effizienter das JSON Object zurück geben oder methoden hier aufrufen und dieser Klasse ein Stichwort wie code übergeben?
     public ConceptMap getRightConceptMap(String eingabe){
-        String[] cases = {"abio", "keim", "cov"};
+        String[] cases = {"abio", "^keim", "cov"};
 
         int i;
         for(i = 0; i < cases.length; i++)
@@ -20,11 +20,10 @@ public class ConceptMapHandler {
             case 1: //keim
                 return conceptMapErreger;
             case 2: //corona
-                return conceptMapVirologischerBefund; //TODO könnte übereinstimmungen mit anderen Codes geben?
+                return conceptMapVirologischerBefund; 
             default:
-                System.out.println(eingabe);
+                return null;
         }
-        return null;
     }
 
 }

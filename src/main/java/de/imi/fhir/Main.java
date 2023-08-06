@@ -11,12 +11,12 @@ public class Main {
         }
         String inputFolder = args[0]; // src/main/resources/MiBi
         String outputFilename = args[1];*/
-
         Fhir fhir = new Fhir();
         //fhir.saveToFhir();
-        String inputFolder = " ";
-        String outputFilename = "";
-        fhir.start(inputFolder, outputFilename); // TODO terminal eingabe
+        String inputFolder = "src/main/resources/MiBi";
+        String saveTo = "src/main/resources/outputs/Directory1";
+        //fhir.start(inputFolder, outputFilename); // TODO terminal eingabe
+        fhir.start(saveTo,inputFolder);
 
         //V2 v2 = new V2();
 

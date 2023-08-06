@@ -6,55 +6,54 @@ import ca.uhn.hl7v2.DefaultHapiContext;
 import ca.uhn.hl7v2.HL7Exception;
 import ca.uhn.hl7v2.HapiContext;
 import ca.uhn.hl7v2.model.Message;
-import ca.uhn.hl7v2.model.v25.datatype.ID;
+import ca.uhn.hl7v2.model.v25.group.ORU_R01_OBSERVATION;
 import ca.uhn.hl7v2.model.v25.group.ORU_R01_ORDER_OBSERVATION;
 import ca.uhn.hl7v2.model.v25.message.ORU_R01;
-import ca.uhn.hl7v2.model.v25.segment.OBX;
+import ca.uhn.hl7v2.model.v25.segment.OBR;
 import ca.uhn.hl7v2.parser.Parser;
-import de.imi.fhir.conceptMap.ConceptMapHandler;
-import de.imi.fhir.conceptMap.ConceptMap;
-import de.imi.fhir.conceptMap.ConceptMapResultStatus;
-import org.apache.commons.lang3.ArrayUtils;
+import de.imi.fhir.ressourcen.*;
+import org.hl7.fhir.instance.model.api.IBaseResource;
 import org.hl7.fhir.r4.model.*;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Fhir {
-
-
-// TODO: 05.05.23 Die Unterscheidung Serologie etc. einmal alle Daten durchlaufen und Keywort anhängen
-
     HapiContext context = new DefaultHapiContext();
     Parser p = context.getPipeParser();
-    private ConceptMapResultStatus conceptMapResultStatus = new ConceptMapResultStatus("http://localhost:8888/fhir/ConceptMap/1?_format=application/fhir+json");
-    private CodeSystemAbnormalFlags codeSystemAbnormalFlags = new CodeSystemAbnormalFlags("http://localhost:8888/fhir/CodeSystem/52?_format=application/fhir+json");
-    private String uri = "http://snomed.info/sct";
-    public void start(String startFolder, String outputFilename) throws HL7Exception, IOException  { // TODO umbauen um den startfile zu finden
-        String directoryName = "ObservationDirectoryCorona"; // TODO directory ersetzen
-        Path path = Path.of("src/main/resources/KC" +"/ORU1");
+    public void start(String saveTo, String file) throws HL7Exception, IOException  { // TODO umbauen um den startfile zu finden
+        String directoryName = "ObservationDirectoryCorona";
+        Path path = Path.of("src/main/resources/MiBi" +"/multiple678");
+        //Path path = Path.of(file);
         String hl7String = Files.readString(path, StandardCharsets.ISO_8859_1);
         Message message = p.parse(hl7String);
         ORU_R01 oruR01 = (ORU_R01) p.parse(message.encode());
-        saveToFhir(oruR01, "src/main/resources/outputs/"+ directoryName);
+        saveTo = "/Users/lydia/Desktop/Uni/6 Semester/BA Script/src/main/resources/outputs/Directory1"; //todo Hier save To ändern
+        //saveToFhir(oruR01, saveTo);
+        saveToFhir(oruR01, saveTo);
+
     }
     public void saveToFhir(ORU_R01 oruR01, String path) throws HL7Exception {
-        File directory = new File(path);
+      /*  File directory = new File(path);
         if (!directory.exists()) {
             if (directory.mkdirs()) {
                 System.out.println("Directory is created!");
             } else {
                 System.out.println("Failed to create directory!");
             }
-        }
-        FhirContext ctx = FhirContext.forR4();
-        IParser parser = ctx.newJsonParser();
-        parser.setPrettyPrint(true);
+        }*/
+        KulturDiagnostik kulturDiagnostik = new KulturDiagnostik();
+        MolekularDiagnostik molekularDiagnostik = new MolekularDiagnostik();
+        SerologieImmunologie serologieImmunologie = new SerologieImmunologie();
+        MikrobioDiagnosticReport mikrobioDiagnosticReport = new MikrobioDiagnosticReport();
 
         int orderObservationCount = 0;
-        ORU_R01_ORDER_OBSERVATION orderObservation = oruR01.getPATIENT_RESULT().getORDER_OBSERVATION(orderObservationCount);
+        //ORU_R01_ORDER_OBSERVATION orderObservation = oruR01.getPATIENT_RESULT().getORDER_OBSERVATION(orderObservationCount);
+        List<ORU_R01_ORDER_OBSERVATION> allOrderObservation = oruR01.getPATIENT_RESULT().getORDER_OBSERVATIONAll();
 
         Observation parentObservation = new Observation();
         // Kulturdiagnostik
@@ -62,124 +61,77 @@ public class Fhir {
         // Directory
         // String profileDirectory = "src/main/resources/Profiles/MII/medizininformatikinitiative-highmed-ic/ressourcen-profile";
         parentObservation.getMeta().addProfile("https://highmed.org/fhir/StructureDefinition/ic/Kulturdiagnostik&scope=MedizininformatikInitiative-HiGHmed-IC@current");
+        SpecimenMI specimen = new SpecimenMI();
+        saveFile(specimen.specimenMI(allOrderObservation.get(0).getOBR()),"specimen", path);
+        List<Reference> results = new ArrayList<>();
+        for (ORU_R01_ORDER_OBSERVATION orderObservation : allOrderObservation) {
+            List<ORU_R01_OBSERVATION> allObservations = orderObservation.getOBSERVATIONAll();
+            OBR obr = orderObservation.getOBR();
+            for (ORU_R01_OBSERVATION observation : allObservations) {
+                if ((observation.getOBX().getObx3_ObservationIdentifier().getCe3_NameOfCodingSystem().encode().equals("abio"))){
+                    Observation antibio = kulturDiagnostik.fillEmpfindlichkeit(observation.getOBX(),obr);
+                    results.add(new Reference(path + "/" + "antibiogramm" + antibio.getIdElement().getValue() + ".json"));
+                    saveFile(antibio, "antibiogramm", path);
 
-        while (!orderObservation.isEmpty()) {
-            String fileName = "observationMember";
-            if (orderObservation.getOBSERVATION(0).getOBX().getObservationIdentifier().getNameOfCodingSystem().encode().contains("abio")){
-                fileName = "antibiogramm";
-            }
-            File childFile = new File(path + "/"+ fileName + orderObservationCount + ".json");
-            Writer writer = null;
-            try {
-                Observation childObservation;
-
-                // Profil der HiGHmed
-                // Beispiel für den Status, OBX.11 getObservationResultStatus()
-                childObservation = castToFhir(orderObservation);
-
-                //System.out.println(parser.encodeResourceToString(childObservation));
-                // String encode = parser.encodeResourceToString(childObservation);
-
-                writer = new OutputStreamWriter(new FileOutputStream(childFile), StandardCharsets.ISO_8859_1);
-                writer.write(parser.encodeResourceToString(childObservation));
-
-                Reference parentReference = new Reference();
-                parentReference.setReference(path + "/"+ fileName + orderObservationCount + ".json");
-                parentObservation.addHasMember(parentReference);
-
-                orderObservationCount++;
-                orderObservation = oruR01.getPATIENT_RESULT().getORDER_OBSERVATION(orderObservationCount);
-            } catch (IOException ioException) {
-                ioException.printStackTrace();
-            } finally {
-                try {
-                    if (writer != null){
-                        writer.close();
-                    }
-                } catch (IOException e) {
-                    e.printStackTrace();
                 }
+                else if (observation.getOBX().getObx5_ObservationValue(0).encode().contains("MRGN")){
+                    Observation mrgn = kulturDiagnostik.fillMRGN(observation.getOBX(),obr);
+                    results.add(new Reference(path + "/" + "mrgn" + mrgn.getIdElement().getValue() + ".json"));
+                    saveFile(mrgn, "mrgn", path);
+                }
+                else if (observation.getOBX().getObx5_ObservationValue(0).encode().equals("MRE")){
+                    Observation mre = kulturDiagnostik.fillMRE(observation.getOBX(),obr);
+                    results.add(new Reference(path + "/" + "mre" + mre.getIdElement().getValue() + ".json"));
+                    saveFile(mre, "mre", path);
+                }
+                else if (observation.getOBX().getObx3_ObservationIdentifier().encode().equals("cov")){
+                    Observation corona = molekularDiagnostik.fillMolekularDiagnostik(observation.getOBX(),obr);
+                    results.add(new Reference(path + "/" + "molekularDiagnostik" + corona.getIdElement().getValue() + ".json"));
+                    saveFile(corona, "molekularDiagnostik", path);
+                }
+                else if (observation.getOBX().getObx3_ObservationIdentifier().encode().equals("Antigen")) {
+                    Observation antigen = serologieImmunologie.fillSerologieImmunologie(observation.getOBX(),obr);
+                    results.add(new Reference(path + "/" + "serologie" + antigen.getIdElement().getValue() + ".json"));
+                    saveFile(antigen, "serologie", path);
+                }
+                else {
+                    Observation kultur = kulturDiagnostik.kulturNachweis(observation.getOBX(),obr);
+                    results.add(new Reference(path + "/" + "kulturDiagnostik" + kultur.getIdElement().getValue() + ".json"));
+                    saveFile(kultur, "kulturDiagnostik", path);
+                }
+
+            }
+            if (!orderObservation.getOBR().isEmpty()){
+                saveFile(mikrobioDiagnosticReport.fillDiagnosticReport(orderObservation.getOBR(),results), "diagnosticReport", path);
+                results.clear();
             }
         }
+        // todo Validator mit HTTP Put an den Marshal
+        // http://localhost:8888/fhir/ConceptMap/1?_format=application/fhir+json
 
-        // Get the file
-        File parentFile = new File(path+"/observation.json");
-        Writer parentWriter = null;
+    }
 
+
+    public void saveFile(IBaseResource observation, String name, String path){
+        FhirContext ctx = FhirContext.forR4();
+        IParser parser = ctx.newJsonParser();
+        parser.setPrettyPrint(true);
+        File file = new File(path + "/"+ name + observation.getIdElement().getValue() + ".json");
+        Writer writer = null;
         try {
-            parentWriter = new OutputStreamWriter(new FileOutputStream(parentFile), StandardCharsets.ISO_8859_1);
-            parentWriter.write(parser.encodeResourceToString(parentObservation));
+            writer = new OutputStreamWriter(new FileOutputStream(file), StandardCharsets.ISO_8859_1);
+            writer.write(parser.encodeResourceToString(observation));
+
         } catch (IOException ioException) {
             ioException.printStackTrace();
         } finally {
             try {
-                if (parentWriter != null){
-                    parentWriter.close();
+                if (writer != null){
+                    writer.close();
                 }
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
-
-
-        // todo Validator mit HTTP Put an den Marshal
-        // http://localhost:8888/fhir/ConceptMap/1?_format=application/fhir+json
-
-
-    }
-
-
-    public Observation castToFhir(ORU_R01_ORDER_OBSERVATION orderObservation) throws HL7Exception, IOException {
-        Observation childObservation = new Observation();
-        ConceptMapHandler conceptMapHandler = new ConceptMapHandler();
-        int rowCount = 0;
-        // Verschiedene unter Observations also OBX|2, OBX|3 ...
-        OBX obx = orderObservation.getOBSERVATION(rowCount).getOBX();
-        while(!obx.isEmpty()) {
-            // Profil der HiGHmed
-            // Beispiel für den Status, OBX.11 getObservationResultStatus()
-            childObservation.addComponent();
-            ID status = obx.getObx11_ObservationResultStatus();
-            Observation.ObservationStatus observationStatus = conceptMapResultStatus.getObservationStatusStatusFor(status.getValue());
-            childObservation.setStatus(observationStatus);
-
-            String sourceCode = obx.getObservationValue(0).encode().split("\\^")[0];
-            String observationValues = obx.getObservationValue(0).encode();
-            ConceptMap conceptMapObservationValues = conceptMapHandler.getRightConceptMap(observationValues);
-            CodeableConcept observationValuesAndUnits = new CodeableConcept();
-            if(conceptMapObservationValues != null){
-                observationValuesAndUnits.addCoding().setSystem("Observation Values").setCode(conceptMapObservationValues.getTargetCode(sourceCode)).setDisplay(conceptMapObservationValues.getTargetDisplay(sourceCode)).setSystem(uri);
-            }
-            if (obx.getObx3_ObservationIdentifier().getNameOfCodingSystem().encode().contains("abio")){
-                observationValuesAndUnits.addCoding().setSystem("Units").setDisplay(obx.getObservationValue(0).encode() + " " + obx.getUnits().encode()); // Units OBX.6
-            }
-            else {
-                observationValuesAndUnits.addCoding().setSystem("Units").setDisplay(obx.getUnits().encode()); // Units OBX.6 //TODO falls Units leer
-            }
-            childObservation.getComponent().get(rowCount).setValue(observationValuesAndUnits); // OBX 5 Observation Value and Units OBX.6
-
-            CodeableConcept interpretation = new CodeableConcept();
-            String[] stringArray = new String[obx.getAbnormalFlags().length];
-            for (int i = 0; i < obx.getAbnormalFlags().length; i++) {
-                stringArray[i] = obx.getAbnormalFlags(i).encode();
-            }
-            // OBX.8 Abnormal Flags "https://r4.ontoserver.csiro.au/fhir/CodeSystem/v2-0078?_format=application/fhir+json"
-            if (!ArrayUtils.isEmpty(stringArray)) {
-                interpretation.addCoding().setSystem("Abnormal Flags").setCode(stringArray[0]).setDisplay(codeSystemAbnormalFlags.getAbnormalFlagFor(stringArray[0]));
-            }
-            childObservation.getComponent().get(rowCount).addInterpretation(interpretation);
-
-            ConceptMap conceptMapObservationIdentifier = conceptMapHandler.getRightConceptMap(obx.getObx3_ObservationIdentifier().encode());
-            if (conceptMapObservationIdentifier != null){
-                CodeableConcept observationIdentifier = new CodeableConcept();
-                observationIdentifier.addCoding().setSystem("Observation Identifier").setCode(conceptMapObservationIdentifier.getTargetCode(obx.getObx3_ObservationIdentifier().getIdentifier().encode())).setDisplay(conceptMapObservationIdentifier.getTargetDisplay(obx.getObx3_ObservationIdentifier().getIdentifier().encode())).setSystem(uri); // Observation Identifier OBX.3
-                childObservation.getComponent().get(rowCount).setCode(observationIdentifier); // OBX.3
-            }
-
-            rowCount++;
-            obx = orderObservation.getOBSERVATION(rowCount).getOBX();
-        }
-        return childObservation;
-
     }
 }

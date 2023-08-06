@@ -1,0 +1,113 @@
+{
+  "resourceType": "ConceptMap",
+  "id": "mibi2fhir-mikrobioPositiveNegative-fhir",
+  "meta": {
+    "versionId": "1",
+    "lastUpdated": "2023-07-18T14:56:45.053+00:00"
+  },
+  "url": "https://fhir.imi.uni-luebeck.de/mibi2fhir/ConceptMap",
+  "version": "20211004",
+  "name": "mibi2fhir-mikrobioPositiveNegative-fhir",
+  "title": "Mikrobio_positiv_nagativ_SNOMEDCT",
+  "status": "draft",
+  "publisher": " ",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": " "
+        }
+      ]
+    },
+    {
+      "telecom": [
+        {
+          "system": "email"
+        }
+      ]
+    }
+  ],
+  "sourceCanonical": "https://www.medizininformatik-initiative.de/fhir/modul-mikrobio/ValueSet/mii-vs-mikrobio-positiv-negativ-snomedct",
+  "targetCanonical": "https://fhir.imi.uni-luebeck.de/mibi2fhir/ValueSet/mibi2fhir-mikrobioPositiveNegative-fhir",
+  "group": [
+    {
+      "source": "https://www.medizininformatik-initiative.de/fhir/modul-mikrobio/ValueSet/mii-vs-mikrobio-positiv-negativ-snomedct",
+      "sourceVersion": "2.5.0",
+      "target": "https://fhir.imi.uni-luebeck.de/mibi2fhir/ValueSet/mibi2fhir-mikrobioPositiveNegative-fhir",
+      "targetVersion": "20211004",
+      "element": [
+        {
+          "code": "pos",
+          "target": [
+            {
+              "code": "10828004",
+              "display": "Positive",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "positiv",
+          "target": [
+            {
+              "code": "10828004",
+              "display": "Positive",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "negativ",
+          "target": [
+            {
+              "code": "260385009",
+              "display": "Negative",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "neg",
+          "target": [
+            {
+              "code": "260385009",
+              "display": "Negative",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "grenzw.",
+          "target": [
+            {
+              "code": "260408008",
+              "display": "Weakly positive",
+              "equivalence": "wider"
+            }
+          ]
+        },
+        {
+          "code": "!fehlt",
+          "target": [
+            {
+              "code": "419984006",
+              "display": "Inconclusive",
+              "equivalence": "wider"
+            }
+          ]
+        },
+        {
+          "code": "!folgt",
+          "target": [
+            {
+              "code": "419984006",
+              "display": "Inconclusive",
+              "equivalence": "wider"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
