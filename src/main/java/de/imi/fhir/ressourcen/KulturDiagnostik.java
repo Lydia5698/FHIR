@@ -45,11 +45,11 @@ public class KulturDiagnostik { //Kultur -> Antibiogramm -> MRGN oder MRE (meist
         kulturNachweis.addInterpretation(mainRessource.getAbnormalFlag(obx));
 
         CodeableConcept valueCodeableConcept = new CodeableConcept();
-        String observationValues = obx.getObservationValue(0).encode();
+        String observationValues = obx.getObx5_ObservationValue(0).encode();
         ConceptMapHandler conceptMapHandler = new ConceptMapHandler();
         if (conceptMapHandler.getRightConceptMap(observationValues) != null){
             ConceptMap conceptMapObservationValues = conceptMapHandler.getRightConceptMap(observationValues);
-            String sourceCode = obx.getObservationValue(0).encode().split("\\^")[0];
+            String sourceCode = obx.getObx5_ObservationValue(0).encode().split("\\^")[0];
             valueCodeableConcept.addCoding().setSystem("http://snomed.info/sct").setCode(conceptMapObservationValues.getTargetCode(sourceCode)).setDisplay(conceptMapObservationValues.getTargetDisplay(sourceCode));
             kulturNachweis.setValue(valueCodeableConcept);
         }
@@ -112,18 +112,20 @@ public class KulturDiagnostik { //Kultur -> Antibiogramm -> MRGN oder MRE (meist
         interpretation.addCoding(eucast); // oder clsi
         empfindlichkeit.addInterpretation(interpretation);
 
-        CodeableConcept valueCodeableConcept = new CodeableConcept();
-        String observationValues = obx.getObservationValue(0).encode();
-        if (conceptMapHandler.getRightConceptMap(observationValues) != null){
-            ConceptMap conceptMapObservationValues = conceptMapHandler.getRightConceptMap(observationValues);
-            String sourceCodeObservationValues = obx.getObservationValue(0).encode().split("\\^")[0];
-            valueCodeableConcept.addCoding().setSystem("http://snomed.info/sct").setCode(conceptMapObservationValues.getTargetCode(sourceCodeObservationValues)).setDisplay(conceptMapObservationValues.getTargetDisplay(sourceCodeObservationValues));
-            empfindlichkeit.setValue(valueCodeableConcept);
-        }
-        else {
-            Annotation note = new Annotation();
-            note.setText(observationValues);
-            empfindlichkeit.addNote(note);
+        if (!obx.getObx5_ObservationValue(0).isEmpty()) {
+            Quantity valueQuantity = new Quantity();
+            String[] observationValues = obx.getObservationValue(0).encode().split("(?<=\\D)(?=\\d)");
+            int value;
+            if (observationValues.length < 2) {
+                value = Integer.parseInt(observationValues[0]);
+                valueQuantity.setValue(value).setUnit(obx.getObx6_Units().encode());
+            } else {
+                value = Integer.parseInt(observationValues[1]);
+                String comparator = observationValues[0];
+                Quantity.QuantityComparatorEnumFactory quantityComparatorEnumFactory = new Quantity.QuantityComparatorEnumFactory();
+                valueQuantity.setValue(value).setComparator(quantityComparatorEnumFactory.fromCode(comparator)).setUnit(obx.getObx6_Units().encode());
+            }
+            empfindlichkeit.setValue(valueQuantity);
         }
 
         Reference patient = new Reference("src/main/resources/dummyPatient");

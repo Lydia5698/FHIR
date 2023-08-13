@@ -27,12 +27,12 @@ public class Fhir {
     Parser p = context.getPipeParser();
     public void start(String saveTo, String file) throws HL7Exception, IOException  { // TODO umbauen um den startfile zu finden
         String directoryName = "ObservationDirectoryCorona";
-        Path path = Path.of("src/main/resources/MiBi" +"/multiple998"); // File
+        Path path = Path.of("src/main/resources/MiBi" +"/multiple678"); // File
         //Path path = Path.of(file);
         String hl7String = Files.readString(path, StandardCharsets.ISO_8859_1);
         Message message = p.parse(hl7String);
         ORU_R01 oruR01 = (ORU_R01) p.parse(message.encode());
-        saveTo = "/Users/lydia/Desktop/Uni/6 Semester/BA Script/src/main/resources/outputs/Serologie"; //todo Hier save To ändern
+        saveTo = "/Users/lydia/Desktop/Uni/6 Semester/BA Script/src/main/resources/outputs/Directory1"; //todo Hier save To ändern
         //saveToFhir(oruR01, saveTo);
         saveToFhir(oruR01, saveTo);
 

@@ -52,7 +52,7 @@ public class MainRessource {
         List<Coding> coding = new ArrayList<>();
         coding.add(lonicObservation);
         coding.add(observationCategory);
-        coding.add(lonicObservation);
+        coding.add(lonicMicrobiologyStudies);
         CodeableConcept category = new CodeableConcept();
         category.setCoding(coding);
         return category;
