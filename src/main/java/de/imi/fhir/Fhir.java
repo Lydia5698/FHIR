@@ -27,12 +27,12 @@ public class Fhir {
     Parser p = context.getPipeParser();
     public void start(String saveTo, String file) throws HL7Exception, IOException  { // TODO umbauen um den startfile zu finden
         String directoryName = "ObservationDirectoryCorona";
-        Path path = Path.of("src/main/resources/MiBi" +"/multiple678");
+        Path path = Path.of("src/main/resources/MiBi" +"/multiple998"); // File
         //Path path = Path.of(file);
         String hl7String = Files.readString(path, StandardCharsets.ISO_8859_1);
         Message message = p.parse(hl7String);
         ORU_R01 oruR01 = (ORU_R01) p.parse(message.encode());
-        saveTo = "/Users/lydia/Desktop/Uni/6 Semester/BA Script/src/main/resources/outputs/Directory1"; //todo Hier save To ändern
+        saveTo = "/Users/lydia/Desktop/Uni/6 Semester/BA Script/src/main/resources/outputs/Serologie"; //todo Hier save To ändern
         //saveToFhir(oruR01, saveTo);
         saveToFhir(oruR01, saveTo);
 
@@ -68,7 +68,7 @@ public class Fhir {
             List<ORU_R01_OBSERVATION> allObservations = orderObservation.getOBSERVATIONAll();
             OBR obr = orderObservation.getOBR();
             for (ORU_R01_OBSERVATION observation : allObservations) {
-                if ((observation.getOBX().getObx3_ObservationIdentifier().getCe3_NameOfCodingSystem().encode().equals("abio"))){
+                if ((observation.getOBX().getObx3_ObservationIdentifier().getCe3_NameOfCodingSystem().encode().contains("abio"))){
                     Observation antibio = kulturDiagnostik.fillEmpfindlichkeit(observation.getOBX(),obr);
                     results.add(new Reference(path + "/" + "antibiogramm" + antibio.getIdElement().getValue() + ".json"));
                     saveFile(antibio, "antibiogramm", path);
@@ -79,17 +79,17 @@ public class Fhir {
                     results.add(new Reference(path + "/" + "mrgn" + mrgn.getIdElement().getValue() + ".json"));
                     saveFile(mrgn, "mrgn", path);
                 }
-                else if (observation.getOBX().getObx5_ObservationValue(0).encode().equals("MRE")){
+                else if (observation.getOBX().getObx5_ObservationValue(0).encode().contains("MRE")){
                     Observation mre = kulturDiagnostik.fillMRE(observation.getOBX(),obr);
                     results.add(new Reference(path + "/" + "mre" + mre.getIdElement().getValue() + ".json"));
                     saveFile(mre, "mre", path);
                 }
-                else if (observation.getOBX().getObx3_ObservationIdentifier().encode().equals("cov")){
+                else if (observation.getOBX().getObx3_ObservationIdentifier().encode().contains("cov")){
                     Observation corona = molekularDiagnostik.fillMolekularDiagnostik(observation.getOBX(),obr);
                     results.add(new Reference(path + "/" + "molekularDiagnostik" + corona.getIdElement().getValue() + ".json"));
                     saveFile(corona, "molekularDiagnostik", path);
                 }
-                else if (observation.getOBX().getObx3_ObservationIdentifier().encode().equals("Antigen")) {
+                else if (observation.getOBX().getObx3_ObservationIdentifier().encode().contains("Antigen") || observation.getOBX().getObx5_ObservationValue(0).encode().contains("Toxin") ) {
                     Observation antigen = serologieImmunologie.fillSerologieImmunologie(observation.getOBX(),obr);
                     results.add(new Reference(path + "/" + "serologie" + antigen.getIdElement().getValue() + ".json"));
                     saveFile(antigen, "serologie", path);
