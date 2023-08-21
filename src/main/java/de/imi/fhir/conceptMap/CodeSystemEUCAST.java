@@ -4,23 +4,19 @@ import de.imi.fhir.ReadFromServer;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-public class CodeSystemAbnormalFlags {
+public class CodeSystemEUCAST {
     private final JSONObject conceptMap;
     ReadFromServer readFromServer = new ReadFromServer();
 
-    public CodeSystemAbnormalFlags(String url) {
+    public CodeSystemEUCAST(String url) {
         conceptMap = readFromServer.readFromUrl(url);
     }
 
-    public String getAbnormalFlagFor(String abnormalFlag) {
+    public String getEUCAST(String abnormalFlag) {
         if (abnormalFlag != null) {
             return mapStatusValue(abnormalFlag);
         }
         return null;
-    }
-
-    public String getAbnormalFlagVersion(){
-        return conceptMap.getString("version").toString();
     }
 
     private String mapStatusValue(String statusValue) {

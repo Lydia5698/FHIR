@@ -66,7 +66,7 @@ public class MainRessource {
         }
         // OBX.8 Abnormal Flags "https://r4.ontoserver.csiro.au/fhir/CodeSystem/v2-0078?_format=application/fhir+json"
         if (!ArrayUtils.isEmpty(stringArray)) {
-            interpretation.addCoding().setSystem("Abnormal Flags").setCode(stringArray[0]).setDisplay(codeSystemAbnormalFlags.getAbnormalFlagFor(stringArray[0]));
+            interpretation.addCoding().setSystem("Abnormal Flags").setVersion(codeSystemAbnormalFlags.getAbnormalFlagVersion()).setCode(stringArray[0]).setDisplay(codeSystemAbnormalFlags.getAbnormalFlagFor(stringArray[0]));
         }
         return interpretation;
     }

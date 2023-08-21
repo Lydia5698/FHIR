@@ -4,15 +4,19 @@ import ca.uhn.hl7v2.HL7Exception;
 import ca.uhn.hl7v2.model.v25.datatype.ID;
 import ca.uhn.hl7v2.model.v25.segment.OBR;
 import ca.uhn.hl7v2.model.v25.segment.OBX;
+import de.imi.fhir.conceptMap.*;
 import de.imi.fhir.conceptMap.ConceptMap;
-import de.imi.fhir.conceptMap.ConceptMapHandler;
-import de.imi.fhir.conceptMap.ConceptMapResultStatus;
+import org.apache.commons.lang3.ArrayUtils;
 import org.hl7.fhir.r4.model.*;
 
 import java.util.UUID;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class KulturDiagnostik { //Kultur -> Antibiogramm -> MRGN oder MRE (meist neue Datei)
     private ConceptMapResultStatus conceptMapResultStatus = new ConceptMapResultStatus("http://localhost:8888/fhir/ConceptMap/1707?_format=application/fhir+json");
+    private CodeSystemEUCAST codeSystemEUCAST = new CodeSystemEUCAST("http://localhost:8888/fhir/CodeSystem/3302?_format=application/fhir+json");
+    private ConceptMapMRGN conceptMapMRGN = new ConceptMapMRGN("http://localhost:8888/fhir/ConceptMap/3303?_format=application/fhir+json");
     private MainRessource mainRessource = new MainRessource();
     ConceptMapHandler conceptMapHandler = new ConceptMapHandler();
 
@@ -104,13 +108,15 @@ public class KulturDiagnostik { //Kultur -> Antibiogramm -> MRGN oder MRE (meist
             empfindlichkeit.getEffectiveDateTimeType().addExtension(new Extension("https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/QuelleKlinischesBezugsdatum").setValue(mainRessource.getEffectiveDateTime(obx)));
         }
 
-        CodeableConcept interpretation = new CodeableConcept();
-        Coding eucast = new Coding();
-        CodeableConcept clsi = new CodeableConcept();
-        eucast.setVersion("").setCode(obx.getObx8_AbnormalFlags(0).encode());  // OBX-8 Abnormal Flags
-        clsi.addCoding(new Coding().setVersion("").setCode(obx.getObx8_AbnormalFlags(0).encode()));
-        interpretation.addCoding(eucast); // oder clsi
-        empfindlichkeit.addInterpretation(interpretation);
+        CodeableConcept eucast = new CodeableConcept();
+        String[] stringArray = new String[obx.getObx8_AbnormalFlags().length];
+        for (int i = 0; i < obx.getObx8_AbnormalFlags().length; i++) {
+            stringArray[i] = obx.getObx8_AbnormalFlags(i).encode();
+        }
+        if (!ArrayUtils.isEmpty(stringArray)) {
+            eucast.addCoding().setSystem("EUCAST").setCode(stringArray[0]).setDisplay(codeSystemEUCAST.getEUCAST(stringArray[0]));
+        }
+        empfindlichkeit.addInterpretation(eucast);
 
         if (!obx.getObx5_ObservationValue(0).isEmpty()) {
             Quantity valueQuantity = new Quantity();
@@ -225,6 +231,13 @@ public class KulturDiagnostik { //Kultur -> Antibiogramm -> MRGN oder MRE (meist
             ConceptMap conceptMapObservationValues = conceptMapHandler.getRightConceptMap(observationValues);
             String sourceCodeObservationValues = obx.getObservationValue(0).encode().split("\\^")[0];
             valueCodeableConcept.addCoding().setSystem("http://snomed.info/sct").setCode(conceptMapObservationValues.getTargetCode(sourceCodeObservationValues)).setDisplay(conceptMapObservationValues.getTargetDisplay(sourceCodeObservationValues));
+            String mrgnKlasse = null;
+            Pattern p = Pattern.compile(".*\\((.*)\\).*");
+            Matcher m = p.matcher(obx.getObservationValue(0).encode().split("\\^")[1]);
+            if(m.find()){
+                mrgnKlasse = m.group(1);
+            }
+            valueCodeableConcept.addCoding().setSystem("http://loinc.org").setCode(conceptMapMRGN.getTargetCode(mrgnKlasse)).setDisplay(conceptMapMRGN.getTargetDisplay(mrgnKlasse));
             mrgn.setValue(valueCodeableConcept);
         }
         else {

@@ -1,0 +1,38 @@
+{
+  "resourceType": "CodeSystem",
+  "title": "v2 Mikrobio_EUCAST",
+  "url": "https://www.medizininformatik-initiative.de/fhir/modul-mikrobio/CodeSystem/mii-vs-mikrobio-eucast-eucast",
+  "status": "draft",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "email"
+        }
+      ]
+    }
+  ],
+  "compositional": false,
+  "content": "complete",
+  "concept": [
+    {
+      "code": "S",
+      "display": "Susceptible"
+    },
+    {
+      "code": "I",
+      "display": "Intermediate"
+    },
+    {
+      "code": "R",
+      "display": "Resistant"
+    }
+  ],
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>v2 Mikrobio_EUCAST</h2><tt>https://www.medizininformatik-initiative.de/fhir/modul-mikrobio/CodeSystem/mii-vs-mikrobio-eucast-eucast</tt><p></p></div>"
+  },
+  "valueSet": "https://www.medizininformatik-initiative.de/fhir/modul-mikrobio/ValueSet/mii-vs-mikrobio-eucast-eucast",
+  "count": 3,
+  "name": "V2_Mikrobio_EUCAST"
+}

@@ -1,0 +1,52 @@
+{
+  "resourceType": "ConceptMap",
+  "id": "mibi2fhir-MRGN_Klasse-fhir",
+  "meta": {
+    "versionId": "1",
+    "lastUpdated": "2023-08-21T14:56:45.053+00:00"
+  },
+  "url": "https://fhir.imi.uni-luebeck.de/mibi2fhir/ConceptMap/MRGN_Klasse",
+  "version": "20211004",
+  "name": "mibi2fhir-MRGN_Klasse-fhir",
+  "title": "Mikrobio_MRGN_Klasse",
+  "status": "draft",
+  "publisher": " ",
+  "contact": [ {
+    "telecom": [ {
+      "system": "url",
+      "value": " "
+    } ]
+  }, {
+    "telecom": [ {
+      "system": "email"
+    } ]
+  } ],
+  "sourceCanonical": "https://fhir.imi.uni-luebeck.de/mibi2fhir/ValueSet/MRGN",
+  "targetCanonical": "https://www.medizininformatik-initiative.de/fhir/modul-mikrobio/ValueSet/mii-vs-mikrobio-mrgn-klasse-loinc",
+  "group": [ {
+    "sourceVersion": "2.5.0",
+    "targetVersion": "20211004",
+    "element": [ {
+      "code": "2MRGN",
+      "target": [ {
+        "code": "LA33214-0",
+        "display": "2MRGN",
+        "equivalence": "equivalent"
+      } ]
+    }, {
+      "code": "3MRGN",
+      "target": [ {
+        "code": "LA33215-7",
+        "display": "3MRGN",
+        "equivalence": "equivalent"
+      } ]
+    }, {
+      "code": "4MRGN",
+      "target": [ {
+        "code": "LA33216-5",
+        "display": "4MRGN",
+        "equivalence": "equivalent"
+      } ]
+    } ]
+  } ]
+}
