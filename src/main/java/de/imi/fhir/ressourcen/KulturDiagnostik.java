@@ -114,7 +114,7 @@ public class KulturDiagnostik { //Kultur -> Antibiogramm -> MRGN oder MRE (meist
             stringArray[i] = obx.getObx8_AbnormalFlags(i).encode();
         }
         if (!ArrayUtils.isEmpty(stringArray)) {
-            eucast.addCoding().setSystem("EUCAST").setCode(stringArray[0]).setDisplay(codeSystemEUCAST.getEUCAST(stringArray[0]));
+            eucast.addCoding().setSystem("https://www.medizininformatik-initiative.de/fhir/modul-mikrobio/CodeSystem/mii-vs-mikrobio-eucast-eucast").setCode(stringArray[0]).setDisplay(codeSystemEUCAST.getEUCAST(stringArray[0]));
         }
         empfindlichkeit.addInterpretation(eucast);
 
