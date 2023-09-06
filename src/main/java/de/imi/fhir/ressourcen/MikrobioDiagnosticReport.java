@@ -55,7 +55,7 @@ public class MikrobioDiagnosticReport { //OBR
         snomedMicrobiologyStudies.setSystem("http://snomed.info/sct");
         snomedMicrobiologyStudies.setCode("4341000179107");
         snomedMicrobiologyStudies.setDisplay("Microbiology report (record artifact)");
-        Coding loincMicrobiologySpecialization = new Coding(); //Todo  Code
+        Coding loincMicrobiologySpecialization = new Coding();
         loincMicrobiologySpecialization.setSystem("https://www.medizininformatik-initiative.de/fhir/modul-mikrobiologie/ValueSet/mii-vs-mikrobio-befundtyp-loinc");
         List<Coding> codings = new ArrayList<>();
         codings.add(loincLab);
@@ -70,8 +70,8 @@ public class MikrobioDiagnosticReport { //OBR
 
         CodeableConcept coding1 = new CodeableConcept();
         Coding lonicLabReport = new Coding();
-        lonicLabReport.setSystem("");
-        lonicLabReport.setCode(obr.getObr4_UniversalServiceIdentifier().encode());
+        lonicLabReport.setSystem("http://loinc.org");
+        lonicLabReport.setCode("11502-2").setDisplay(obr.getObr4_UniversalServiceIdentifier().encode());
         coding1.addCoding(lonicLabReport);
         diagnosticReport.setCode(coding1); //OBR-4
 

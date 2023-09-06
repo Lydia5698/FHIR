@@ -14,12 +14,12 @@ public class MainRessource {
     private CodeSystemAbnormalFlags codeSystemAbnormalFlags = new CodeSystemAbnormalFlags("http://localhost:8888/fhir/CodeSystem/52?_format=application/fhir+json");
     public Coding getEffectiveDateTime(OBX obx) throws HL7Exception {
         Coding time = new Coding();
-        time.setCode(obx.getObx14_DateTimeOfTheObservation().encode()).setSystem("?System Date Time");
+        time.setDisplay(obx.getObx14_DateTimeOfTheObservation().encode()).setSystem("https://www.medizininformatik-initiative.de/fhir/core/modul-labor/ValueSet/QuelleKlinischesBezugsdatum");
         return time;
     }
     public Coding getEffectiveDateTimeOBR(OBR obr) throws HL7Exception {
         Coding time = new Coding();
-        time.setCode(obr.getObr7_ObservationDateTime().encode()).setSystem("?System Date Time");
+        time.setDisplay(obr.getObr7_ObservationDateTime().encode()).setSystem("https://www.medizininformatik-initiative.de/fhir/core/modul-labor/ValueSet/QuelleKlinischesBezugsdatum");
         return time;
     }
 
@@ -66,7 +66,7 @@ public class MainRessource {
         }
         // OBX.8 Abnormal Flags "https://r4.ontoserver.csiro.au/fhir/CodeSystem/v2-0078?_format=application/fhir+json"
         if (!ArrayUtils.isEmpty(stringArray)) {
-            interpretation.addCoding().setSystem("Abnormal Flags").setVersion(codeSystemAbnormalFlags.getAbnormalFlagVersion()).setCode(stringArray[0]).setDisplay(codeSystemAbnormalFlags.getAbnormalFlagFor(stringArray[0]));
+            interpretation.addCoding().setSystem("http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation").setVersion(codeSystemAbnormalFlags.getAbnormalFlagVersion()).setCode(stringArray[0]).setDisplay(codeSystemAbnormalFlags.getAbnormalFlagFor(stringArray[0]));
         }
         return interpretation;
     }
