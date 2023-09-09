@@ -28,13 +28,13 @@
       ]
     }
   ],
-  "sourceCanonical": "https://www.medizininformatik-initiative.de/fhir/modul-mikrobio/ValueSet/mii-vs-mikrobio-positiv-negativ-snomedct",
-  "targetCanonical": "https://fhir.imi.uni-luebeck.de/mibi2fhir/ValueSet/mibi2fhir-mikrobioPositiveNegative-fhir",
+  "sourceCanonical": "https://fhir.imi.uni-luebeck.de/mibi2fhir/ValueSet/mibi2fhir-mikrobioPositiveNegative-fhir",
+  "targetCanonical": "https://www.medizininformatik-initiative.de/fhir/modul-mikrobio/ValueSet/mii-vs-mikrobio-positiv-negativ-snomedct",
   "group": [
     {
-      "source": "https://www.medizininformatik-initiative.de/fhir/modul-mikrobio/ValueSet/mii-vs-mikrobio-positiv-negativ-snomedct",
+      "source": "https://fhir.imi.uni-luebeck.de/mibi2fhir/ValueSet/mibi2fhir-mikrobioPositiveNegative-fhir",
       "sourceVersion": "2.5.0",
-      "target": "https://fhir.imi.uni-luebeck.de/mibi2fhir/ValueSet/mibi2fhir-mikrobioPositiveNegative-fhir",
+      "target": "www.medizininformatik-initiative.de/fhir/modul-mikrobio/ValueSet/mii-vs-mikrobio-positiv-negativ-snomedct",
       "targetVersion": "20211004",
       "element": [
         {

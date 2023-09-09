@@ -21,12 +21,12 @@
       "system": "email"
     } ]
   } ],
-  "sourceCanonical": "https://hl7.org/fhir/ValueSet/observation-status",
-  "targetCanonical": "https://fhir.imi.uni-luebeck.de/mibi2fhir/ValueSet/observation-result-status",
+  "sourceCanonical": "https://fhir.imi.uni-luebeck.de/mibi2fhir/ValueSet/observation-result-status",
+  "targetCanonical": "https://hl7.org/fhir/ValueSet/observation-status",
   "group": [ {
-    "source": "https://terminology.hl7.org/CodeSystem/v2-0085",
+    "source": "https://fhir.imi.uni-luebeck.de/mibi2fhir/CodeSystem/observation-result-status",
     "sourceVersion": "2.5.0",
-    "target": "https://fhir.imi.uni-luebeck.de/mibi2fhir/CodeSystem/observation-result-status",
+    "target": "https://terminology.hl7.org/CodeSystem/v2-0085",
     "targetVersion": "20211004",
     "element": [ {
       "code": "C",
