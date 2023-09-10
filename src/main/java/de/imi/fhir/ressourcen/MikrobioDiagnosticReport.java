@@ -35,8 +35,6 @@ public class MikrobioDiagnosticReport { //OBR
         DiagnosticReport.DiagnosticReportStatus diagnosticReportStatus = conceptMapResultStatus.getDiagnosticReportStatusStatusFor(status.getValue());
         diagnosticReport.setStatus(diagnosticReportStatus); //OBR-25
 
-        diagnosticReport.addCategory().addCoding().setSystem("http://terminology.hl7.org/CodeSystem/v2-0074").setCode(codeSystemDiagnosticServiceSectionID.getDiagnosticIDFor(obr.getObr24_DiagnosticServSectID().encode()));
-
         Identifier befund = new Identifier(); // OBR-51/ for globally unique filler ID - OBR-3 , For non-globally unique filler-id the flller/placer number must be combined with the universal service Id - OBR-2(if present)+OBR-3+OBR-4
         CodeableConcept type = new CodeableConcept();
         type.addCoding(new Coding().setSystem("http://terminology.hl7.org/CodeSystem/v2-0203").setCode("FILL"));
@@ -50,7 +48,7 @@ public class MikrobioDiagnosticReport { //OBR
         loincLab.setCode("26436-6").setSystem("http://loinc.org");
         Coding diagnosticServiceSections = new Coding(); // laboratory
         diagnosticServiceSections.setSystem("http://terminology.hl7.org/CodeSystem/v2-0074");  //OBR-24
-        diagnosticServiceSections.setCode(obr.getObr24_DiagnosticServSectID().encode());
+        diagnosticServiceSections.setCode(obr.getObr24_DiagnosticServSectID().encode()).setDisplay(codeSystemDiagnosticServiceSectionID.getDiagnosticDisplayFor(obr.getObr24_DiagnosticServSectID().encode()));
         Coding snomedMicrobiologyStudies = new Coding();
         snomedMicrobiologyStudies.setSystem("http://snomed.info/sct");
         snomedMicrobiologyStudies.setCode("4341000179107");

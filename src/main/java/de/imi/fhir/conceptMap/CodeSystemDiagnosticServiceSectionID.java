@@ -13,19 +13,20 @@ public class CodeSystemDiagnosticServiceSectionID {
         conceptMap = readFromServer.readFromUrl(url);
     }
 
-    public String getDiagnosticIDFor(String abnormalFlag) {
-        if (abnormalFlag != null) {
-            return mapStatusValue(abnormalFlag);
+    public String getDiagnosticDisplayFor(String serviceID) {
+        if (serviceID != null) {
+            return mapStatusValue(serviceID).getString("display");
         }
         return null;
     }
 
-    private String mapStatusValue(String statusValue) {
+
+    private JSONObject mapStatusValue(String value) {
         JSONArray concept = conceptMap.getJSONArray("concept");
         for (int i=0; i<concept.length(); i++) {
             JSONObject element = concept.getJSONObject(i);
-            if (element.getString("code").equals(statusValue)) {
-                return element.getString("display");
+            if (element.getString("code").equals(value)) {
+                return element;
             }
         }
         return null;
