@@ -53,9 +53,15 @@ public class MolekularDiagnostik { // Corona
         }
         //OBX-14
 
-        CodeableConcept valueCodeableConcept = new CodeableConcept();
-        valueCodeableConcept.addCoding().setSystem("http://localhost:8080/fhir/ConceptMap/1?_format=json&_pretty=true").setCode(conceptMapSerologiePositiveNegative.getTargetDisplay(obx.getObx5_ObservationValue(0).encode())).setDisplay(conceptMapSerologiePositiveNegative.getTargetDisplay(obx.getObx5_ObservationValue(0).encode()));//
-        molekularDiagnostik.setValue(valueCodeableConcept);
+        if (!obx.getObx5_ObservationValue(0).encode().isEmpty()){
+            CodeableConcept valueCodeableConcept = new CodeableConcept();
+            valueCodeableConcept.addCoding().setSystem("https://www.medizininformatik-initiative.de/fhir/modul-mikrobio/ValueSet/mii-vs-mikrobio-positiv-negativ-snomedct").setCode(conceptMapSerologiePositiveNegative.getTargetCode(obx.getObx5_ObservationValue(0).encode())).setDisplay(conceptMapSerologiePositiveNegative.getTargetDisplay(obx.getObx5_ObservationValue(0).encode()));//
+            molekularDiagnostik.setValue(valueCodeableConcept);
+        }
+        else {
+            molekularDiagnostik.setDataAbsentReason(mainRessource.getDataAbsentreason());
+        }
+
 
         molekularDiagnostik.addInterpretation(mainRessource.getAbnormalFlag(obx));
 
@@ -64,6 +70,7 @@ public class MolekularDiagnostik { // Corona
         Reference specimen = new Reference();
         specimen.setReference("src/main/resources/outputs/specimen");
         molekularDiagnostik.setSpecimen(specimen);
+
 
         return molekularDiagnostik;
 

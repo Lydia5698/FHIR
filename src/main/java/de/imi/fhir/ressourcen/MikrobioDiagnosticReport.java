@@ -45,19 +45,21 @@ public class MikrobioDiagnosticReport { //OBR
         // OBR-2 +3+4 = 28516883^LABOR + 28516883^OSMCLAR + 1^MRGN
 
         Coding loincLab = new Coding();
+        List<Coding> codings = new ArrayList<>();
         loincLab.setCode("26436-6").setSystem("http://loinc.org");
         Coding diagnosticServiceSections = new Coding(); // laboratory
-        diagnosticServiceSections.setSystem("http://terminology.hl7.org/CodeSystem/v2-0074");  //OBR-24
-        diagnosticServiceSections.setCode(obr.getObr24_DiagnosticServSectID().encode()).setDisplay(codeSystemDiagnosticServiceSectionID.getDiagnosticDisplayFor(obr.getObr24_DiagnosticServSectID().encode()));
+        if (!obr.getObr24_DiagnosticServSectID().encode().isEmpty()){
+            diagnosticServiceSections.setSystem("http://terminology.hl7.org/CodeSystem/v2-0074");  //OBR-24
+            diagnosticServiceSections.setCode(obr.getObr24_DiagnosticServSectID().encode()).setDisplay(codeSystemDiagnosticServiceSectionID.getDiagnosticDisplayFor(obr.getObr24_DiagnosticServSectID().encode()));
+            codings.add(diagnosticServiceSections);
+        }
         Coding snomedMicrobiologyStudies = new Coding();
         snomedMicrobiologyStudies.setSystem("http://snomed.info/sct");
         snomedMicrobiologyStudies.setCode("4341000179107");
         snomedMicrobiologyStudies.setDisplay("Microbiology report (record artifact)");
         Coding loincMicrobiologySpecialization = new Coding();
         loincMicrobiologySpecialization.setSystem("https://www.medizininformatik-initiative.de/fhir/modul-mikrobiologie/ValueSet/mii-vs-mikrobio-befundtyp-loinc");
-        List<Coding> codings = new ArrayList<>();
         codings.add(loincLab);
-        codings.add(diagnosticServiceSections);
         codings.add(snomedMicrobiologyStudies);
         CodeableConcept category = new CodeableConcept();
         category.setCoding(codings);

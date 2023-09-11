@@ -77,4 +77,10 @@ public class MainRessource {
         metaData.addProfile(url);
         return metaData;
     }
+
+    public CodeableConcept getDataAbsentreason(){
+        CodeableConcept dataAbsentreason = new CodeableConcept();
+        dataAbsentreason.addCoding().setCode("unsupported").setDisplay("http://terminology.hl7.org/CodeSystem/data-absent-reason");
+        return dataAbsentreason;
+    }
 }

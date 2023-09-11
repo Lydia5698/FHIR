@@ -61,12 +61,12 @@ public class KulturDiagnostik { //Kultur -> Antibiogramm -> MRGN oder MRE (meist
             Annotation note = new Annotation();
             note.setText(observationValues);
             kulturNachweis.addNote(note);
+            kulturNachweis.setDataAbsentReason(mainRessource.getDataAbsentreason());
         }
 
         Reference patient = new Reference("src/main/resources/dummyPatient");
         kulturNachweis.setSubject(patient);
-        
-        //kulturNachweis.setDataAbsentReason(); // TODO: 18.07.23 nicht umsetzbar, da Grund im Freitext steht
+
         //kulturNachweis.setMethod(); // TODO: 18.07.23 wie sollte man das Unterscheiden? Haben nur die Art
 
         return kulturNachweis;
@@ -133,6 +133,9 @@ public class KulturDiagnostik { //Kultur -> Antibiogramm -> MRGN oder MRE (meist
             }
             empfindlichkeit.setValue(valueQuantity);
         }
+        else {
+            empfindlichkeit.setDataAbsentReason(mainRessource.getDataAbsentreason());
+        }
 
         Reference patient = new Reference("src/main/resources/dummyPatient");
         empfindlichkeit.setSubject(patient);
@@ -185,6 +188,7 @@ public class KulturDiagnostik { //Kultur -> Antibiogramm -> MRGN oder MRE (meist
             Annotation note = new Annotation();
             note.setText(observationValues);
             mre.addNote(note);
+            mre.setDataAbsentReason(mainRessource.getDataAbsentreason());
         }
 
         if (!obx.getObx14_DateTimeOfTheObservation().isEmpty()) {
@@ -244,6 +248,7 @@ public class KulturDiagnostik { //Kultur -> Antibiogramm -> MRGN oder MRE (meist
             Annotation note = new Annotation();
             note.setText(observationValues);
             mrgn.addNote(note);
+            mrgn.setDataAbsentReason(mainRessource.getDataAbsentreason());
         }
 
         if (!obx.getObx14_DateTimeOfTheObservation().isEmpty()) {

@@ -49,9 +49,14 @@ public class SerologieImmunologie { // Antigene
             serologieImmunologie.getEffectiveDateTimeType().addExtension(new Extension("https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/QuelleKlinischesBezugsdatum").setValue(mainRessource.getEffectiveDateTime(obx)));
         }
 
-        CodeableConcept valueCodeableConcept = new CodeableConcept();
-        valueCodeableConcept.setText(obx.getObx5_ObservationValue(0).encode());
-        serologieImmunologie.setValue(valueCodeableConcept);
+        if (!obx.getObx5_ObservationValue(0).encode().isEmpty()) {
+            CodeableConcept valueCodeableConcept = new CodeableConcept();
+            valueCodeableConcept.setText(obx.getObx5_ObservationValue(0).encode());
+            serologieImmunologie.setValue(valueCodeableConcept);
+        }
+        else {
+            serologieImmunologie.setDataAbsentReason(mainRessource.getDataAbsentreason());
+        }
 
         Reference patient = new Reference("src/main/resources/dummyPatient");
         serologieImmunologie.setSubject(patient);
