@@ -20,7 +20,7 @@ public class MolekularDiagnostik { // Corona
     // OBX-14 Zeit (nur bei Schnelltests?)
 
     private ConceptMapResultStatus conceptMapResultStatus = new ConceptMapResultStatus("http://localhost:8888/fhir/ConceptMap/1707?_format=application/fhir+json");
-    private ConceptMapSerologiePositiveNegative conceptMapSerologiePositiveNegative = new ConceptMapSerologiePositiveNegative("http://localhost:8888/fhir/ConceptMap/1?_format=json&_pretty=true");
+    private ConceptMapMikrobioPositiveNegative conceptMapMikrobioPositiveNegative = new ConceptMapMikrobioPositiveNegative("http://localhost:8888/fhir/ConceptMap/1?_format=json&_pretty=true");
     private MainRessource mainRessource = new MainRessource();
 
     public Observation fillMolekularDiagnostik(OBX obx, OBR obr) throws HL7Exception {
@@ -55,7 +55,7 @@ public class MolekularDiagnostik { // Corona
 
         if (!obx.getObx5_ObservationValue(0).encode().isEmpty()){
             CodeableConcept valueCodeableConcept = new CodeableConcept();
-            valueCodeableConcept.addCoding().setSystem("https://www.medizininformatik-initiative.de/fhir/modul-mikrobio/ValueSet/mii-vs-mikrobio-positiv-negativ-snomedct").setCode(conceptMapSerologiePositiveNegative.getTargetCode(obx.getObx5_ObservationValue(0).encode())).setDisplay(conceptMapSerologiePositiveNegative.getTargetDisplay(obx.getObx5_ObservationValue(0).encode()));//
+            valueCodeableConcept.addCoding().setSystem("https://www.medizininformatik-initiative.de/fhir/modul-mikrobio/ValueSet/mii-vs-mikrobio-positiv-negativ-snomedct").setCode(conceptMapMikrobioPositiveNegative.getTargetCode(obx.getObx5_ObservationValue(0).encode())).setDisplay(conceptMapMikrobioPositiveNegative.getTargetDisplay(obx.getObx5_ObservationValue(0).encode()));//
             molekularDiagnostik.setValue(valueCodeableConcept);
         }
         else {

@@ -14,7 +14,7 @@ public class MainRessource {
     private CodeSystemAbnormalFlags codeSystemAbnormalFlags = new CodeSystemAbnormalFlags("http://localhost:8888/fhir/CodeSystem/52?_format=application/fhir+json");
     public Coding getEffectiveDateTime(OBX obx) throws HL7Exception {
         Coding time = new Coding();
-        time.setDisplay(obx.getObx14_DateTimeOfTheObservation().encode()).setSystem("https://www.medizininformatik-initiative.de/fhir/core/modul-labor/ValueSet/QuelleKlinischesBezugsdatum");
+        time.setDisplay(obx.getObx14_DateTimeOfTheObservation().encode()).setSystem("https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/QuelleKlinischesBezugsdatum");
         return time;
     }
     public Coding getEffectiveDateTimeOBR(OBR obr) throws HL7Exception {
@@ -24,7 +24,7 @@ public class MainRessource {
     }
 
     public Identifier getAnalyseBefundCode(OBX obx, OBR obr) throws HL7Exception {
-        Identifier analyseBefundCode = new Identifier(); // gute Idee?
+        Identifier analyseBefundCode = new Identifier();
         analyseBefundCode.setSystem("URI");
         analyseBefundCode.setValue(obr.getObr3_FillerOrderNumber().encode() + obx.getObx3_ObservationIdentifier().encode() + obx.getObx4_ObservationSubID().encode()); // OBR-3, OBX-3, OBX-4
         Organization organization = new Organization();

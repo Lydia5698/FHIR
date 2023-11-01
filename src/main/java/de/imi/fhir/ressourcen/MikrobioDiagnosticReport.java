@@ -31,7 +31,7 @@ public class MikrobioDiagnosticReport { //OBR
         Reference basedOn = new Reference(); //// TODO: 18.07.23 ?
         diagnosticReport.addBasedOn(basedOn);
 
-        ID status = obr.getResultStatus();
+        ID status = obr.getObr25_ResultStatus();
         DiagnosticReport.DiagnosticReportStatus diagnosticReportStatus = conceptMapResultStatus.getDiagnosticReportStatusStatusFor(status.getValue());
         diagnosticReport.setStatus(diagnosticReportStatus); //OBR-25
 
@@ -95,12 +95,6 @@ public class MikrobioDiagnosticReport { //OBR
         //diagnosticReport.setConclusion();
 
         return diagnosticReport;
-
-        //OBR-14? Specimen Received Date/Time
-        //OBR-15? Specimen Source
-        //OBR-18  Placer Field
-        //OBR-20  Filler Field
-
 
     }
 }

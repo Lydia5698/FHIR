@@ -4,6 +4,7 @@ import ca.uhn.hl7v2.HL7Exception;
 import ca.uhn.hl7v2.model.v25.datatype.ID;
 import ca.uhn.hl7v2.model.v25.segment.OBR;
 import ca.uhn.hl7v2.model.v25.segment.OBX;
+import de.imi.fhir.conceptMap.ConceptMapMikrobioPositiveNegative;
 import de.imi.fhir.conceptMap.ConceptMapResultStatus;
 import org.hl7.fhir.r4.model.*;
 
@@ -18,6 +19,7 @@ public class SerologieImmunologie { // Antigene
     // 11,(P)
     // 14 (202207041449)
     private ConceptMapResultStatus conceptMapResultStatus = new ConceptMapResultStatus("http://localhost:8888/fhir/ConceptMap/1707?_format=application/fhir+json");
+    private ConceptMapMikrobioPositiveNegative conceptMapMikrobioPositiveNegative = new ConceptMapMikrobioPositiveNegative("http://localhost:8888/fhir/ConceptMap/1?_format=json&_pretty=true");
     private MainRessource mainRessource = new MainRessource();
 
     // identifier -> analyseBefundCode -> type -> observationInstanceV2, System uri, Value
@@ -51,7 +53,7 @@ public class SerologieImmunologie { // Antigene
 
         if (!obx.getObx5_ObservationValue(0).encode().isEmpty()) {
             CodeableConcept valueCodeableConcept = new CodeableConcept();
-            valueCodeableConcept.setText(obx.getObx5_ObservationValue(0).encode());
+            valueCodeableConcept.addCoding().setSystem("https://www.medizininformatik-initiative.de/fhir/modul-mikrobio/ValueSet/mii-vs-mikrobio-positiv-negativ-snomedct").setCode(conceptMapMikrobioPositiveNegative.getTargetCode(obx.getObx5_ObservationValue(0).encode())).setDisplay(conceptMapMikrobioPositiveNegative.getTargetDisplay(obx.getObx5_ObservationValue(0).encode()));//
             serologieImmunologie.setValue(valueCodeableConcept);
         }
         else {

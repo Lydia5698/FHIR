@@ -82,16 +82,33 @@ public class KulturDiagnostik { //Kultur -> Antibiogramm -> MRGN oder MRE (meist
     // interpretation OBX-8 EUCAST oder CLSI
     // ? Value OBX-5 OBX-6
 
+    /**
+     * This method gets one line of the message and returns the observation associated with it. This observation is filled with the elements from the line.
+     * @param obx OBX Segment of the current Message
+     * @param obr OBR Segment of the current Message
+     * @return Observation: the observation for the current line of the message
+     */
     public Observation fillEmpfindlichkeit(OBX obx, OBR obr) throws HL7Exception { // Antibiogramm
+        /**
+        * Generates random UUID and sets the Metadata to the Observation
+         */
         Observation empfindlichkeit = new Observation();
         empfindlichkeit.setId(UUID.randomUUID().toString());
         empfindlichkeit.setMeta(mainRessource.setMetaData("https://www.medizininformatik-initiative.de/fhir/modul-mikrobio/StructureDefinition/empfindlichkeit"));
 
+        /**
+         *  The identifier is stored in the observation. This is composed of OBR-3, OBX-3, OBX-4.
+         */
         empfindlichkeit.addIdentifier(mainRessource.getAnalyseBefundCode(obx,obr)); // OBX-21
-        // option: 1) OBR-3 + OBX-3 + OBX-4 or 2) OBR-3 + OBR-4 + OBX-3 + OBX-4 or 2) some other way to uniquely ID the OBR/ORC + OBX-3 + OBX-4.
 
+        /**
+         *  Here the observation is filled with the category
+         */
         empfindlichkeit.addCategory(mainRessource.getCategory());
 
+        /**
+         * Here the observation is filled with the code from the OBX-3 element. In the case of an antibiogram, the antibiotics to be tested for resistance are stored here.
+         */
         CodeableConcept code = new CodeableConcept();
         String sourceCode = obx.getObx3_ObservationIdentifier().getCe1_Identifier().encode();
         ConceptMap conceptMapObservationIdentifier = conceptMapHandler.getRightConceptMap(obx.getObx3_ObservationIdentifier().getCe3_NameOfCodingSystem().encode());
@@ -100,14 +117,23 @@ public class KulturDiagnostik { //Kultur -> Antibiogramm -> MRGN oder MRE (meist
         }
         empfindlichkeit.setCode(code); //OBX-3
 
+        /**
+         * Here the status is filled with the OBX-11 element
+         */
         ID status = obx.getObx11_ObservationResultStatus();
         Observation.ObservationStatus observationStatus = conceptMapResultStatus.getObservationStatusStatusFor(status.getValue());
         empfindlichkeit.setStatus(observationStatus);
 
+        /**
+         *  The date and time of the observation from the OBX-14 element is stored here.
+         */
         if (!obx.getObx14_DateTimeOfTheObservation().isEmpty()) {
             empfindlichkeit.getEffectiveDateTimeType().addExtension(new Extension("https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/QuelleKlinischesBezugsdatum").setValue(mainRessource.getEffectiveDateTime(obx)));
         }
 
+        /**
+         * The abnormal flag from the OBX-8 element is stored here. This flag indicates a correction of the observed value.
+         */
         CodeableConcept eucast = new CodeableConcept();
         String[] stringArray = new String[obx.getObx8_AbnormalFlags().length];
         for (int i = 0; i < obx.getObx8_AbnormalFlags().length; i++) {
@@ -118,6 +144,9 @@ public class KulturDiagnostik { //Kultur -> Antibiogramm -> MRGN oder MRE (meist
         }
         empfindlichkeit.addInterpretation(eucast);
 
+        /**
+         * The observation value from the OBX-5 is stored here. In this case, the numerical value of the antibiogram is stored here.
+         */
         if (!obx.getObx5_ObservationValue(0).isEmpty()) {
             Quantity valueQuantity = new Quantity();
             String[] observationValues = obx.getObservationValue(0).encode().split("(?<=\\D)(?=\\d)");
@@ -137,6 +166,9 @@ public class KulturDiagnostik { //Kultur -> Antibiogramm -> MRGN oder MRE (meist
             empfindlichkeit.setDataAbsentReason(mainRessource.getDataAbsentreason());
         }
 
+        /**
+         * Here the patient is referenced to the observation
+         */
         Reference patient = new Reference("src/main/resources/dummyPatient");
         empfindlichkeit.setSubject(patient);
 
@@ -168,8 +200,7 @@ public class KulturDiagnostik { //Kultur -> Antibiogramm -> MRGN oder MRE (meist
 
         CodeableConcept code = new CodeableConcept();
         code.addCoding().setCode(obx.getObx3_ObservationIdentifier().encode()).setSystem("http://hl7.org/fhir/ValueSet/observation-codes");
-        mre.setCode(code); //OBX-3 // TODO: 04.07.23 System nicht ganz richtig noch mappen
-
+        mre.setCode(code); //OBX-3
         ID status = obx.getObx11_ObservationResultStatus();
         Observation.ObservationStatus observationStatus = conceptMapResultStatus.getObservationStatusStatusFor(status.getValue());
         mre.setStatus(observationStatus);
@@ -221,7 +252,7 @@ public class KulturDiagnostik { //Kultur -> Antibiogramm -> MRGN oder MRE (meist
 
         CodeableConcept code = new CodeableConcept();
         code.addCoding().setCode(obx.getObx3_ObservationIdentifier().encode()).setSystem("http://hl7.org/fhir/ValueSet/observation-codes");
-        mrgn.setCode(code); //OBX-3 // TODO: 04.07.23 System nicht ganz richtig noch mappen
+        mrgn.setCode(code); //OBX-3
 
         mrgn.addInterpretation(mainRessource.getAbnormalFlag(obx));
 
@@ -230,7 +261,7 @@ public class KulturDiagnostik { //Kultur -> Antibiogramm -> MRGN oder MRE (meist
         mrgn.setStatus(observationStatus);
 
         CodeableConcept valueCodeableConcept = new CodeableConcept();
-        String observationValues = obx.getObservationValue(0).encode();
+        String observationValues = obx.getObx5_ObservationValue(0).encode();
         if (conceptMapHandler.getRightConceptMap(observationValues) != null){
             ConceptMap conceptMapObservationValues = conceptMapHandler.getRightConceptMap(observationValues);
             String sourceCodeObservationValues = obx.getObservationValue(0).encode().split("\\^")[0];
@@ -260,11 +291,4 @@ public class KulturDiagnostik { //Kultur -> Antibiogramm -> MRGN oder MRE (meist
 
         return mrgn;
     }
-
-
-
-
-
-
-
 }
