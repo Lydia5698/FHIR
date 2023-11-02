@@ -7,9 +7,14 @@ import org.hl7.fhir.r4.model.Specimen;
 
 import java.util.UUID;
 
-public class SpecimenMI { //OBR-15 Ort art der probe
-    // Menge der Probe in OBX-5 als freitext
-    private MainRessource mainRessource = new MainRessource();
+public class SpecimenMI {
+    private final MainRessource mainRessource = new MainRessource();
+
+    /**
+     * This method gives the specimen of the investigation
+     * @param obr OBR Segment of the current Message
+     * @return Specimen
+     */
     public Specimen specimenMI(OBR obr) throws HL7Exception {
         Specimen specimen = new Specimen();
         specimen.setId(UUID.randomUUID().toString());
@@ -28,8 +33,5 @@ public class SpecimenMI { //OBR-15 Ort art der probe
 
         return specimen;
 
-        // 15.1 Specimen Source Name or Code
-        // 15.3 Specimen Collection methode
-        // 15.4 Body Site
     }
 }

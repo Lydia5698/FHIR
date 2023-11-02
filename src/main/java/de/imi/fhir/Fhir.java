@@ -37,63 +37,65 @@ public class Fhir {
         saveToFhir(oruR01, saveTo);
 
     }
+
+    /**
+     * In this method, the message is taken and each message line is assigned to a category. This is then saved with saveFile.
+     * @param oruR01 The Message
+     * @param path the path where the result is to be saved
+     */
     public void saveToFhir(ORU_R01 oruR01, String path) throws HL7Exception {
-      /*  File directory = new File(path);
-        if (!directory.exists()) {
-            if (directory.mkdirs()) {
-                System.out.println("Directory is created!");
-            } else {
-                System.out.println("Failed to create directory!");
-            }
-        }*/
         KulturDiagnostik kulturDiagnostik = new KulturDiagnostik();
         MolekularDiagnostik molekularDiagnostik = new MolekularDiagnostik();
         SerologieImmunologie serologieImmunologie = new SerologieImmunologie();
         MikrobioDiagnosticReport mikrobioDiagnosticReport = new MikrobioDiagnosticReport();
 
-        int orderObservationCount = 0;
-        //ORU_R01_ORDER_OBSERVATION orderObservation = oruR01.getPATIENT_RESULT().getORDER_OBSERVATION(orderObservationCount);
         List<ORU_R01_ORDER_OBSERVATION> allOrderObservation = oruR01.getPATIENT_RESULT().getORDER_OBSERVATIONAll();
 
         Observation parentObservation = new Observation();
-        // Kulturdiagnostik
-        // String profile = "https://highmed.org/fhir/StructureDefinition/ic/Kulturdiagnostik&scope=MedizininformatikInitiative-HiGHmed-IC@current";
-        // Directory
-        // String profileDirectory = "src/main/resources/Profiles/MII/medizininformatikinitiative-highmed-ic/ressourcen-profile";
+
         parentObservation.getMeta().addProfile("https://highmed.org/fhir/StructureDefinition/ic/Kulturdiagnostik&scope=MedizininformatikInitiative-HiGHmed-IC@current");
+        // Dummy Specimen
         SpecimenMI specimen = new SpecimenMI();
         saveFile(specimen.specimenMI(allOrderObservation.get(0).getOBR()),"specimen", path);
         List<Reference> results = new ArrayList<>();
+        // goes through all message blocks
         for (ORU_R01_ORDER_OBSERVATION orderObservation : allOrderObservation) {
             List<ORU_R01_OBSERVATION> allObservations = orderObservation.getOBSERVATIONAll();
             OBR obr = orderObservation.getOBR();
+            // goes through all lines of the message blocks
             for (ORU_R01_OBSERVATION observation : allObservations) {
+                // Case Antibiogramm
                 if ((observation.getOBX().getObx3_ObservationIdentifier().getCe3_NameOfCodingSystem().encode().contains("abio"))){
                     Observation antibio = kulturDiagnostik.fillEmpfindlichkeit(observation.getOBX(),obr);
                     results.add(new Reference(path + "/" + "antibiogramm" + antibio.getIdElement().getValue() + ".json"));
                     saveFile(antibio, "antibiogramm", path);
 
                 }
+                // Case MRGN
                 else if (observation.getOBX().getObx5_ObservationValue(0).encode().contains("MRGN")){
                     Observation mrgn = kulturDiagnostik.fillMRGN(observation.getOBX(),obr);
                     results.add(new Reference(path + "/" + "mrgn" + mrgn.getIdElement().getValue() + ".json"));
                     saveFile(mrgn, "mrgn", path);
                 }
+                // Case MRE
                 else if (observation.getOBX().getObx5_ObservationValue(0).encode().contains("MRE")){
                     Observation mre = kulturDiagnostik.fillMRE(observation.getOBX(),obr);
                     results.add(new Reference(path + "/" + "mre" + mre.getIdElement().getValue() + ".json"));
                     saveFile(mre, "mre", path);
                 }
+                // Case Molecular Diagnostic
                 else if (observation.getOBX().getObx3_ObservationIdentifier().encode().contains("cov")){
                     Observation corona = molekularDiagnostik.fillMolekularDiagnostik(observation.getOBX(),obr);
                     results.add(new Reference(path + "/" + "molekularDiagnostik" + corona.getIdElement().getValue() + ".json"));
                     saveFile(corona, "molekularDiagnostik", path);
                 }
+                // Case Serology Immunology
                 else if (observation.getOBX().getObx3_ObservationIdentifier().encode().contains("Antigen") || observation.getOBX().getObx5_ObservationValue(0).encode().contains("Toxin") ) {
                     Observation antigen = serologieImmunologie.fillSerologieImmunologie(observation.getOBX(),obr);
                     results.add(new Reference(path + "/" + "serologie" + antigen.getIdElement().getValue() + ".json"));
                     saveFile(antigen, "serologie", path);
                 }
+                // Default Case Culture Diagnostics
                 else {
                     Observation kultur = kulturDiagnostik.kulturNachweis(observation.getOBX(),obr);
                     results.add(new Reference(path + "/" + "kulturDiagnostik" + kultur.getIdElement().getValue() + ".json"));
@@ -101,17 +103,21 @@ public class Fhir {
                 }
 
             }
+            // Case OBR diagnostic Report
             if (!orderObservation.getOBR().isEmpty()){
                 saveFile(mikrobioDiagnosticReport.fillDiagnosticReport(orderObservation.getOBR(),results), "diagnosticReport", path);
                 results.clear();
             }
         }
-        // todo Validator mit HTTP Put an den Marshal
-        // http://localhost:8888/fhir/ConceptMap/1?_format=application/fhir+json
-
     }
 
 
+    /**
+     * this method stores the observation in JSON
+     * @param observation the observation of the message line
+     * @param name the type of examination
+     * @param path the path
+     */
     public void saveFile(IBaseResource observation, String name, String path){
         FhirContext ctx = FhirContext.forR4();
         IParser parser = ctx.newJsonParser();

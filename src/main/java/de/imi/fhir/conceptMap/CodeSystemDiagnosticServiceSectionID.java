@@ -23,7 +23,7 @@ public class CodeSystemDiagnosticServiceSectionID {
 
     private JSONObject mapStatusValue(String value) {
         JSONArray concept = conceptMap.getJSONArray("concept");
-        for (int i=0; i<concept.length(); i++) {
+        for (int i = 0; i < concept.length(); i++) {
             JSONObject element = concept.getJSONObject(i);
             if (element.getString("code").equals(value)) {
                 return element;

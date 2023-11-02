@@ -20,7 +20,7 @@ public class CodeSystemAbnormalFlags {
     }
 
     public String getAbnormalFlagVersion(){
-        return conceptMap.getString("version").toString();
+        return conceptMap.getString("version");
     }
 
     private String mapStatusValue(String statusValue) {

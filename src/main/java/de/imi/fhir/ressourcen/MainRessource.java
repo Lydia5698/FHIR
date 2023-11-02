@@ -10,19 +10,38 @@ import org.hl7.fhir.r4.model.*;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class MainRessource {
-    private CodeSystemAbnormalFlags codeSystemAbnormalFlags = new CodeSystemAbnormalFlags("http://localhost:8888/fhir/CodeSystem/52?_format=application/fhir+json");
+    private final CodeSystemAbnormalFlags codeSystemAbnormalFlags = new CodeSystemAbnormalFlags("http://localhost:8888/fhir/CodeSystem/52?_format=application/fhir+json");
+
+    /**
+     * This method returns the time and date of the observation
+     * @param obx OBX Segment of the current Message
+     * @return the current Time of the Message
+     */
     public Coding getEffectiveDateTime(OBX obx) throws HL7Exception {
         Coding time = new Coding();
         time.setDisplay(obx.getObx14_DateTimeOfTheObservation().encode()).setSystem("https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/QuelleKlinischesBezugsdatum");
         return time;
     }
+
+    /**
+     * This method returns the time and date of the OBR-Segment
+     * @param obr OBR Segment of the current Message
+     * @return the current Time of the Message
+     */
     public Coding getEffectiveDateTimeOBR(OBR obr) throws HL7Exception {
         Coding time = new Coding();
         time.setDisplay(obr.getObr7_ObservationDateTime().encode()).setSystem("https://www.medizininformatik-initiative.de/fhir/core/modul-labor/ValueSet/QuelleKlinischesBezugsdatum");
         return time;
     }
 
+    /**
+     * This method returns the code from the observation.
+     * @param obx OBX Segment of the current Message
+     * @param obr OBR Segment of the current Message
+     * @return the code from the observation
+     */
     public Identifier getAnalyseBefundCode(OBX obx, OBR obr) throws HL7Exception {
         Identifier analyseBefundCode = new Identifier();
         analyseBefundCode.setSystem("URI");
@@ -39,6 +58,10 @@ public class MainRessource {
         return analyseBefundCode;
     }
 
+    /**
+     * This method shows the category of the observation. Here some fixed values are set
+     * @return the category from the observation
+     */
     public CodeableConcept getCategory(){
         Coding lonicObservation = new Coding();
         lonicObservation.setSystem("http://loinc.org");
@@ -58,6 +81,11 @@ public class MainRessource {
         return category;
     }
 
+    /**
+     * The abnormal flag from the OBX-8 element is stored here. This flag indicates a correction of the observed value.
+     * @param obx OBX Segment of the current Message
+     * @return abnormal flag
+     */
     public CodeableConcept getAbnormalFlag(OBX obx) throws HL7Exception {
         CodeableConcept interpretation = new CodeableConcept();
         String[] stringArray = new String[obx.getObx8_AbnormalFlags().length];
@@ -71,6 +99,11 @@ public class MainRessource {
         return interpretation;
     }
 
+    /**
+     * Sets the Metadata to the Observation
+     * @param url the url to the fhir resource
+     * @return Metadata
+     */
     public Meta setMetaData(String url){
         Meta metaData = new Meta();
         metaData.setSource("https://simplifier.net/Medizininformatik-Initiative-Modul-Mikrobiologie/~introduction");
@@ -78,6 +111,10 @@ public class MainRessource {
         return metaData;
     }
 
+    /**
+     * The reason for the absence of certain data is given here
+     * @return Data absent Reason
+     */
     public CodeableConcept getDataAbsentreason(){
         CodeableConcept dataAbsentreason = new CodeableConcept();
         dataAbsentreason.addCoding().setCode("unsupported").setDisplay("http://terminology.hl7.org/CodeSystem/data-absent-reason");
