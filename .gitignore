@@ -8,3 +8,5 @@ src/main/java/StatusKulturdiagnostik.java
 src/main/java/ObservationJSON.java
 target/
 out/
+**/.DS_Store
+.DS_Store
