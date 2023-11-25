@@ -111,7 +111,6 @@ public class Fhir {
         }
     }
 
-
     /**
      * this method stores the observation in JSON
      * @param observation the observation of the message line
