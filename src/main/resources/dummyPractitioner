@@ -24,9 +24,9 @@
   "active" : true,
   "name" : [{
     "use" : "official",
-    "text" : "Sarah-Lisa Gisch",
-    "family" : "Gisch",
-    "given" : ["Sarah-Lisa"],
+    "text" : "Erika Mustermann",
+    "family" : "Mustermann",
+    "given" : ["Erika"],
     "prefix" : ["Dr."]
   }],
   "telecom" : [{
